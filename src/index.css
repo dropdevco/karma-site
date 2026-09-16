@@ -1,0 +1,57 @@
+@import 'tailwindcss';
+
+@theme {
+  /* Brand palette sampled from the Karma logo. Replace with exact values
+     once the source SVG lands in /public/brand. */
+  --color-karma-red: #b0121a;
+  --color-karma-red-dark: #8a0d14;
+  --color-karma-red-soft: #f6e7e8;
+  --color-karma-tan: #d5c2a9;
+  --color-karma-tan-light: #e9dfd0;
+  --color-karma-tan-dark: #b8a288;
+  --color-karma-cream: #faf7f2;
+  --color-karma-ink: #1c1614;
+  --color-karma-ink-soft: #5c524c;
+
+  --font-display: 'Archivo', ui-sans-serif, system-ui, sans-serif;
+  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+
+  --radius-card: 1.25rem;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-karma-cream text-karma-ink font-sans antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display tracking-tight;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-karma-red;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

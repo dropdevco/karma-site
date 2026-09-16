@@ -1,0 +1,36 @@
+{
+  "org": {
+    "name": "Karma",
+    "tagline": "Juega por algo más grande."
+  },
+  "nav": {
+    "home": "Inicio",
+    "events": "Eventos",
+    "about": "Nosotros",
+    "beneficiaries": "A Quién Ayudamos",
+    "join": "Únete a Karma",
+    "menu": "Menú",
+    "close": "Cerrar menú",
+    "skipToContent": "Saltar al contenido principal"
+  },
+  "lang": {
+    "switch": "Cambiar idioma",
+    "current": "Idioma actual"
+  },
+  "footer": {
+    "blurb": "Una comunidad que convierte los partidos de barrio en apoyo real para hogares de acogida y las familias que atienden.",
+    "explore": "Explorar",
+    "connect": "Conectar",
+    "legal": "Legal",
+    "privacy": "Política de Privacidad",
+    "terms": "Términos",
+    "contact": "Contacto",
+    "rights": "Todos los derechos reservados.",
+    "builtWith": "Hecho por voluntarios, para la comunidad."
+  },
+  "cta": {
+    "join": "Únete a Karma",
+    "seeEvents": "Ver próximos eventos",
+    "learnMore": "Conoce más"
+  }
+}

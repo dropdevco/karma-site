@@ -1,0 +1,36 @@
+{
+  "org": {
+    "name": "Karma",
+    "tagline": "Play for something bigger."
+  },
+  "nav": {
+    "home": "Home",
+    "events": "Events",
+    "about": "About",
+    "beneficiaries": "Who We Help",
+    "join": "Join Karma",
+    "menu": "Menu",
+    "close": "Close menu",
+    "skipToContent": "Skip to main content"
+  },
+  "lang": {
+    "switch": "Change language",
+    "current": "Current language"
+  },
+  "footer": {
+    "blurb": "A community that turns pickup games into real support for foster homes and the families they serve.",
+    "explore": "Explore",
+    "connect": "Connect",
+    "legal": "Legal",
+    "privacy": "Privacy Policy",
+    "terms": "Terms",
+    "contact": "Contact",
+    "rights": "All rights reserved.",
+    "builtWith": "Built by volunteers, for the community."
+  },
+  "cta": {
+    "join": "Join Karma",
+    "seeEvents": "See upcoming events",
+    "learnMore": "Learn more"
+  }
+}
