@@ -1,3 +1,21 @@
+import { Hero } from '@/components/home/Hero'
+import { Premise } from '@/components/home/Premise'
+import { HowItWorks } from '@/components/home/HowItWorks'
+import { ImpactNumbers } from '@/components/home/ImpactNumbers'
+import { PointsAndPrize } from '@/components/home/PointsAndPrize'
+import { UpcomingEvents } from '@/components/home/UpcomingEvents'
+import { ClosingCta } from '@/components/home/ClosingCta'
+
 export function Home() {
-  return <div className="px-4 py-24 text-center text-karma-ink-soft">Home</div>
+  return (
+    <>
+      <Hero />
+      <Premise />
+      <HowItWorks />
+      <ImpactNumbers />
+      <PointsAndPrize />
+      <UpcomingEvents />
+      <ClosingCta />
+    </>
+  )
 }

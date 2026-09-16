@@ -1,0 +1,69 @@
+{
+  "meta": {
+    "title": "Sobre Karma — Juega con Propósito"
+  },
+  "hero": {
+    "eyebrow": "Nuestra historia",
+    "heading": "Jugar es poderoso. La comunidad también.",
+    "body": "Ya la gente se reúne para fútbol libre, básquetbol y carreras comunitarias. Karma convierte esa reunión semanal en apoyo real para hogares de acogida y organizaciones de servicios familiares en tu ciudad."
+  },
+  "why": {
+    "eyebrow": "Por qué existimos",
+    "heading": "Cada ciudad tiene los dos.",
+    "body": "El martes por la noche, cuarenta personas se presentan a jugar fútbol libre. A cinco minutos de distancia, un hogar de acogida necesita quince cajas de alimentos enlatados este mes. Karma conecta esas dos realidades. No escribes un cheque. Te presentas y juegas. La energía que ya existe lleva algo más pesado."
+  },
+  "mechanism": {
+    "eyebrow": "Cómo funciona",
+    "heading": "Tres piezas simples.",
+    "steps": [
+      {
+        "number": "1",
+        "title": "Los eventos son gratis",
+        "description": "Preséntate. Sin cuota de entrada, sin costo de registro. Lo único que te pedimos: trae un artículo de donación que ya estabas cómodo comprando."
+      },
+      {
+        "number": "2",
+        "title": "Las recolecciones se entregan",
+        "description": "Recolectamos alimentos enlatados, artículos del hogar y efectivo en cada evento. Cada pocas semanas, entregamos todo a organizaciones asociadas verificadas que trabajan directamente con hogares de acogida."
+      },
+      {
+        "number": "3",
+        "title": "Ganas puntos",
+        "description": "Tu asistencia y donaciones se suman. Cada miembro puede ver su contribución en tiempo real. El máximo anotador de la temporada gana un premio en efectivo, y todos los premios se donan a las organizaciones asociadas."
+      }
+    ]
+  },
+  "difference": {
+    "eyebrow": "Lo que nos hace diferente",
+    "heading": "No te pedimos que sacrifiques nada que ya no estuvieras dando.",
+    "values": [
+      {
+        "title": "Integra la donación en la alegría, no en la obligación.",
+        "description": "La mejor manera de cuidar tu comunidad no es hacerle sentir culpa a nadie. Es presentarse a jugar y dejar que la energía natural del juego lleve la donación."
+      },
+      {
+        "title": "Haz el impacto visible y real.",
+        "description": "Verás exactamente cuántas latas se recolectaron, qué organizaciones asociadas las recibieron, y cómo tu asistencia importó. Sin cajas negras. Sin promesas vagas."
+      },
+      {
+        "title": "Encuentra a las personas donde están.",
+        "description": "La mayoría de los deportes de pickup ya son bilingües, ya son diversos, ya están construidos sobre confianza. No intentamos reclutar voluntarios de caridad—simplemente nos presentamos al campo de fútbol y les pedimos a las personas ya allí que traigan una lata extra."
+      }
+    ]
+  },
+  "involved": {
+    "eyebrow": "Participa",
+    "heading": "Dos formas de involucrarte.",
+    "playHeading": "Ven a jugar.",
+    "playBody": "Preséntate a un evento de Karma. Elige el deporte y la zona que se ajuste a tu semana. Trae un artículo de donación. Juega duro. Así de simple.",
+    "playCTA": "Ver próximos eventos",
+    "volunteerHeading": "Ayúdanos a organizar eventos.",
+    "volunteerBody": "Necesitamos gente que coordine recolecciones, construya relaciones con organizaciones asociadas, y ayude a mantener los eventos en marcha. No necesitas experiencia en deportes—solo cuidado y algunas horas a la semana.",
+    "volunteerCTA": "Voluntario con Karma"
+  },
+  "team": {
+    "eyebrow": "El equipo detrás de Karma",
+    "heading": "Voluntarios construyendo algo más grande.",
+    "note": "Fotos y nombres en la Versión 2. Karma está completamente dirigida por voluntarios—coordinadores de eventos, enlaces comunitarios, y gente de operaciones que se presentan cada semana para asegurar que la donación llegue a las personas que más la necesitan."
+  }
+}

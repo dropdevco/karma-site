@@ -1,0 +1,96 @@
+{
+  "meta": {
+    "title": "Karma — Juega por algo más grande"
+  },
+  "hero": {
+    "eyebrow": "Deporte recreativo con propósito",
+    "headline": "Ven a jugar. Vete sabiendo que alimentaste a una familia.",
+    "subhead": "Karma convierte el fútbol, el básquetbol y las carreras comunitarias que ya jugarías en comida, fondos y apoyo para hogares de acogida en tu ciudad.",
+    "ctaPrimary": "Únete a Karma",
+    "ctaSecondary": "Ver próximos eventos",
+    "imageAlt": "Espacio para foto: jugadores en plena acción, brazos en alto"
+  },
+  "premise": {
+    "eyebrow": "La idea",
+    "lead": "Un partido es solo un partido — hasta que llegan cuarenta personas a jugarlo.",
+    "body": "Cada partido de pickup es una excusa para reunirnos. Nosotros convertimos esa reunión en latas de comida sobre una mesa, dólares en un bote y puntos en una tabla. Tú te llevas el partido, la rivalidad sana y los choques de manos al final. Un hogar de acogida cercano se lleva la cena.",
+    "highlight": "Juega duro. Da más duro todavía."
+  },
+  "howItWorks": {
+    "eyebrow": "Cómo funciona",
+    "heading": "Tres pasos entre tú y tu primera asistencia fuera de la cancha.",
+    "steps": [
+      {
+        "number": "01",
+        "title": "Únete a Karma",
+        "description": "Regístrate en minutos. Elige los deportes y las zonas donde de verdad quieres presentarte."
+      },
+      {
+        "number": "02",
+        "title": "Llega y regístrate al entrar",
+        "description": "Trae comida enlatada, equipo deportivo o unos dólares. Escaneas tu entrada al evento y queda registrado al instante."
+      },
+      {
+        "number": "03",
+        "title": "Gana puntos",
+        "description": "Cada vez que asistes y cada donación suman a tu total de la temporada — y a lo que tu comunidad logra entregar."
+      }
+    ]
+  },
+  "impact": {
+    "eyebrow": "El impacto hasta ahora",
+    "heading": "Cifras de las que estamos orgullosos — y que queremos superar.",
+    "note": "Cifras de muestra. Los números reales y en vivo llegan en la Versión 4.",
+    "stats": [
+      { "value": "120+", "label": "Eventos realizados" },
+      { "value": "18,400 lbs", "label": "Comida recolectada" },
+      { "value": "9", "label": "Hogares de acogida apoyados" },
+      { "value": "640", "label": "Miembros activos" }
+    ]
+  },
+  "points": {
+    "eyebrow": "Puntos y el premio",
+    "heading": "Competencia sana. Causa real para niños reales.",
+    "body": "Cada partido al que asistes y cada donación que traes suma puntos en la tabla de posiciones de la temporada. Sube porque te encanta ganar — y porque entre más alto llegues, más hogares de acogida reciben apoyo.",
+    "prizeLabel": "Gran premio de la temporada",
+    "prizeAmount": "$400 en efectivo",
+    "prizeDetail": "El miembro con más puntos al terminar el año se lo lleva a casa.",
+    "cta": "Empieza a sumar puntos"
+  },
+  "events": {
+    "eyebrow": "Lo que se viene",
+    "heading": "Elige un partido. Preséntate. Trae algo.",
+    "cta": "Ver todos los eventos",
+    "items": [
+      {
+        "sport": "Fútbol",
+        "title": "Fútbol Libre del Sábado",
+        "day": "Sáb",
+        "date": "20 sep",
+        "location": "Canchas Riverside",
+        "donation": "Trae: comida enlatada"
+      },
+      {
+        "sport": "Básquetbol",
+        "title": "Básquetbol del Martes",
+        "day": "Mar",
+        "date": "23 sep",
+        "location": "Centro Recreativo Eastside",
+        "donation": "Trae: $5 o equipo deportivo"
+      },
+      {
+        "sport": "Carrera",
+        "title": "5K Comunitario",
+        "day": "Dom",
+        "date": "28 sep",
+        "location": "Sendero Lakefront",
+        "donation": "Trae: alimentos no perecederos"
+      }
+    ]
+  },
+  "closing": {
+    "heading": "Tu próximo partido de pickup puede alimentar a una familia esta semana.",
+    "subhead": "No cuesta nada más que el partido que ya ibas a jugar.",
+    "cta": "Únete a Karma hoy"
+  }
+}

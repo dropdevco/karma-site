@@ -27,12 +27,12 @@ export function Footer() {
             <h2 className="font-display text-sm font-bold uppercase tracking-widest text-karma-ink">
               {t('footer.explore')}
             </h2>
-            <ul className="mt-4 space-y-2">
+            <ul className="mt-2">
               {exploreLinks.map((link) => (
                 <li key={link.to}>
                   <Link
                     to={link.to}
-                    className="text-sm text-karma-ink-soft transition-colors hover:text-karma-red"
+                    className="inline-flex min-h-11 items-center text-sm text-karma-ink-soft transition-colors hover:text-karma-red"
                   >
                     {t(link.key)}
                   </Link>
@@ -45,11 +45,11 @@ export function Footer() {
             <h2 className="font-display text-sm font-bold uppercase tracking-widest text-karma-ink">
               {t('footer.legal')}
             </h2>
-            <ul className="mt-4 space-y-2">
+            <ul className="mt-2">
               <li>
                 <Link
                   to="/privacy"
-                  className="text-sm text-karma-ink-soft transition-colors hover:text-karma-red"
+                  className="inline-flex min-h-11 items-center text-sm text-karma-ink-soft transition-colors hover:text-karma-red"
                 >
                   {t('footer.privacy')}
                 </Link>
@@ -57,7 +57,7 @@ export function Footer() {
               <li>
                 <Link
                   to="/terms"
-                  className="text-sm text-karma-ink-soft transition-colors hover:text-karma-red"
+                  className="inline-flex min-h-11 items-center text-sm text-karma-ink-soft transition-colors hover:text-karma-red"
                 >
                   {t('footer.terms')}
                 </Link>

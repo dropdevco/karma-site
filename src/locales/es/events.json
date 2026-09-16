@@ -1,0 +1,59 @@
+{
+  "hero": {
+    "eyebrow": "Ven a jugar",
+    "title": "Partidos abiertos para todos. Donaciones que llegan directo a las familias.",
+    "description": "Cada evento de Karma es un partido casual o una carrera comunitaria, totalmente gratis — sin pruebas, sin experiencia previa, sin necesidad de equipo. Solo ven, juega, y trae lo que puedas para las familias que apoyamos esa semana."
+  },
+  "filters": {
+    "categoryLabel": "Deporte",
+    "allCategories": "Todos los deportes",
+    "whenLabel": "Cuándo",
+    "upcoming": "Próximos",
+    "past": "Eventos pasados",
+    "resultsCount_one": "{{count}} evento",
+    "resultsCount_other": "{{count}} eventos"
+  },
+  "categories": {
+    "soccer": "Fútbol",
+    "basketball": "Básquetbol",
+    "running": "Carrera",
+    "volleyball": "Vóleibol"
+  },
+  "recurringBadge": "Semanal",
+  "card": {
+    "collecting": "Recolectando"
+  },
+  "capacity": {
+    "spotsLeft_one": "Queda {{count}} lugar",
+    "spotsLeft_other": "Quedan {{count}} lugares",
+    "nearlyFull": "Casi lleno",
+    "full": "Lleno — lista de espera abierta"
+  },
+  "empty": {
+    "title": "Ningún evento coincide con esos filtros",
+    "body": "Prueba con otro deporte, o revisa los eventos pasados para ver qué hemos hecho. Agregamos partidos nuevos seguido.",
+    "reset": "Quitar filtros"
+  },
+  "detail": {
+    "back": "Todos los eventos",
+    "dateTime": "Fecha y hora",
+    "venue": "Lugar",
+    "getDirections": "Cómo llegar",
+    "capacityLabel": "Capacidad",
+    "spotsTaken": "{{taken}} de {{capacity}} lugares ocupados",
+    "addToCalendar": "Agregar al calendario",
+    "share": "Compartir este evento",
+    "shareCopied": "Enlace copiado al portapapeles",
+    "whatToBring": "Qué traer",
+    "whoItHelps": "A quién ayuda",
+    "helpsIntro": "Las donaciones de este evento van para",
+    "register": "Inscripción",
+    "registerBody": "Estamos construyendo la inscripción en línea y el registro con código QR para una próxima versión. Por ahora, solo preséntate — los lugares son por orden de llegada.",
+    "registerSoon": "La inscripción de miembros abre pronto"
+  },
+  "notFound": {
+    "title": "No encontramos ese evento",
+    "body": "Puede que haya cambiado de fecha, o que el enlace ya no sirva. Échale un vistazo a todo lo que se viene.",
+    "cta": "Volver a todos los eventos"
+  }
+}

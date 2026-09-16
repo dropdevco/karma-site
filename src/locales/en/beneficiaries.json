@@ -1,0 +1,23 @@
+{
+  "meta": {
+    "title": "Who We Help — Karma"
+  },
+  "hero": {
+    "eyebrow": "Our partners",
+    "heading": "Every donation reaches real people.",
+    "body": "We work with foster family organizations, family services nonprofits, and youth shelters that have proven they can turn your cans into meals, your dollars into stability."
+  },
+  "selection": {
+    "heading": "How partners are chosen",
+    "body": "Every organization listed here meets our criteria: they work directly with foster families or youth in crisis, they can document how donations are used, and they're grounded in the neighborhoods Karma runs events in. We audit partnerships twice a year and remove any that no longer fit. Your donation doesn't sit in a warehouse—it goes to work within two weeks of collection."
+  },
+  "partners": {
+    "heading": "Meet our partners"
+  },
+  "apply": {
+    "eyebrow": "Your organization",
+    "heading": "Is your nonprofit ready to be a partner?",
+    "body": "We're always looking to expand to new neighborhoods and new partner types. If your organization works with foster families, youth in crisis, or families experiencing housing instability, and you can track how donations are used, we'd love to hear from you.",
+    "cta": "Apply to partner with Karma"
+  }
+}

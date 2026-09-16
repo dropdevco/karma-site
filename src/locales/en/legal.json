@@ -1,0 +1,287 @@
+{
+  "draftBanner": {
+    "label": "⚠️ Draft — Pending Legal Review",
+    "message": "This page is a draft and has not yet been reviewed by legal counsel. Do not rely on it for legal advice. Last updated: September 16, 2026."
+  },
+  "privacy": {
+    "pageTitle": "Privacy Policy",
+    "lastUpdated": "Last updated: September 16, 2026",
+    "intro": "Karma is committed to protecting your privacy. This policy explains what information we collect, how we use it, and your rights regarding your data.",
+    "toc": {
+      "title": "On this page",
+      "items": [
+        {
+          "id": "what-we-collect",
+          "label": "What We Collect"
+        },
+        {
+          "id": "why-we-collect",
+          "label": "Why We Collect It"
+        },
+        {
+          "id": "event-photography",
+          "label": "Event Photography"
+        },
+        {
+          "id": "email-communications",
+          "label": "Email & Event Reminders"
+        },
+        {
+          "id": "data-sharing",
+          "label": "How We Share Data"
+        },
+        {
+          "id": "data-retention",
+          "label": "How Long We Keep Your Data"
+        },
+        {
+          "id": "your-rights",
+          "label": "Your Rights"
+        },
+        {
+          "id": "minors",
+          "label": "We Serve Adults 18+"
+        }
+      ]
+    },
+    "sections": {
+      "whatWeCollect": {
+        "heading": "What We Collect",
+        "intro": "When you join Karma or register for an event, we collect:",
+        "items": [
+          {
+            "label": "Name and contact info",
+            "description": "Your full name, email address, and phone number."
+          },
+          {
+            "label": "Date of birth",
+            "description": "Used only to confirm you are 18 or older, since Karma events are for adults."
+          },
+          {
+            "label": "Emergency contact",
+            "description": "Name and phone number of someone we can reach in case of injury or emergency at an event."
+          },
+          {
+            "label": "Language preference",
+            "description": "Whether you prefer English or Spanish for communication."
+          },
+          {
+            "label": "Sports interests",
+            "description": "Which sports you'd like to play (soccer, basketball, running, etc.)."
+          },
+          {
+            "label": "Event attendance",
+            "description": "Which events you've attended and check-in records."
+          },
+          {
+            "label": "QR identifier (when member accounts launch)",
+            "description": "A unique code linked to your account for fast check-in at events."
+          },
+          {
+            "label": "Points balance (when member accounts launch)",
+            "description": "Record of points earned from event attendance and donations."
+          }
+        ]
+      },
+      "whyWeCollect": {
+        "heading": "Why We Collect It",
+        "intro": "Each piece of information serves a specific purpose:",
+        "items": [
+          {
+            "label": "Name & contact",
+            "description": "To identify you, send event details, and communicate about your membership."
+          },
+          {
+            "label": "Emergency contact",
+            "description": "For your safety and the safety of staff during physical events. We only use this information if you're injured or in an emergency."
+          },
+          {
+            "label": "Language preference",
+            "description": "To send you updates and reminders in the language you understand best."
+          },
+          {
+            "label": "Sports interests",
+            "description": "To recommend events that match what you enjoy and help us plan events the community wants."
+          },
+          {
+            "label": "Event attendance",
+            "description": "To track your involvement, send targeted event reminders, and verify your eligibility for the annual points prize."
+          },
+          {
+            "label": "QR code & points",
+            "description": "To make check-in fast, fair, and transparent for the points-tracking system."
+          }
+        ]
+      },
+      "eventPhotography": {
+        "heading": "Event Photography",
+        "content": "Karma volunteers photograph our events to celebrate our community and share impact. Photos may appear on our website, social media, or in fundraising materials.\n\nYou can opt out of appearing in photos. When you join or at any time, let us know if you don't want to appear in event photographs, and we'll note that on your account and remind our photographers.\n\nWe never sell photos or use them for commercial purposes outside of Karma's mission."
+      },
+      "emailCommunications": {
+        "heading": "Email & Event Reminders",
+        "content": "We send event reminders, updates about new events, and occasional news about our work. You can unsubscribe from all email at any time by replying \"STOP\" to any message or clicking the unsubscribe link in emails.\n\nWe will never sell or share your email address with anyone outside Karma."
+      },
+      "dataSharing": {
+        "heading": "How We Share Data",
+        "content": "We never sell your data. We only share information with service providers who help us run Karma:\n\n• Hosting and database providers that keep our website and member records secure.\n• Email delivery services that send you event reminders.\n• Payment processors if you donate online (Release 2).\n\nAll service providers are required to keep your data confidential and secure. We do not share personal information with other organizations, the media, or anyone else without your explicit permission."
+      },
+      "dataRetention": {
+        "heading": "How Long We Keep Your Data",
+        "content": "We keep your information as long as you're an active member. Once you leave Karma, we retain your data for one year in case you return, then delete it unless we have a legal reason to keep it (e.g., tax records from a prize you won).\n\nYou can request deletion of your data at any time — see 'Your Rights' below."
+      },
+      "yourRights": {
+        "heading": "Your Rights",
+        "intro": "You have the right to:",
+        "items": [
+          {
+            "label": "Request a copy",
+            "description": "Ask for all the data we hold about you."
+          },
+          {
+            "label": "Correct inaccuracies",
+            "description": "Update or fix any information that's wrong."
+          },
+          {
+            "label": "Request deletion",
+            "description": "Ask us to delete your account and personal data."
+          },
+          {
+            "label": "Opt out",
+            "description": "Stop receiving emails, opt out of photography, or change your preferences anytime."
+          }
+        ],
+        "contactPrompt": "To exercise any of these rights, contact us at:",
+        "contactPlaceholder": "[legal@karma-nonprofit.org — to be replaced with actual email]"
+      },
+      "minors": {
+        "heading": "We Serve Adults 18+",
+        "content": "Karma only accepts members who are 18 years or older. We do not knowingly collect personal information from anyone under 18. If we discover we've collected data from a minor, we will delete it immediately. Parents or guardians who believe a minor has submitted information should contact us right away."
+      }
+    }
+  },
+  "terms": {
+    "pageTitle": "Terms of Membership",
+    "lastUpdated": "Last updated: September 16, 2026",
+    "intro": "These terms explain the rights and responsibilities of Karma members. By joining, you agree to these terms.",
+    "toc": {
+      "title": "On this page",
+      "items": [
+        {
+          "id": "membership",
+          "label": "Membership"
+        },
+        {
+          "id": "events",
+          "label": "Events & Physical Risk"
+        },
+        {
+          "id": "conduct",
+          "label": "Code of Conduct"
+        },
+        {
+          "id": "points-prize",
+          "label": "Points & Annual Prize"
+        },
+        {
+          "id": "donations",
+          "label": "Donations"
+        },
+        {
+          "id": "changes",
+          "label": "Changes to These Terms"
+        }
+      ]
+    },
+    "sections": {
+      "membership": {
+        "heading": "Membership",
+        "content": "Karma membership is free and open to adults 18 and older. There are no fees, no contracts, and you can leave anytime.\n\nBy joining Karma, you agree to follow our code of conduct and respect the safety and comfort of everyone in our community."
+      },
+      "eventsPhysicalRisk": {
+        "heading": "Events & Physical Risk",
+        "content": "Karma events are recreational sports — soccer, basketball, community runs — and carry real physical risk. Injuries can and do happen.\n\nBefore you participate, you will sign a separate liability waiver that acknowledges these risks. That waiver is the governing agreement for event participation; it takes precedence over these terms.\n\nWe encourage you to warm up, play at your own level, stop if you feel pain, and speak up if you have concerns about safety."
+      },
+      "conduct": {
+        "heading": "Code of Conduct",
+        "intro": "We expect all members to:",
+        "items": [
+          {
+            "label": "Be respectful",
+            "description": "Treat other members, volunteers, and staff with kindness and respect."
+          },
+          {
+            "label": "Play fair",
+            "description": "No harassment, discrimination, or aggressive behavior."
+          },
+          {
+            "label": "Follow the rules",
+            "description": "Respect event guidelines and volunteer direction."
+          },
+          {
+            "label": "Show up",
+            "description": "If you register, commit to attending. Cancel in advance if you can't make it."
+          }
+        ],
+        "enforcement": "Members who violate the code of conduct may be warned, suspended, or permanently removed from Karma events at the discretion of staff."
+      },
+      "pointsPrize": {
+        "heading": "Points & Annual Prize",
+        "intro": "⚠️ Important: This section describes the points and prize system in plain language. It has not been reviewed by a lawyer. Do not rely on it alone; Karma will provide complete legal documents before Release 2.",
+        "rules": {
+          "earning": "How you earn points:",
+          "earningItems": [
+            {
+              "label": "Event attendance",
+              "description": "1 point per event you attend."
+            },
+            {
+              "label": "Donations",
+              "description": "Bring donations (food, goods, money) to an event and earn bonus points."
+            }
+          ],
+          "prize": "The annual prize:",
+          "prizeItems": [
+            {
+              "label": "Amount",
+              "description": "The member with the most points at the end of the calendar year wins $400."
+            },
+            {
+              "label": "January 1 – December 31."
+            },
+            {
+              "label": "Tiebreaker",
+              "description": "If two or more members tie for the highest points, the winner is chosen by random draw."
+            },
+            {
+              "label": "Ineligibility",
+              "description": "Staff and volunteers who perform event check-in are not eligible to win (to prevent conflicts of interest)."
+            },
+            {
+              "label": "Fraud",
+              "description": "Karma may void points obtained through check-in manipulation, fraud, or abuse of the system."
+            },
+            {
+              "label": "Taxes",
+              "description": "The prize winner is responsible for any taxes owed on the $400 prize. Karma will provide a 1099-MISC if required."
+            }
+          ]
+        }
+      },
+      "donations": {
+        "heading": "Donations",
+        "content": "Donations collected at Karma events go to our partner foster care organizations. We do not guarantee that any specific item will reach any specific destination — our partners decide how to allocate donations based on their greatest needs.\n\nAll donations are voluntary. We never pressure anyone to donate."
+      },
+      "changes": {
+        "heading": "Changes to These Terms",
+        "content": "Karma may update these terms at any time. We'll post changes here and notify members via email. Your continued membership after a change means you accept the new terms.\n\nIf you don't agree with changes, you can leave anytime."
+      }
+    }
+  },
+  "notFound": {
+    "pageTitle": "Page Not Found",
+    "heading": "Looks like that play didn't land.",
+    "message": "The page you're looking for doesn't exist here.",
+    "homeLink": "Back to home",
+    "eventsLink": "See upcoming events"
+  }
+}

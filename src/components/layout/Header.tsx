@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Link, NavLink, useLocation } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { Logo } from './Logo'
 import { LanguageToggle } from './LanguageToggle'
@@ -15,11 +15,6 @@ const links = [
 export function Header() {
   const { t } = useTranslation()
   const [open, setOpen] = useState(false)
-  const location = useLocation()
-
-  useEffect(() => {
-    setOpen(false)
-  }, [location.pathname])
 
   useEffect(() => {
     document.body.style.overflow = open ? 'hidden' : ''
@@ -31,7 +26,7 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-karma-tan-dark/20 bg-karma-cream/90 backdrop-blur-md">
       <div className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between px-4 sm:px-6 lg:px-8">
-        <Link to="/" className="shrink-0" aria-label={t('org.name')}>
+        <Link to="/" className="flex min-h-11 shrink-0 items-center" aria-label={t('org.name')}>
           <Logo />
         </Link>
 
@@ -67,7 +62,7 @@ export function Header() {
           aria-expanded={open}
           aria-controls="mobile-nav"
           aria-label={open ? t('nav.close') : t('nav.menu')}
-          className="flex size-10 items-center justify-center rounded-full text-karma-ink md:hidden"
+          className="-mr-2 flex size-11 items-center justify-center rounded-full text-karma-ink md:hidden"
         >
           <span className="relative block h-4 w-6" aria-hidden="true">
             <span
@@ -102,6 +97,7 @@ export function Header() {
               <NavLink
                 key={link.to}
                 to={link.to}
+                onClick={() => setOpen(false)}
                 className={({ isActive }) =>
                   cn(
                     'rounded-xl px-4 py-3 text-base font-medium',
@@ -114,7 +110,7 @@ export function Header() {
             ))}
             <div className="mt-3 flex items-center justify-between gap-3">
               <LanguageToggle />
-              <ButtonLink to="/join" className="flex-1">
+              <ButtonLink to="/join" className="flex-1" onClick={() => setOpen(false)}>
                 {t('cta.join')}
               </ButtonLink>
             </div>

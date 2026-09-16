@@ -1,0 +1,59 @@
+{
+  "hero": {
+    "eyebrow": "Come play",
+    "title": "Games anyone can join. Donations that go straight to families.",
+    "description": "Every Karma event is a free pickup game or community run — no tryouts, no experience, no equipment required. Show up, play, and bring what you can for the families we're supporting that week."
+  },
+  "filters": {
+    "categoryLabel": "Sport",
+    "allCategories": "All sports",
+    "whenLabel": "When",
+    "upcoming": "Upcoming",
+    "past": "Past events",
+    "resultsCount_one": "{{count}} event",
+    "resultsCount_other": "{{count}} events"
+  },
+  "categories": {
+    "soccer": "Soccer",
+    "basketball": "Basketball",
+    "running": "Running",
+    "volleyball": "Volleyball"
+  },
+  "recurringBadge": "Weekly",
+  "card": {
+    "collecting": "Collecting"
+  },
+  "capacity": {
+    "spotsLeft_one": "{{count}} spot left",
+    "spotsLeft_other": "{{count}} spots left",
+    "nearlyFull": "Nearly full",
+    "full": "Full — waitlist open"
+  },
+  "empty": {
+    "title": "No events match those filters",
+    "body": "Try a different sport, or check past events to see what we've been up to. New games get added often.",
+    "reset": "Clear filters"
+  },
+  "detail": {
+    "back": "All events",
+    "dateTime": "Date & time",
+    "venue": "Venue",
+    "getDirections": "Get directions",
+    "capacityLabel": "Capacity",
+    "spotsTaken": "{{taken}} of {{capacity}} spots filled",
+    "addToCalendar": "Add to calendar",
+    "share": "Share this event",
+    "shareCopied": "Link copied to clipboard",
+    "whatToBring": "What to bring",
+    "whoItHelps": "Who it helps",
+    "helpsIntro": "Donations from this event go to",
+    "register": "Registration",
+    "registerBody": "We're building online registration and QR check-in for a future release. For now, just show up — spots are first-come, first-served on the field.",
+    "registerSoon": "Member registration opens soon"
+  },
+  "notFound": {
+    "title": "We couldn't find that event",
+    "body": "It may have been rescheduled, or the link is off. Take a look at everything coming up.",
+    "cta": "Back to all events"
+  }
+}

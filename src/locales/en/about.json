@@ -1,0 +1,69 @@
+{
+  "meta": {
+    "title": "About Karma — Play with Purpose"
+  },
+  "hero": {
+    "eyebrow": "Our story",
+    "heading": "Play is powerful. So is community.",
+    "body": "People already gather for pickup soccer, basketball, and community runs. Karma turns that weekly gathering into real support for foster homes and family services organizations in your city."
+  },
+  "why": {
+    "eyebrow": "Why we exist",
+    "heading": "Every city has both.",
+    "body": "On Tuesday nights, forty people show up for pickup soccer. Five minutes away, a foster home needs fifteen cases of canned food this month. Karma connects those two truths. You don't write a check. You show up and play. The energy that's already there carries something heavier."
+  },
+  "mechanism": {
+    "eyebrow": "How it works",
+    "heading": "Three simple pieces.",
+    "steps": [
+      {
+        "number": "1",
+        "title": "Events stay free",
+        "description": "Show up. No entry fee, no signup cost. The only ask: bring a donation item you were already comfortable buying."
+      },
+      {
+        "number": "2",
+        "title": "Collections get delivered",
+        "description": "We collect canned goods, household items, and cash at every event. Every few weeks, we deliver everything to verified partner organizations that work directly with foster homes."
+      },
+      {
+        "number": "3",
+        "title": "You earn points",
+        "description": "Your attendance and donations add up. Every member can see their contribution in real time. The season's top point-earner wins a cash prize, and all prizes are donated to the partner organizations."
+      }
+    ]
+  },
+  "difference": {
+    "eyebrow": "What makes us different",
+    "heading": "You're not asked to sacrifice anything you weren't already giving.",
+    "values": [
+      {
+        "title": "Embed giving in joy, not obligation.",
+        "description": "The best way to care for your community is not to guilt anyone. It's to show up and play, and let the natural energy of play carry the donation."
+      },
+      {
+        "title": "Make impact visible and real.",
+        "description": "You'll see exactly how many cans were collected, which partner organizations received them, and how your attendance mattered. No black box. No vague promises."
+      },
+      {
+        "title": "Meet people where they are.",
+        "description": "Most pickup sports are already bilingual, already diverse, already built on trust. We don't try to recruit charity volunteers—we just show up to the soccer field and ask people already there to bring one extra can."
+      }
+    ]
+  },
+  "involved": {
+    "eyebrow": "Get involved",
+    "heading": "Two ways in.",
+    "playHeading": "Come play.",
+    "playBody": "Show up to a Karma event. Pick the sport and neighborhood that fits your week. Bring a donation item. Play hard. That's it.",
+    "playCTA": "See upcoming events",
+    "volunteerHeading": "Help us run events.",
+    "volunteerBody": "We need people to coordinate collections, build relationships with partner organizations, and help keep events moving. No sports experience needed—just care and a few hours a week.",
+    "volunteerCTA": "Volunteer with Karma"
+  },
+  "team": {
+    "eyebrow": "The team behind Karma",
+    "heading": "Volunteers building something bigger.",
+    "note": "Photos and names coming in Release 2. Karma's run entirely by volunteers—event coordinators, community liaisons, and operations folks who show up every week to make sure the donation reaches the people who need it most."
+  }
+}

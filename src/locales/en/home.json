@@ -1,0 +1,96 @@
+{
+  "meta": {
+    "title": "Karma — Play for something bigger"
+  },
+  "hero": {
+    "eyebrow": "Recreational sports with a purpose",
+    "headline": "Show up to play. Walk away having fed a family.",
+    "subhead": "Karma turns pickup soccer, basketball and community runs you'd play anyway into food, funds and support for local foster homes.",
+    "ctaPrimary": "Join Karma",
+    "ctaSecondary": "See upcoming events",
+    "imageAlt": "Photo slot: players mid-game, arms raised"
+  },
+  "premise": {
+    "eyebrow": "The idea",
+    "lead": "A game is just a game — until forty people show up for it.",
+    "body": "Every pickup match is a reason to gather. We turn that gathering into cans of food on a table, dollars in a jar, and points on a board. You get the run, the rivalry, the post-game high-fives. A foster home nearby gets dinner.",
+    "highlight": "Play hard. Give harder."
+  },
+  "howItWorks": {
+    "eyebrow": "How it works",
+    "heading": "Three steps between you and your first assist off the field.",
+    "steps": [
+      {
+        "number": "01",
+        "title": "Join Karma",
+        "description": "Sign up in a few minutes. Pick the sports and neighborhoods you actually want to show up for."
+      },
+      {
+        "number": "02",
+        "title": "Show up and get scanned in",
+        "description": "Bring canned goods, gear or a few dollars. Scan in at the event and it's logged automatically."
+      },
+      {
+        "number": "03",
+        "title": "Earn points",
+        "description": "Every appearance and every donation adds to your season total — and to what your community delivers."
+      }
+    ]
+  },
+  "impact": {
+    "eyebrow": "The impact so far",
+    "heading": "Numbers we're proud of — and racing to beat.",
+    "note": "Placeholder figures. Real, live numbers ship in Release 4.",
+    "stats": [
+      { "value": "120+", "label": "Events held" },
+      { "value": "18,400 lbs", "label": "Food collected" },
+      { "value": "9", "label": "Foster homes supported" },
+      { "value": "640", "label": "Active members" }
+    ]
+  },
+  "points": {
+    "eyebrow": "Points & the prize",
+    "heading": "Friendly competition. Real stakes for real kids.",
+    "body": "Every game you attend and every donation you bring earns points on the season leaderboard. Climb it because you love winning — and because the higher it goes, the more foster homes get fed.",
+    "prizeLabel": "Season grand prize",
+    "prizeAmount": "$400 cash",
+    "prizeDetail": "The member with the most points when the year ends takes it home.",
+    "cta": "Start earning points"
+  },
+  "events": {
+    "eyebrow": "What's coming up",
+    "heading": "Pick a game. Show up. Bring something.",
+    "cta": "See all events",
+    "items": [
+      {
+        "sport": "Soccer",
+        "title": "Saturday Pickup Soccer",
+        "day": "Sat",
+        "date": "Sep 20",
+        "location": "Riverside Fields",
+        "donation": "Bring: canned goods"
+      },
+      {
+        "sport": "Basketball",
+        "title": "Tuesday Night Hoops",
+        "day": "Tue",
+        "date": "Sep 23",
+        "location": "Eastside Rec Center",
+        "donation": "Bring: $5 or gear"
+      },
+      {
+        "sport": "Run",
+        "title": "Community 5K Run",
+        "day": "Sun",
+        "date": "Sep 28",
+        "location": "Lakefront Trail",
+        "donation": "Bring: non-perishables"
+      }
+    ]
+  },
+  "closing": {
+    "heading": "Your next pickup game could feed a family this week.",
+    "subhead": "It costs nothing but the game you were already going to play.",
+    "cta": "Join Karma today"
+  }
+}

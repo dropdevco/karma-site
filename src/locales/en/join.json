@@ -1,0 +1,137 @@
+{
+  "hero": {
+    "eyebrow": "Get in the game",
+    "headline": "Sign up. Show up. Score for someone else.",
+    "subhead": "Joining Karma is free. Fill out one form and you're on the list for pickup games, community runs, and a season-long chance to do real good."
+  },
+  "why": {
+    "eyebrow": "What you get",
+    "heading": "This isn't a mailing list. It's a team.",
+    "games": {
+      "title": "Games to actually play",
+      "body": "Pickup soccer, basketball and community runs near you, posted as soon as they're scheduled."
+    },
+    "community": {
+      "title": "A community that shows up",
+      "body": "The same faces, week after week. Karma members look out for each other on and off the field."
+    },
+    "points": {
+      "title": "Points for showing up",
+      "body": "Every game you attend and every donation you bring adds to your season total."
+    },
+    "prize": {
+      "title": "$400 on the line",
+      "body": "The member with the most points when the year ends takes home $400 cash. Everyone else takes home a season of good games and good done."
+    }
+  },
+  "form": {
+    "heading": "Sign up for Karma",
+    "intro": "Takes about two minutes. Fields marked * are required.",
+    "sections": {
+      "about": "About you",
+      "emergency": "Emergency contact",
+      "eligibility": "Eligibility & waiver",
+      "preferences": "Preferences"
+    },
+    "fields": {
+      "fullName": {
+        "label": "Full name",
+        "placeholder": "Jordan Reyes"
+      },
+      "email": {
+        "label": "Email",
+        "placeholder": "you@example.com"
+      },
+      "phone": {
+        "label": "Phone number",
+        "placeholder": "(555) 123-4567"
+      },
+      "preferredLanguage": {
+        "legend": "Preferred language",
+        "hint": "This is the language we'll use for your event reminders.",
+        "options": {
+          "en": "English",
+          "es": "Español"
+        }
+      },
+      "activities": {
+        "legend": "Activities you're interested in",
+        "hint": "Pick as many as you like.",
+        "options": {
+          "soccer": "Soccer",
+          "basketball": "Basketball",
+          "running": "Community runs",
+          "other": "Something else"
+        }
+      },
+      "emergencyName": {
+        "label": "Emergency contact name",
+        "placeholder": "Full name"
+      },
+      "emergencyPhone": {
+        "label": "Emergency contact phone",
+        "placeholder": "(555) 123-4567"
+      },
+      "dateOfBirth": {
+        "label": "Date of birth",
+        "hint": "Karma events are open to adults 18 and up."
+      },
+      "waiver": {
+        "legend": "Liability waiver",
+        "checkboxLabel": "I have read and agree to the liability waiver above.",
+        "body1": "By checking the box below, I acknowledge that participation in Karma pickup games, runs, and related events involves inherent risks of physical injury, including but not limited to sprains, fractures, collisions with other participants, and other injuries common to recreational sports.",
+        "body2": "I voluntarily assume all risks associated with my participation, whether foreseen or unforeseen, and I release Karma, its volunteers, organizers, and event hosts from any and all claims, liabilities, or damages arising from my participation, except to the extent caused by gross negligence or willful misconduct.",
+        "body3": "I confirm that I am physically fit to participate and am not aware of any medical condition that would make participation unsafe. In the event of an injury, I authorize Karma volunteers to arrange emergency medical care on my behalf if I am unable to consent at the time.",
+        "body4": "This waiver applies to every Karma event I attend, present and future, until I withdraw my membership in writing."
+      },
+      "photoConsent": {
+        "label": "Photo & media consent (optional)",
+        "description": "Karma volunteers take photos and video at events for our website and social media. Checking this box lets us include you. It's completely optional and won't affect your membership either way."
+      },
+      "emailOptIn": {
+        "label": "Email me event reminders",
+        "description": "We'll only send you reminders for events near you — no spam, unsubscribe anytime."
+      },
+      "heardAbout": {
+        "label": "How did you hear about Karma? (optional)",
+        "placeholder": "Select one",
+        "options": {
+          "friend": "A friend or teammate",
+          "event": "I saw an event in person",
+          "social": "Social media",
+          "search": "Web search",
+          "other": "Other"
+        }
+      }
+    },
+    "errors": {
+      "fullNameRequired": "Enter your full name.",
+      "emailRequired": "Enter your email address.",
+      "emailInvalid": "Enter a valid email address.",
+      "phoneRequired": "Enter a phone number.",
+      "phoneInvalid": "Enter a valid phone number.",
+      "preferredLanguageRequired": "Choose a preferred language.",
+      "activitiesRequired": "Pick at least one activity.",
+      "emergencyNameRequired": "Enter an emergency contact name.",
+      "emergencyPhoneRequired": "Enter an emergency contact phone number.",
+      "emergencyPhoneInvalid": "Enter a valid phone number.",
+      "dateOfBirthRequired": "Enter your date of birth.",
+      "dateOfBirthInvalid": "Enter a valid date.",
+      "dateOfBirthUnder18": "You must be 18 or older to join Karma.",
+      "waiverRequired": "You must accept the waiver to join.",
+      "summary_one": "There is {{count}} error to fix before you can submit.",
+      "summary_other": "There are {{count}} errors to fix before you can submit."
+    },
+    "submit": "Sign me up",
+    "submitting": "Signing you up…",
+    "submitError": "Something went wrong on our end. Please try again."
+  },
+  "success": {
+    "eyebrow": "You're on the list",
+    "heading": "Welcome to Karma, {{name}}.",
+    "body1": "You're officially on the interest list. When member accounts go live, we'll email you at {{email}} to finish setting up your account and get your check-in QR code.",
+    "body2": "Keep an eye on the Events page in the meantime — that's where every pickup game, run and donation drive gets posted.",
+    "cta": "See upcoming events",
+    "another": "Sign up someone else"
+  }
+}

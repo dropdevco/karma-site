@@ -1,0 +1,23 @@
+{
+  "meta": {
+    "title": "A Quién Ayudamos — Karma"
+  },
+  "hero": {
+    "eyebrow": "Nuestros asociados",
+    "heading": "Cada donación llega a personas reales.",
+    "body": "Trabajamos con organizaciones de familias de acogida, organizaciones sin fines de lucro de servicios familiares, y refugios para jóvenes que han demostrado que pueden convertir tus latas en comidas y tus dólares en estabilidad."
+  },
+  "selection": {
+    "heading": "Cómo se eligen los asociados",
+    "body": "Cada organización aquí listed cumple nuestros criterios: trabajan directamente con familias de acogida o jóvenes en crisis, pueden documentar cómo se usan las donaciones, y están arraigadas en los vecindarios donde Karma organiza eventos. Auditamos asociaciones dos veces al año y eliminamos cualquiera que ya no sea adecuada. Tu donación no se queda en un almacén—se pone a trabajar dentro de dos semanas después de la recolección."
+  },
+  "partners": {
+    "heading": "Conoce a nuestros asociados"
+  },
+  "apply": {
+    "eyebrow": "Tu organización",
+    "heading": "¿Está tu organización sin fines de lucro lista para ser asociada?",
+    "body": "Siempre estamos buscando expandir a nuevos vecindarios y nuevos tipos de asociados. Si tu organización trabaja con familias de acogida, jóvenes en crisis, o familias que experimentan inestabilidad de vivienda, y puedes rastrear cómo se usan las donaciones, nos encantaría escucharte.",
+    "cta": "Solicita ser asociado de Karma"
+  }
+}
