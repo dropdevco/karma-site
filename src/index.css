@@ -1,14 +1,14 @@
 @import 'tailwindcss';
 
 @theme {
-  /* Brand palette sampled from the Karma logo. Replace with exact values
-     once the source SVG lands in /public/brand. */
-  --color-karma-red: #b0121a;
-  --color-karma-red-dark: #8a0d14;
-  --color-karma-red-soft: #f6e7e8;
-  --color-karma-tan: #d5c2a9;
-  --color-karma-tan-light: #e9dfd0;
-  --color-karma-tan-dark: #b8a288;
+  /* Red and tan are sampled pixel-exact from public/brand/karma-mark.png;
+     the -dark/-light/-soft steps are derived from them. */
+  --color-karma-red: #ad0000;
+  --color-karma-red-dark: #870000;
+  --color-karma-red-soft: #f8ebeb;
+  --color-karma-tan: #d3bca1;
+  --color-karma-tan-light: #e7dacb;
+  --color-karma-tan-dark: #b3a089;
   --color-karma-cream: #faf7f2;
   --color-karma-ink: #1c1614;
   --color-karma-ink-soft: #5c524c;

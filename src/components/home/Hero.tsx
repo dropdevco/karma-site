@@ -42,18 +42,25 @@ export function Hero() {
           role="img"
           aria-label={t('hero.imageAlt')}
         >
-          {/* Photo slot: real event photography drops in here in a later release. */}
-          <div className="relative aspect-[4/5] w-full overflow-hidden rounded-card bg-karma-tan">
-            <div className="absolute -right-10 -top-10 size-40 rounded-full bg-karma-red" />
-            <div className="absolute bottom-8 left-6 size-24 rounded-full border-8 border-karma-cream" />
-            <svg
-              viewBox="0 0 24 24"
-              className="absolute bottom-10 right-8 size-12 fill-karma-red-dark"
-              aria-hidden="true"
-            >
-              <path d="M12 21s-7.5-4.6-10-9.2C.4 8.7 2 5 5.6 5c2 0 3.4 1 4.4 2.4C11 6 12.4 5 14.4 5 18 5 19.6 8.7 22 11.8 19.5 16.4 12 21 12 21z" />
-            </svg>
-            <div className="absolute left-8 top-10 h-1.5 w-16 -rotate-6 bg-karma-cream/80" />
+          {/* Photo slot: real event photography drops in here in a later release.
+              Until then the brand mark holds the space. */}
+          <div className="relative flex aspect-[4/5] w-full items-center justify-center overflow-hidden rounded-card bg-karma-tan-light">
+            <div className="absolute -right-12 -top-12 size-44 rounded-full bg-karma-tan" />
+            <div className="absolute -bottom-10 -left-10 size-32 rounded-full bg-karma-tan" />
+            <picture className="relative flex h-3/5 items-center justify-center">
+              <source
+                type="image/webp"
+                srcSet="/brand/karma-mark-256.webp 1x, /brand/karma-mark-512.webp 2x"
+              />
+              <img
+                src="/brand/karma-mark-256.png"
+                srcSet="/brand/karma-mark-256.png 1x, /brand/karma-mark-512.png 2x"
+                alt=""
+                width={256}
+                height={314}
+                className="h-full w-auto drop-shadow-sm"
+              />
+            </picture>
           </div>
         </motion.div>
       </Container>
