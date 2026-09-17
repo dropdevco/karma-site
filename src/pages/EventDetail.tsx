@@ -1,4 +1,5 @@
-import { Link, useParams } from 'react-router-dom'
+import { useCallback, useEffect, useState } from 'react'
+import { Link, useLocation, useParams } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { Section, Container, Eyebrow } from '@/components/ui/Section'
 import { ButtonLink } from '@/components/ui/Button'
@@ -6,15 +7,139 @@ import { CategoryVisual } from '@/components/events/CategoryVisual'
 import { CapacityBadge } from '@/components/events/CapacityBadge'
 import { AddToCalendarButton } from '@/components/events/AddToCalendarButton'
 import { ShareButton } from '@/components/events/ShareButton'
+import { ErrorState } from '@/components/events/ErrorState'
+import { RegistrationPanel, type RegistrationLoadStatus } from '@/components/events/RegistrationPanel'
 import { formatDateLong, formatTimeRange, toLanguageCode } from '@/components/events/dateUtils'
 import { buildMapsUrl } from '@/components/events/mapsUrl'
-import { findEventBySlug } from '@/data/events'
+import { useAuth, useIsReadyToRegister } from '@/auth/useAuth'
+import {
+  fetchEventBySlug,
+  fetchMyRegistrationForEvent,
+  fetchEventAvailability,
+  registerForEvent,
+  cancelMyRegistration,
+  type KarmaEvent,
+  type EventApiErrorCode,
+} from '@/lib/eventsApi'
+import type { RegistrationRow } from '@/lib/database.types'
 
 export function EventDetail() {
   const { slug } = useParams<{ slug: string }>()
   const { t, i18n } = useTranslation('events')
   const lang = toLanguageCode(i18n.resolvedLanguage)
-  const event = slug ? findEventBySlug(slug) : undefined
+  const location = useLocation()
+  const { loading: authLoading, session, user } = useAuth()
+  const readyToRegister = useIsReadyToRegister()
+
+  const [event, setEvent] = useState<KarmaEvent | null>(null)
+  const [eventStatus, setEventStatus] = useState<'loading' | 'ready' | 'error'>('loading')
+
+  const loadEvent = useCallback(() => {
+    if (!slug) return
+    setEventStatus('loading')
+    fetchEventBySlug(slug)
+      .then((data) => {
+        setEvent(data)
+        setEventStatus('ready')
+      })
+      .catch(() => setEventStatus('error'))
+  }, [slug])
+
+  useEffect(() => {
+    loadEvent()
+  }, [loadEvent])
+
+  const [registration, setRegistration] = useState<RegistrationRow | null>(null)
+  const [regStatus, setRegStatus] = useState<RegistrationLoadStatus>('idle')
+
+  const loadRegistration = useCallback(() => {
+    if (!event || !user) {
+      setRegistration(null)
+      setRegStatus('idle')
+      return
+    }
+    setRegStatus('loading')
+    fetchMyRegistrationForEvent(event.id, user.id)
+      .then((data) => {
+        setRegistration(data)
+        setRegStatus('ready')
+      })
+      .catch(() => setRegStatus('error'))
+  }, [event, user])
+
+  useEffect(() => {
+    loadRegistration()
+  }, [loadRegistration])
+
+  const [actionPending, setActionPending] = useState(false)
+  const [actionError, setActionError] = useState<EventApiErrorCode | null>(null)
+  const [liveMessage, setLiveMessage] = useState('')
+
+  const refreshAfterAction = useCallback(async () => {
+    if (!event) return
+    const availability = await fetchEventAvailability(event.id)
+    if (availability) {
+      setEvent((prev) =>
+        prev ? { ...prev, spotsTaken: availability.registered_count, waitlistCount: availability.waitlist_count } : prev,
+      )
+    }
+    loadRegistration()
+  }, [event, loadRegistration])
+
+  async function handleRegister() {
+    if (!event) return
+    setActionPending(true)
+    setActionError(null)
+    const result = await registerForEvent(event.id)
+    setActionPending(false)
+    if (result.ok) {
+      setLiveMessage(result.data === 'registered' ? t('register.announced.registered') : t('register.announced.waitlisted'))
+      await refreshAfterAction()
+    } else {
+      setActionError(result.code)
+    }
+  }
+
+  async function handleCancel() {
+    if (!event) return
+    setActionPending(true)
+    setActionError(null)
+    const result = await cancelMyRegistration(event.id)
+    setActionPending(false)
+    if (result.ok) {
+      setLiveMessage(t('register.announced.cancelled'))
+      await refreshAfterAction()
+    } else {
+      setActionError(result.code)
+    }
+  }
+
+  if (eventStatus === 'loading') {
+    return (
+      <Section>
+        <Container className="text-center">
+          <p className="text-karma-ink-soft" aria-busy="true">
+            {t('detail.loading')}
+          </p>
+        </Container>
+      </Section>
+    )
+  }
+
+  if (eventStatus === 'error') {
+    return (
+      <Section>
+        <Container>
+          <ErrorState
+            title={t('detail.errorTitle')}
+            body={t('detail.errorBody')}
+            retryLabel={t('detail.errorRetry')}
+            onRetry={loadEvent}
+          />
+        </Container>
+      </Section>
+    )
+  }
 
   if (!event) {
     return (
@@ -32,9 +157,14 @@ export function EventDetail() {
 
   const mapsUrl = buildMapsUrl(event.venue.name, event.venue.address)
   const shareUrl = typeof window !== 'undefined' ? window.location.href : ''
+  const returnTo = location.pathname + location.search
 
   return (
     <>
+      <div role="status" aria-live="polite" className="sr-only">
+        {liveMessage}
+      </div>
+
       <Section className="pb-8 pt-10 sm:pt-14">
         <Container>
           <Link
@@ -51,6 +181,11 @@ export function EventDetail() {
                 {event.recurring && (
                   <span className="rounded-full bg-karma-tan-light px-2 py-0.5 text-[11px] font-semibold text-karma-ink-soft">
                     {t('recurringBadge')}
+                  </span>
+                )}
+                {event.status === 'cancelled' && (
+                  <span className="rounded-full bg-karma-ink px-2 py-0.5 text-[11px] font-bold uppercase tracking-wide text-white">
+                    {t('status.cancelled')}
                   </span>
                 )}
               </div>
@@ -122,13 +257,20 @@ export function EventDetail() {
             </div>
           </div>
 
-          <div className="mt-10 rounded-card border-2 border-karma-red/20 bg-white p-6 sm:p-8">
-            <h2 className="font-display text-xl font-bold text-karma-ink">{t('detail.register')}</h2>
-            <p className="mt-2 max-w-xl text-karma-ink-soft">{t('detail.registerBody')}</p>
-            <ButtonLink to="/join" className="mt-4">
-              {t('detail.registerSoon')}
-            </ButtonLink>
-          </div>
+          <RegistrationPanel
+            event={event}
+            authLoading={authLoading}
+            isSignedIn={Boolean(session)}
+            readyToRegister={readyToRegister}
+            registration={registration}
+            regStatus={regStatus}
+            actionPending={actionPending}
+            actionError={actionError}
+            onRegister={() => void handleRegister()}
+            onCancel={() => void handleCancel()}
+            onRetryRegistration={loadRegistration}
+            returnTo={returnTo}
+          />
         </Container>
       </Section>
     </>

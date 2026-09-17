@@ -45,6 +45,17 @@
   }
 }
 
+/* Drains across the refresh interval on the member's check-in code. Done in
+   CSS so holding the page open at a venue does not re-render on a timer. */
+@keyframes karma-drain {
+  from {
+    transform: scaleX(1);
+  }
+  to {
+    transform: scaleX(0);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

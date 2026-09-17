@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next'
 import { Button } from '@/components/ui/Button'
 import { downloadEventIcs } from './ics'
-import type { KarmaEvent } from '@/data/events'
+import type { KarmaEvent } from '@/lib/eventsApi'
 import type { LanguageCode } from '@/i18n'
 
 interface AddToCalendarButtonProps {

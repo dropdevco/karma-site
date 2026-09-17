@@ -1,4 +1,4 @@
-import type { KarmaEvent } from '@/data/events'
+import type { KarmaEvent } from '@/lib/eventsApi'
 import type { LanguageCode } from '@/i18n'
 
 function toIcsDate(iso: string): string {

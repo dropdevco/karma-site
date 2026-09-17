@@ -29,6 +29,17 @@
     "nearlyFull": "Nearly full",
     "full": "Full — waitlist open"
   },
+  "status": {
+    "cancelled": "Cancelled"
+  },
+  "loading": {
+    "events": "Loading events…"
+  },
+  "error": {
+    "title": "We couldn't load events",
+    "body": "Something went wrong reaching the schedule. Check your connection and try again.",
+    "retry": "Try again"
+  },
   "empty": {
     "title": "No events match those filters",
     "body": "Try a different sport, or check past events to see what we've been up to. New games get added often.",
@@ -47,9 +58,97 @@
     "whatToBring": "What to bring",
     "whoItHelps": "Who it helps",
     "helpsIntro": "Donations from this event go to",
-    "register": "Registration",
-    "registerBody": "We're building online registration and QR check-in for a future release. For now, just show up — spots are first-come, first-served on the field.",
-    "registerSoon": "Member registration opens soon"
+    "loading": "Loading event…",
+    "errorTitle": "We couldn't load this event",
+    "errorBody": "Something went wrong. Check your connection and try again.",
+    "errorRetry": "Try again"
+  },
+  "register": {
+    "heading": "Registration",
+    "loading": "Checking your registration…",
+    "signedOut": {
+      "body": "Sign in to register for this event. We'll bring you right back here afterward.",
+      "cta": "Sign in to register"
+    },
+    "incomplete": {
+      "title": "Finish setting up your account",
+      "body": "You'll need a complete profile, to confirm you're 18 or older, and to accept the current waiver before you can register.",
+      "cta": "Finish setup"
+    },
+    "cancelledEvent": {
+      "title": "This event was cancelled",
+      "body": "Registration isn't open because this event has been cancelled."
+    },
+    "ended": {
+      "title": "This event has already happened",
+      "body": "Registration is closed because the event is over."
+    },
+    "available": {
+      "cta": "Register"
+    },
+    "full": {
+      "cta": "Join the waitlist",
+      "count_one": "{{count}} person already on the waitlist",
+      "count_other": "{{count}} people already on the waitlist"
+    },
+    "registered": {
+      "title": "You're registered",
+      "body": "Save the date — we'll see you there.",
+      "cancelCta": "Cancel my spot"
+    },
+    "waitlisted": {
+      "title": "You're on the waitlist",
+      "body": "We'll move you to registered automatically if a spot opens up.",
+      "leaveCta": "Leave the waitlist"
+    },
+    "processing": "Working on it…",
+    "loadError": {
+      "title": "We couldn't check your registration",
+      "body": "Something went wrong. Check your connection and try again.",
+      "retry": "Try again"
+    },
+    "announced": {
+      "registered": "You're registered for this event.",
+      "waitlisted": "You've been added to the waitlist.",
+      "cancelled": "Your registration has been cancelled."
+    },
+    "errors": {
+      "not_authenticated": "Sign in and try again.",
+      "event_not_found": "We couldn't find this event anymore.",
+      "event_cancelled": "This event has been cancelled.",
+      "event_ended": "This event has already happened.",
+      "event_started": "This event has already started, so it can't be cancelled online.",
+      "profile_incomplete": "Finish your profile before registering.",
+      "under_18": "Karma events are for members 18 and up.",
+      "waiver_required": "Accept the current waiver before registering.",
+      "offline": "You're offline. Check your connection and try again.",
+      "unknown": "Something went wrong. Please try again."
+    }
+  },
+  "myEvents": {
+    "title": "My events",
+    "subtitle": "Everything you've registered for, in one place.",
+    "upcomingHeading": "Upcoming",
+    "pastHeading": "Past",
+    "statusRegistered": "Registered",
+    "statusWaitlisted": "Waitlisted",
+    "cancel": "Cancel",
+    "loading": "Loading your events…",
+    "error": {
+      "title": "We couldn't load your events",
+      "body": "Something went wrong. Check your connection and try again.",
+      "retry": "Try again"
+    },
+    "empty": {
+      "title": "You haven't registered for anything yet",
+      "body": "Browse upcoming games and community runs and grab a spot.",
+      "cta": "See events"
+    }
+  },
+  "homeTeaser": {
+    "bring": "Bring: {{item}}",
+    "empty": "New events are being added soon — check back shortly.",
+    "error": "We couldn't load upcoming events right now."
   },
   "notFound": {
     "title": "We couldn't find that event",

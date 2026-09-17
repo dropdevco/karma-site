@@ -2,7 +2,7 @@
   "hero": {
     "eyebrow": "Get in the game",
     "headline": "Sign up. Show up. Score for someone else.",
-    "subhead": "Joining Karma is free. Fill out one form and you're on the list for pickup games, community runs, and a season-long chance to do real good."
+    "subhead": "Joining Karma is free. Verify your email, tell us about you, and you're on the list for pickup games, community runs, and a season-long chance to do real good."
   },
   "why": {
     "eyebrow": "What you get",
@@ -24,23 +24,23 @@
       "body": "The member with the most points when the year ends takes home $400 cash. Everyone else takes home a season of good games and good done."
     }
   },
-  "form": {
-    "heading": "Sign up for Karma",
+  "emailStep": {
+    "heading": "Let's start with your email",
+    "intro": "We'll send you a one-time code to verify it's you before you create your profile."
+  },
+  "profile": {
+    "heading": "Tell us about you",
     "intro": "Takes about two minutes. Fields marked * are required.",
     "sections": {
       "about": "About you",
       "emergency": "Emergency contact",
-      "eligibility": "Eligibility & waiver",
+      "eligibility": "Eligibility",
       "preferences": "Preferences"
     },
     "fields": {
       "fullName": {
         "label": "Full name",
         "placeholder": "Jordan Reyes"
-      },
-      "email": {
-        "label": "Email",
-        "placeholder": "you@example.com"
       },
       "phone": {
         "label": "Phone number",
@@ -61,6 +61,7 @@
           "soccer": "Soccer",
           "basketball": "Basketball",
           "running": "Community runs",
+          "volleyball": "Volleyball",
           "other": "Something else"
         }
       },
@@ -76,19 +77,11 @@
         "label": "Date of birth",
         "hint": "Karma events are open to adults 18 and up."
       },
-      "waiver": {
-        "legend": "Liability waiver",
-        "checkboxLabel": "I have read and agree to the liability waiver above.",
-        "body1": "By checking the box below, I acknowledge that participation in Karma pickup games, runs, and related events involves inherent risks of physical injury, including but not limited to sprains, fractures, collisions with other participants, and other injuries common to recreational sports.",
-        "body2": "I voluntarily assume all risks associated with my participation, whether foreseen or unforeseen, and I release Karma, its volunteers, organizers, and event hosts from any and all claims, liabilities, or damages arising from my participation, except to the extent caused by gross negligence or willful misconduct.",
-        "body3": "I confirm that I am physically fit to participate and am not aware of any medical condition that would make participation unsafe. In the event of an injury, I authorize Karma volunteers to arrange emergency medical care on my behalf if I am unable to consent at the time.",
-        "body4": "This waiver applies to every Karma event I attend, present and future, until I withdraw my membership in writing."
-      },
       "photoConsent": {
         "label": "Photo & media consent (optional)",
         "description": "Karma volunteers take photos and video at events for our website and social media. Checking this box lets us include you. It's completely optional and won't affect your membership either way."
       },
-      "emailOptIn": {
+      "reminderOptIn": {
         "label": "Email me event reminders",
         "description": "We'll only send you reminders for events near you — no spam, unsubscribe anytime."
       },
@@ -106,8 +99,6 @@
     },
     "errors": {
       "fullNameRequired": "Enter your full name.",
-      "emailRequired": "Enter your email address.",
-      "emailInvalid": "Enter a valid email address.",
       "phoneRequired": "Enter a phone number.",
       "phoneInvalid": "Enter a valid phone number.",
       "preferredLanguageRequired": "Choose a preferred language.",
@@ -118,20 +109,35 @@
       "dateOfBirthRequired": "Enter your date of birth.",
       "dateOfBirthInvalid": "Enter a valid date.",
       "dateOfBirthUnder18": "You must be 18 or older to join Karma.",
-      "waiverRequired": "You must accept the waiver to join.",
-      "summary_one": "There is {{count}} error to fix before you can submit.",
-      "summary_other": "There are {{count}} errors to fix before you can submit."
+      "summary_one": "There is {{count}} error to fix before you can continue.",
+      "summary_other": "There are {{count}} errors to fix before you can continue."
     },
-    "submit": "Sign me up",
-    "submitting": "Signing you up…",
-    "submitError": "Something went wrong on our end. Please try again."
+    "submit": "Continue",
+    "submitting": "Saving…",
+    "saved": "Your profile has been saved.",
+    "submitError": "Something went wrong saving your profile. Please try again.",
+    "submitErrorOffline": "You're offline. Reconnect and try again."
+  },
+  "waiver": {
+    "heading": "Liability waiver",
+    "intro": "One last step before you're a Karma member.",
+    "legend": "Liability waiver",
+    "checkboxLabel": "I have read and agree to the liability waiver above.",
+    "body1": "By checking the box below, I acknowledge that participation in Karma pickup games, runs, and related events involves inherent risks of physical injury, including but not limited to sprains, fractures, collisions with other participants, and other injuries common to recreational sports.",
+    "body2": "I voluntarily assume all risks associated with my participation, whether foreseen or unforeseen, and I release Karma, its volunteers, organizers, and event hosts from any and all claims, liabilities, or damages arising from my participation, except to the extent caused by gross negligence or willful misconduct.",
+    "body3": "I confirm that I am physically fit to participate and am not aware of any medical condition that would make participation unsafe. In the event of an injury, I authorize Karma volunteers to arrange emergency medical care on my behalf if I am unable to consent at the time.",
+    "body4": "This waiver applies to every Karma event I attend, present and future, until I withdraw my membership in writing.",
+    "error": "You must accept the waiver to continue.",
+    "submit": "Accept & continue",
+    "submitting": "Saving…",
+    "submitError": "Something went wrong accepting the waiver. Please try again."
   },
   "success": {
-    "eyebrow": "You're on the list",
-    "heading": "Welcome to Karma, {{name}}.",
-    "body1": "You're officially on the interest list. When member accounts go live, we'll email you at {{email}} to finish setting up your account and get your check-in QR code.",
-    "body2": "Keep an eye on the Events page in the meantime — that's where every pickup game, run and donation drive gets posted.",
-    "cta": "See upcoming events",
-    "another": "Sign up someone else"
+    "eyebrow": "You're a member",
+    "heading": "Welcome to Karma.",
+    "headingNamed": "Welcome to Karma, {{name}}.",
+    "body": "You're officially a Karma member. Head to your account for your check-in QR code, or check out upcoming events to find your first game.",
+    "cta": "Go to your account",
+    "ctaSecondary": "See upcoming events"
   }
 }

@@ -14,14 +14,14 @@ const links = [
   { to: '/beneficiaries', key: 'nav.beneficiaries' },
 ] as const
 
-function MobileAccountMenuItems({
-  onClose,
-}: {
-  onClose: () => void
-}) {
+const mobileItemClass =
+  'block w-full rounded-xl px-4 py-3 text-left text-base font-medium text-karma-ink transition-colors hover:bg-karma-tan-light'
+
+function MobileAccountMenuItems({ onClose }: { onClose: () => void }) {
   const { t } = useTranslation()
   const { status, signOut } = useAuth()
   const navigate = useNavigate()
+  const isStaff = status?.role === 'staff' || status?.role === 'admin'
 
   const handleSignOut = async () => {
     onClose()
@@ -29,56 +29,22 @@ function MobileAccountMenuItems({
     navigate('/')
   }
 
+  const items = [
+    { to: '/account/qr', key: 'account.myQR' },
+    { to: '/account/events', key: 'account.myEvents' },
+    { to: '/account', key: 'account.account' },
+    ...(isStaff ? [{ to: '/staff', key: 'account.staffArea' }] : []),
+  ]
+
   return (
     <>
-      <button
-        type="button"
-        onClick={() => {
-          onClose()
-          navigate('/account/qr')
-        }}
-        className="w-full text-left rounded-xl px-4 py-3 text-base font-medium text-karma-ink hover:bg-karma-tan-light transition-colors"
-      >
-        {t('account.myQR')}
-      </button>
-      <button
-        type="button"
-        onClick={() => {
-          onClose()
-          navigate('/account/events')
-        }}
-        className="w-full text-left rounded-xl px-4 py-3 text-base font-medium text-karma-ink hover:bg-karma-tan-light transition-colors"
-      >
-        {t('account.myEvents')}
-      </button>
-      <button
-        type="button"
-        onClick={() => {
-          onClose()
-          navigate('/account')
-        }}
-        className="w-full text-left rounded-xl px-4 py-3 text-base font-medium text-karma-ink hover:bg-karma-tan-light transition-colors"
-      >
-        {t('account.account')}
-      </button>
-      {(status?.role === 'staff' || status?.role === 'admin') && (
-        <button
-          type="button"
-          onClick={() => {
-            onClose()
-            navigate('/staff')
-          }}
-          className="w-full text-left rounded-xl px-4 py-3 text-base font-medium text-karma-ink hover:bg-karma-tan-light transition-colors"
-        >
-          {t('account.staffArea')}
-        </button>
-      )}
-      <div className="mt-3 pt-3 border-t border-karma-tan-dark/20">
-        <button
-          type="button"
-          onClick={handleSignOut}
-          className="w-full text-left rounded-xl px-4 py-3 text-base font-medium text-karma-ink hover:bg-karma-tan-light transition-colors"
-        >
+      {items.map((item) => (
+        <Link key={item.to} to={item.to} onClick={onClose} className={mobileItemClass}>
+          {t(item.key)}
+        </Link>
+      ))}
+      <div className="mt-3 border-t border-karma-tan-dark/20 pt-3">
+        <button type="button" onClick={handleSignOut} className={mobileItemClass}>
           {t('account.signOut')}
         </button>
       </div>

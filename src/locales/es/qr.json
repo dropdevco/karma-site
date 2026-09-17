@@ -1,0 +1,29 @@
+{
+  "heading": "Tu Código de Ingreso",
+  "loading": "Cargando tu código...",
+  "qrAlt": "Tu código QR único para registrarte",
+  "refreshing": "Se actualiza automáticamente cada pocos segundos",
+  "brightnessHint": "💡 Consejo: Sube el brillo de tu pantalla para escanear más rápido al aire libre.",
+  "note1": "Este código cambia cada 30 segundos, así que las capturas de pantalla no funcionarán. Muéstrale tu teléfono al voluntario en la puerta.",
+  "note2": "El código muestra tu nombre para que puedan verificar que eres tú.",
+  "reset": {
+    "button": "Reiniciar mi código",
+    "loading": "Reiniciando...",
+    "confirm": "Esto invalidará cualquier código que ya hayas compartido. ¿Estás seguro?",
+    "success": "Código reiniciado correctamente. Uno nuevo se está mostrando ahora."
+  },
+  "offline": {
+    "message": "Necesitas visitar esta página mientras estés en línea al menos una vez para que tu código funcione sin conexión en el evento.",
+    "action": "Ir a cuenta"
+  },
+  "noSecret": {
+    "message": "Aún no has completado tu perfil. Termina de registrarte para obtener tu código de ingreso.",
+    "action": "Completar perfil"
+  },
+  "incompleteProfile": {
+    "message": "Tu perfil no está completo. Aún puedes mostrar este código, pero termina de registrarte para poder registrarte en eventos.",
+    "action": "Completar perfil"
+  },
+  "fetchFailed": "No pudimos cargar tu código. Por favor intenta de nuevo.",
+  "resetFailed": "No pudimos reiniciar tu código. Por favor intenta de nuevo."
+}

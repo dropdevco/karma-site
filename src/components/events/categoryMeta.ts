@@ -1,4 +1,4 @@
-import type { EventCategory } from '@/data/events'
+import type { EventCategory } from '@/lib/eventsApi'
 
 export const CATEGORY_ORDER: readonly EventCategory[] = ['soccer', 'basketball', 'running', 'volleyball']
 

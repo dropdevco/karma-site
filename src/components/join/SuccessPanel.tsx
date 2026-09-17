@@ -1,16 +1,15 @@
 import { motion } from 'motion/react'
 import { useTranslation } from 'react-i18next'
-import { Button, ButtonLink } from '@/components/ui/Button'
+import { ButtonLink } from '@/components/ui/Button'
 import { Eyebrow } from '@/components/ui/Section'
 
 interface SuccessPanelProps {
-  name: string
-  email: string
-  onReset: () => void
+  name?: string
 }
 
-export function SuccessPanel({ name, email, onReset }: SuccessPanelProps) {
+export function SuccessPanel({ name }: SuccessPanelProps) {
   const { t } = useTranslation('join')
+  const trimmedName = name?.trim()
 
   return (
     <motion.div
@@ -22,19 +21,16 @@ export function SuccessPanel({ name, email, onReset }: SuccessPanelProps) {
     >
       <Eyebrow>{t('success.eyebrow')}</Eyebrow>
       <h2 className="mt-3 text-3xl font-bold text-karma-ink sm:text-4xl">
-        {t('success.heading', { name })}
+        {trimmedName ? t('success.headingNamed', { name: trimmedName }) : t('success.heading')}
       </h2>
-      <p className="mx-auto mt-4 max-w-xl text-base text-karma-ink-soft">
-        {t('success.body1', { email })}
-      </p>
-      <p className="mx-auto mt-3 max-w-xl text-base text-karma-ink-soft">{t('success.body2')}</p>
+      <p className="mx-auto mt-4 max-w-xl text-base text-karma-ink-soft">{t('success.body')}</p>
       <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-        <ButtonLink to="/events" size="lg">
+        <ButtonLink to="/account" size="lg">
           {t('success.cta')}
         </ButtonLink>
-        <Button type="button" variant="ghost" size="lg" onClick={onReset}>
-          {t('success.another')}
-        </Button>
+        <ButtonLink to="/events" variant="secondary" size="lg">
+          {t('success.ctaSecondary')}
+        </ButtonLink>
       </div>
     </motion.div>
   )

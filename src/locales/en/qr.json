@@ -1,0 +1,29 @@
+{
+  "heading": "Your Check-In Code",
+  "loading": "Loading your code...",
+  "qrAlt": "Your unique check-in QR code",
+  "refreshing": "Refreshes automatically every few seconds",
+  "brightnessHint": "💡 Tip: Turn your brightness up for faster scanning outdoors.",
+  "note1": "This code changes every 30 seconds, so screenshots won't work. Show your phone to the volunteer at the door.",
+  "note2": "The code displays your name so they can verify it's you.",
+  "reset": {
+    "button": "Reset my code",
+    "loading": "Resetting...",
+    "confirm": "This will invalidate any code you've already shared. Are you sure?",
+    "success": "Code reset successfully. A new one is now showing."
+  },
+  "offline": {
+    "message": "You need to visit this page while online at least once so your code can work offline at the venue.",
+    "action": "Go to account"
+  },
+  "noSecret": {
+    "message": "You haven't completed your profile yet. Finish signing up to get your check-in code.",
+    "action": "Complete profile"
+  },
+  "incompleteProfile": {
+    "message": "Your profile isn't complete. You can still show this code, but finish signing up to register for events.",
+    "action": "Complete profile"
+  },
+  "fetchFailed": "Could not load your code. Please try again.",
+  "resetFailed": "Could not reset your code. Please try again."
+}

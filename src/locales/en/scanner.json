@@ -1,0 +1,102 @@
+{
+  "title": "Check-in scanner",
+  "subtitle": "Scans queue on this phone and sync whenever a connection is available.",
+  "mode": {
+    "scan": "Scan QR",
+    "manual": "Manual check-in"
+  },
+  "camera": {
+    "notStarted": "Camera is off.",
+    "startCta": "Start camera",
+    "starting": "Starting camera…",
+    "errorTitle": "Camera unavailable",
+    "permissionDenied": "Camera access was denied. Allow camera access in your browser settings and try again.",
+    "genericError": "Couldn't start the camera on this device. Use manual check-in instead.",
+    "torchOn": "Torch on",
+    "torchOff": "Torch off"
+  },
+  "preflight": {
+    "blockedTitle": "No roster and no connection",
+    "blockedBody": "This device has never downloaded this event's roster, and there's no signal to get one now. Check-in cannot start until you get connected — find a signal before doors open.",
+    "needsDownloadTitle": "Roster not downloaded yet",
+    "needsDownloadBody": "Download the roster now, before you lose signal at the venue.",
+    "downloadCta": "Download roster",
+    "downloading": "Downloading…",
+    "downloadError": "Couldn't download the roster. Check your connection and try again.",
+    "readyTitle_one": "Ready for offline use — {{count}} member downloaded",
+    "readyTitle_other": "Ready for offline use — {{count}} members downloaded",
+    "readyBadge": "Ready",
+    "updated": "Updated {{time}}",
+    "redownloadCta": "Re-download roster",
+    "redownloadNeedsSignal": "Needs a connection to refresh."
+  },
+  "result": {
+    "accepted": {
+      "label": "Checked in"
+    },
+    "already": {
+      "label": "Already checked in"
+    },
+    "stale": {
+      "label": "Code expired",
+      "body": "Ask them to refresh their screen and try again."
+    },
+    "invalid": {
+      "label": "Not a Karma code",
+      "body": "This isn't a valid check-in code. Try again or use manual check-in."
+    },
+    "unknown": {
+      "label": "Unknown member",
+      "body": "This code doesn't match anyone on the roster."
+    },
+    "registrationStatus": {
+      "registered": "Registered",
+      "waitlisted": "Waitlisted",
+      "cancelled": "Cancelled registration",
+      "unregistered": "Not registered for this event"
+    },
+    "emergencyContact": "Emergency contact"
+  },
+  "manual": {
+    "searchPlaceholder": "Search by name",
+    "noResults": "No one matches that search.",
+    "checkInCta": "Check in",
+    "alreadyIn": "Checked in"
+  },
+  "sync": {
+    "online": "Online",
+    "offline": "Offline",
+    "pending_one": "{{count}} waiting to sync",
+    "pending_other": "{{count}} waiting to sync",
+    "syncNow": "Sync now",
+    "syncing": "Syncing…",
+    "lastAttemptFailed": "Couldn't reach the server on the last attempt. Still queued — it'll retry automatically.",
+    "rejectedHeading": "Needs attention",
+    "dismiss": "Dismiss"
+  },
+  "walkIn": {
+    "title": "Walk-in attendee",
+    "subtitle": "For someone who isn't a Karma member. This records their attendance today, not a member account.",
+    "success": "Walk-in queued. It'll sync automatically once you're back online.",
+    "submitCta": "Record walk-in",
+    "submitting": "Saving…",
+    "sections": {
+      "emergency": "Emergency contact"
+    },
+    "fields": {
+      "fullName": "Full name",
+      "email": "Email",
+      "phone": "Phone number",
+      "emergencyContactName": "Emergency contact name",
+      "emergencyContactPhone": "Emergency contact phone",
+      "confirmedAdult": "I confirm this person is 18 or older.",
+      "waiverAcknowledged": "I confirm this person has read and accepted the liability waiver."
+    },
+    "errors": {
+      "nameRequired": "Enter a full name.",
+      "adultRequired": "You must confirm the attendee is 18 or older.",
+      "waiverRequired": "You must confirm the waiver was acknowledged.",
+      "noWaiverVersion": "The current waiver text hasn't been downloaded to this device yet. Connect to the internet once to enable walk-ins offline."
+    }
+  }
+}

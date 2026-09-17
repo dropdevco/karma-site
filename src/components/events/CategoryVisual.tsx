@@ -1,5 +1,5 @@
 import { cn } from '@/lib/cn'
-import type { EventCategory } from '@/data/events'
+import type { EventCategory } from '@/lib/eventsApi'
 
 const BACKGROUND: Record<EventCategory, string> = {
   soccer: 'bg-karma-tan-light',

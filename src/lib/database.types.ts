@@ -7,7 +7,7 @@ export type RegistrationStatus = 'registered' | 'waitlisted' | 'cancelled'
 export type EventStatus = 'scheduled' | 'cancelled'
 export type CheckInMethod = 'qr' | 'manual'
 
-export interface ProfileRow {
+export type ProfileRow = {
   id: string
   full_name: string
   phone: string | null
@@ -41,7 +41,7 @@ export type ProfileUpdate = Partial<
   >
 >
 
-export interface EventRow {
+export type EventRow = {
   id: string
   slug: string
   title_en: string
@@ -73,7 +73,7 @@ export type EventInsert = Omit<
   'id' | 'created_at' | 'updated_at' | 'created_by'
 > & { id?: string }
 
-export interface RegistrationRow {
+export type RegistrationRow = {
   id: string
   event_id: string
   user_id: string
@@ -82,7 +82,7 @@ export interface RegistrationRow {
   created_at: string
 }
 
-export interface CheckInRow {
+export type CheckInRow = {
   id: string
   event_id: string
   user_id: string
@@ -93,7 +93,7 @@ export interface CheckInRow {
   client_scan_id: string
 }
 
-export interface WalkInRow {
+export type WalkInRow = {
   id: string
   event_id: string
   full_name: string
@@ -109,20 +109,20 @@ export interface WalkInRow {
   synced_at: string
 }
 
-export interface MemberQrSecretRow {
+export type MemberQrSecretRow = {
   user_id: string
   secret: string
   rotated_at: string
 }
 
-export interface WaiverAcceptanceRow {
+export type WaiverAcceptanceRow = {
   id: string
   user_id: string
   waiver_version: string
   accepted_at: string
 }
 
-export interface AccountStatus {
+export type AccountStatus = {
   role: MemberRole
   profile_complete: boolean
   is_adult: boolean
@@ -130,14 +130,14 @@ export interface AccountStatus {
   waiver_current: boolean
 }
 
-export interface EventAvailabilityRow {
+export type EventAvailabilityRow = {
   event_id: string
   capacity: number
   registered_count: number
   waitlist_count: number
 }
 
-export interface EventRosterRow {
+export type EventRosterRow = {
   user_id: string
   full_name: string
   qr_secret: string
@@ -147,17 +147,17 @@ export interface EventRosterRow {
   emergency_contact_phone: string | null
 }
 
-export interface SyncCheckInResult {
+export type SyncCheckInResult = {
   client_scan_id: string | null
   result: string
 }
 
-export interface SyncWalkInResult {
+export type SyncWalkInResult = {
   walk_in_id: string | null
   result: string
 }
 
-export interface CheckInScanPayload {
+export type CheckInScanPayload = {
   client_scan_id: string
   event_id: string
   user_id: string
@@ -167,7 +167,7 @@ export interface CheckInScanPayload {
   qr_sig?: string
 }
 
-export interface WalkInPayload {
+export type WalkInPayload = {
   id: string
   event_id: string
   full_name: string
@@ -181,34 +181,77 @@ export interface WalkInPayload {
   recorded_at: string
 }
 
-export interface Database {
+/**
+ * Shaped to satisfy postgrest-js's structural constraints, which are easy to
+ * trip: every table needs `Relationships`, and each type must be a `type`
+ * alias rather than an `interface` — only aliases get TypeScript's implicit
+ * index signature, so an interface here silently collapses the whole client
+ * to `never`. Writes to the tables marked below are rejected by row level
+ * security no matter what these types permit.
+ */
+export type Database = {
   public: {
     Tables: {
-      profiles: { Row: ProfileRow; Insert: never; Update: ProfileUpdate }
-      events: { Row: EventRow; Insert: EventInsert; Update: Partial<EventInsert> }
-      registrations: { Row: RegistrationRow; Insert: never; Update: never }
-      check_ins: { Row: CheckInRow; Insert: never; Update: never }
-      walk_ins: { Row: WalkInRow; Insert: never; Update: never }
-      member_qr_secrets: { Row: MemberQrSecretRow; Insert: never; Update: never }
-      waiver_acceptances: { Row: WaiverAcceptanceRow; Insert: never; Update: never }
+      profiles: {
+        Row: ProfileRow
+        Insert: Partial<ProfileRow> & { id: string }
+        Update: ProfileUpdate
+        Relationships: []
+      }
+      events: {
+        Row: EventRow
+        Insert: EventInsert
+        Update: Partial<EventInsert>
+        Relationships: []
+      }
+      registrations: {
+        Row: RegistrationRow
+        Insert: Partial<RegistrationRow>
+        Update: Partial<RegistrationRow>
+        Relationships: []
+      }
+      check_ins: {
+        Row: CheckInRow
+        Insert: Partial<CheckInRow>
+        Update: Partial<CheckInRow>
+        Relationships: []
+      }
+      walk_ins: {
+        Row: WalkInRow
+        Insert: Partial<WalkInRow>
+        Update: Partial<WalkInRow>
+        Relationships: []
+      }
+      member_qr_secrets: {
+        Row: MemberQrSecretRow
+        Insert: Partial<MemberQrSecretRow>
+        Update: Partial<MemberQrSecretRow>
+        Relationships: []
+      }
+      waiver_acceptances: {
+        Row: WaiverAcceptanceRow
+        Insert: Partial<WaiverAcceptanceRow>
+        Update: Partial<WaiverAcceptanceRow>
+        Relationships: []
+      }
     }
     Views: Record<string, never>
     Functions: {
-      current_waiver_version: { Args: Record<PropertyKey, never>; Returns: string }
-      get_my_account_status: { Args: Record<PropertyKey, never>; Returns: AccountStatus | null }
-      accept_current_waiver: { Args: Record<PropertyKey, never>; Returns: void }
-      rotate_my_qr_secret: { Args: Record<PropertyKey, never>; Returns: void }
+      current_waiver_version: { Args: Record<string, never>; Returns: string }
+      get_my_account_status: { Args: Record<string, never>; Returns: AccountStatus | null }
+      accept_current_waiver: { Args: Record<string, never>; Returns: undefined }
+      rotate_my_qr_secret: { Args: Record<string, never>; Returns: undefined }
       register_for_event: { Args: { p_event_id: string }; Returns: RegistrationStatus }
-      cancel_my_registration: { Args: { p_event_id: string }; Returns: void }
+      cancel_my_registration: { Args: { p_event_id: string }; Returns: undefined }
       get_event_availability: {
-        Args: { p_event_ids?: string[] | null }
+        Args: { p_event_ids: string[] | null }
         Returns: EventAvailabilityRow[]
       }
       get_event_roster: { Args: { p_event_id: string }; Returns: EventRosterRow[] }
       sync_check_ins: { Args: { p_scans: CheckInScanPayload[] }; Returns: SyncCheckInResult[] }
       sync_walk_ins: { Args: { p_walk_ins: WalkInPayload[] }; Returns: SyncWalkInResult[] }
-      is_staff: { Args: Record<PropertyKey, never>; Returns: boolean }
-      is_admin: { Args: Record<PropertyKey, never>; Returns: boolean }
+      is_staff: { Args: Record<string, never>; Returns: boolean }
+      is_admin: { Args: Record<string, never>; Returns: boolean }
     }
     Enums: Record<string, never>
     CompositeTypes: Record<string, never>

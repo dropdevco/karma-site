@@ -1,0 +1,102 @@
+{
+  "title": "Escáner de registro",
+  "subtitle": "Los registros se guardan en este teléfono y se sincronizan en cuanto haya conexión.",
+  "mode": {
+    "scan": "Escanear QR",
+    "manual": "Registro manual"
+  },
+  "camera": {
+    "notStarted": "La cámara está apagada.",
+    "startCta": "Iniciar cámara",
+    "starting": "Iniciando cámara…",
+    "errorTitle": "Cámara no disponible",
+    "permissionDenied": "Se denegó el acceso a la cámara. Permite el acceso en la configuración del navegador e inténtalo de nuevo.",
+    "genericError": "No se pudo iniciar la cámara en este dispositivo. Usa el registro manual.",
+    "torchOn": "Linterna encendida",
+    "torchOff": "Linterna apagada"
+  },
+  "preflight": {
+    "blockedTitle": "Sin lista y sin conexión",
+    "blockedBody": "Este dispositivo nunca descargó la lista de este evento y no hay señal para hacerlo ahora. No se puede registrar a nadie hasta que consigas conexión. Búscala antes de que abran las puertas.",
+    "needsDownloadTitle": "Lista aún no descargada",
+    "needsDownloadBody": "Descarga la lista ahora, antes de perder señal en el lugar del evento.",
+    "downloadCta": "Descargar lista",
+    "downloading": "Descargando…",
+    "downloadError": "No se pudo descargar la lista. Revisa tu conexión e inténtalo de nuevo.",
+    "readyTitle_one": "Lista para usar sin conexión — {{count}} miembro descargado",
+    "readyTitle_other": "Lista para usar sin conexión — {{count}} miembros descargados",
+    "readyBadge": "Lista",
+    "updated": "Actualizado {{time}}",
+    "redownloadCta": "Volver a descargar",
+    "redownloadNeedsSignal": "Necesita conexión para actualizarse."
+  },
+  "result": {
+    "accepted": {
+      "label": "Registrado"
+    },
+    "already": {
+      "label": "Ya estaba registrado"
+    },
+    "stale": {
+      "label": "Código vencido",
+      "body": "Pídele que actualice la pantalla de su código e inténtalo de nuevo."
+    },
+    "invalid": {
+      "label": "No es un código de Karma",
+      "body": "Este código no es válido para registrar la entrada. Inténtalo de nuevo o usa el registro manual."
+    },
+    "unknown": {
+      "label": "Miembro desconocido",
+      "body": "Este código no corresponde a nadie de la lista."
+    },
+    "registrationStatus": {
+      "registered": "Inscrito",
+      "waitlisted": "En lista de espera",
+      "cancelled": "Inscripción cancelada",
+      "unregistered": "No inscrito en este evento"
+    },
+    "emergencyContact": "Contacto de emergencia"
+  },
+  "manual": {
+    "searchPlaceholder": "Buscar por nombre",
+    "noResults": "Nadie coincide con esa búsqueda.",
+    "checkInCta": "Registrar",
+    "alreadyIn": "Registrado"
+  },
+  "sync": {
+    "online": "En línea",
+    "offline": "Sin conexión",
+    "pending_one": "{{count}} pendiente de sincronizar",
+    "pending_other": "{{count}} pendientes de sincronizar",
+    "syncNow": "Sincronizar ahora",
+    "syncing": "Sincronizando…",
+    "lastAttemptFailed": "No se pudo conectar con el servidor en el último intento. Sigue en cola y lo reintentará automáticamente.",
+    "rejectedHeading": "Necesita atención",
+    "dismiss": "Descartar"
+  },
+  "walkIn": {
+    "title": "Asistente sin registro previo",
+    "subtitle": "Para alguien que no es miembro de Karma. Esto registra su asistencia de hoy, no crea una cuenta de miembro.",
+    "success": "Registro en cola. Se sincronizará automáticamente en cuanto haya conexión.",
+    "submitCta": "Registrar asistencia",
+    "submitting": "Guardando…",
+    "sections": {
+      "emergency": "Contacto de emergencia"
+    },
+    "fields": {
+      "fullName": "Nombre completo",
+      "email": "Correo electrónico",
+      "phone": "Número de teléfono",
+      "emergencyContactName": "Nombre del contacto de emergencia",
+      "emergencyContactPhone": "Teléfono del contacto de emergencia",
+      "confirmedAdult": "Confirmo que esta persona tiene 18 años o más.",
+      "waiverAcknowledged": "Confirmo que esta persona leyó y aceptó el descargo de responsabilidad."
+    },
+    "errors": {
+      "nameRequired": "Ingresa un nombre completo.",
+      "adultRequired": "Debes confirmar que el asistente tiene 18 años o más.",
+      "waiverRequired": "Debes confirmar que se aceptó el descargo de responsabilidad.",
+      "noWaiverVersion": "El texto vigente del descargo de responsabilidad aún no se ha descargado a este dispositivo. Conéctate a internet una vez para habilitar registros sin conexión."
+    }
+  }
+}

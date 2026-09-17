@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next'
 import { cn } from '@/lib/cn'
-import type { EventCategory } from '@/data/events'
+import type { EventCategory } from '@/lib/eventsApi'
 import { CATEGORY_ORDER } from './categoryMeta'
 
 export type WhenFilter = 'upcoming' | 'past'

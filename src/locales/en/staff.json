@@ -1,0 +1,126 @@
+{
+  "meta": {
+    "title": "Staff — Karma"
+  },
+  "categories": {
+    "soccer": "Soccer",
+    "basketball": "Basketball",
+    "running": "Running",
+    "volleyball": "Volleyball"
+  },
+  "home": {
+    "eyebrow": "Staff area",
+    "title": "Today's games",
+    "subtitle": "Pick an event to check people in, add a walk-in, or make changes.",
+    "newEvent": "New event",
+    "justCreated": "Event created.",
+    "justUpdated": "Event changes saved.",
+    "loading": "Loading events…",
+    "loadError": "We couldn't load events. Check your connection and try again.",
+    "offlineError": "You're offline. Connect and try again to load events.",
+    "retry": "Try again",
+    "empty": {
+      "title": "No events yet",
+      "body": "Add your first event so staff can start taking registrations and check-ins.",
+      "cta": "Add an event"
+    },
+    "upcomingSection": "Today & upcoming",
+    "noUpcoming": "Nothing scheduled. Add an event to get started.",
+    "pastSection": "Past events",
+    "noPast": "No past events yet.",
+    "todayBadge": "Today",
+    "recurringBadge": "Weekly",
+    "cancelledBadge": "Cancelled",
+    "counts": {
+      "loading": "Loading counts…",
+      "summary": "{{registered}} registered · {{capacity}} spots total",
+      "waitlist_one": "{{count}} on waitlist",
+      "waitlist_other": "{{count}} on waitlist"
+    },
+    "scanCta": "Scan check-ins",
+    "walkInCta": "Add a walk-in",
+    "editCta": "Edit event"
+  },
+  "form": {
+    "eyebrow": "Staff area",
+    "title": {
+      "create": "New event",
+      "edit": "Edit event"
+    },
+    "loading": "Loading event…",
+    "notFound": {
+      "title": "We couldn't find that event",
+      "body": "It may have been removed, or the link is wrong.",
+      "cta": "Back to staff home"
+    },
+    "loadError": {
+      "title": "We couldn't load this event",
+      "body": "Something went wrong reaching the database. Check your connection and try again."
+    },
+    "status": {
+      "scheduled": "Scheduled",
+      "cancelled": "Cancelled"
+    },
+    "actions": {
+      "cancelEvent": "Cancel this event",
+      "reactivateEvent": "Reactivate event",
+      "cancelConfirm": "Cancel this event? It will show as cancelled everywhere, but attendance history is kept.",
+      "reactivateConfirm": "Reactivate this event and make it visible again?",
+      "discard": "Back to staff home",
+      "save": "Save event",
+      "saving": "Saving…"
+    },
+    "errors": {
+      "permission": "Your account doesn't have staff permission to save events.",
+      "offline": "You're offline. Connect and try again.",
+      "generic": "Something went wrong saving this event. Try again.",
+      "summary_one": "Fix {{count}} field before saving.",
+      "summary_other": "Fix {{count}} fields before saving.",
+      "required": "This field is required.",
+      "slugRequired": "Enter a web address for this event.",
+      "slugFormat": "Use only lowercase letters, numbers and hyphens, up to 100 characters.",
+      "dateInvalid": "Enter a valid date and time.",
+      "endBeforeStart": "The end time must be after the start time.",
+      "capacityRange": "Capacity must be a whole number between 1 and 10,000."
+    },
+    "sections": {
+      "title": "Event title",
+      "schedule": "Date, time & venue",
+      "description": "Description",
+      "donation": "Donation details"
+    },
+    "fields": {
+      "titleEn": { "label": "Title (English)" },
+      "titleEs": { "label": "Title (Spanish)" },
+      "slug": {
+        "label": "Web address",
+        "hint": "Public link: karma.org/events/{{slug}}. Lowercase letters, numbers and hyphens only."
+      },
+      "category": {
+        "label": "Sport",
+        "placeholder": "Choose a sport"
+      },
+      "capacity": {
+        "label": "Capacity",
+        "hint": "Raising capacity automatically moves people off the waitlist into open spots."
+      },
+      "timezoneNote": "Times use your device's timezone ({{zone}}).",
+      "startsAt": { "label": "Starts" },
+      "endsAt": { "label": "Ends" },
+      "venueName": { "label": "Venue name" },
+      "venueAddress": { "label": "Venue address" },
+      "recurring": {
+        "label": "This is a recurring event",
+        "hint": "Marks it as part of a weekly series. Each date is still its own event to edit and cancel."
+      },
+      "descriptionEn": { "label": "Description (English)" },
+      "descriptionEs": { "label": "Description (Spanish)" },
+      "donationItemEn": { "groupLabel": "Item to bring", "label": "Item to bring (English)" },
+      "donationItemEs": { "label": "Item to bring (Spanish)" },
+      "donationSuggestionEn": { "groupLabel": "Suggested donation", "label": "Suggested donation (English)" },
+      "donationSuggestionEs": { "label": "Suggested donation (Spanish)" },
+      "beneficiaryEn": { "groupLabel": "Beneficiary", "label": "Beneficiary (English)" },
+      "beneficiaryEs": { "label": "Beneficiary (Spanish)" }
+    }
+  }
+}

@@ -2,7 +2,7 @@
   "hero": {
     "eyebrow": "Entra al juego",
     "headline": "Regístrate. Preséntate. Anota para alguien más.",
-    "subhead": "Unirte a Karma es gratis. Completa un formulario y quedas en la lista para partidos, carreras comunitarias y la oportunidad de hacer del bien durante toda la temporada."
+    "subhead": "Unirte a Karma es gratis. Verifica tu correo, cuéntanos sobre ti y quedas en la lista para partidos, carreras comunitarias y la oportunidad de hacer del bien durante toda la temporada."
   },
   "why": {
     "eyebrow": "Lo que recibes",
@@ -24,23 +24,23 @@
       "body": "Quien termine el año con más puntos se lleva $400 en efectivo. Todos los demás se llevan una temporada de buenos partidos y buenas acciones."
     }
   },
-  "form": {
-    "heading": "Regístrate en Karma",
+  "emailStep": {
+    "heading": "Empecemos con tu correo",
+    "intro": "Te enviaremos un código de un solo uso para verificar que eres tú antes de crear tu perfil."
+  },
+  "profile": {
+    "heading": "Cuéntanos sobre ti",
     "intro": "Toma unos dos minutos. Los campos con * son obligatorios.",
     "sections": {
       "about": "Sobre ti",
       "emergency": "Contacto de emergencia",
-      "eligibility": "Elegibilidad y exención",
+      "eligibility": "Elegibilidad",
       "preferences": "Preferencias"
     },
     "fields": {
       "fullName": {
         "label": "Nombre completo",
         "placeholder": "Jordan Reyes"
-      },
-      "email": {
-        "label": "Correo electrónico",
-        "placeholder": "tucorreo@ejemplo.com"
       },
       "phone": {
         "label": "Número de teléfono",
@@ -61,6 +61,7 @@
           "soccer": "Fútbol",
           "basketball": "Básquetbol",
           "running": "Carreras comunitarias",
+          "volleyball": "Voleibol",
           "other": "Otra"
         }
       },
@@ -76,19 +77,11 @@
         "label": "Fecha de nacimiento",
         "hint": "Los eventos de Karma son solo para mayores de 18 años."
       },
-      "waiver": {
-        "legend": "Exención de responsabilidad",
-        "checkboxLabel": "He leído y acepto la exención de responsabilidad de arriba.",
-        "body1": "Al marcar la casilla de abajo, reconozco que participar en los partidos, carreras y demás eventos de Karma implica riesgos inherentes de lesiones físicas, incluyendo entre otros esguinces, fracturas, choques con otros participantes y otras lesiones comunes en los deportes recreativos.",
-        "body2": "Asumo voluntariamente todos los riesgos asociados con mi participación, previstos o no, y libero a Karma, a sus voluntarios, organizadores y sedes de eventos de cualquier reclamo, responsabilidad o daño que surja de mi participación, salvo en casos de negligencia grave o conducta intencional.",
-        "body3": "Confirmo que estoy en condiciones físicas para participar y que no tengo conocimiento de ninguna condición médica que haga insegura mi participación. En caso de lesión, autorizo a los voluntarios de Karma a gestionar atención médica de emergencia en mi nombre si no puedo dar mi consentimiento en ese momento.",
-        "body4": "Esta exención aplica a todos los eventos de Karma a los que asista, presentes y futuros, hasta que cancele mi membresía por escrito."
-      },
       "photoConsent": {
         "label": "Consentimiento de fotos y video (opcional)",
         "description": "Nuestros voluntarios toman fotos y video en los eventos para el sitio web y las redes sociales de Karma. Marca esta casilla si nos das permiso de incluirte. Es totalmente opcional y no afecta tu membresía de ninguna forma."
       },
-      "emailOptIn": {
+      "reminderOptIn": {
         "label": "Enviarme recordatorios de eventos por correo",
         "description": "Solo te avisaremos de eventos cerca de ti — nada de spam, y puedes darte de baja cuando quieras."
       },
@@ -106,8 +99,6 @@
     },
     "errors": {
       "fullNameRequired": "Escribe tu nombre completo.",
-      "emailRequired": "Escribe tu correo electrónico.",
-      "emailInvalid": "Escribe un correo electrónico válido.",
       "phoneRequired": "Escribe un número de teléfono.",
       "phoneInvalid": "Escribe un número de teléfono válido.",
       "preferredLanguageRequired": "Elige un idioma de preferencia.",
@@ -118,20 +109,35 @@
       "dateOfBirthRequired": "Escribe tu fecha de nacimiento.",
       "dateOfBirthInvalid": "Escribe una fecha válida.",
       "dateOfBirthUnder18": "Debes tener 18 años o más para unirte a Karma.",
-      "waiverRequired": "Debes aceptar la exención para unirte.",
-      "summary_one": "Hay {{count}} error que corregir antes de enviar.",
-      "summary_other": "Hay {{count}} errores que corregir antes de enviar."
+      "summary_one": "Hay {{count}} error que corregir antes de continuar.",
+      "summary_other": "Hay {{count}} errores que corregir antes de continuar."
     },
-    "submit": "Registrarme",
-    "submitting": "Registrándote…",
-    "submitError": "Algo salió mal de nuestro lado. Inténtalo de nuevo."
+    "submit": "Continuar",
+    "submitting": "Guardando…",
+    "saved": "Tu perfil se guardó correctamente.",
+    "submitError": "Algo salió mal al guardar tu perfil. Inténtalo de nuevo.",
+    "submitErrorOffline": "Estás sin conexión. Reconéctate e inténtalo de nuevo."
+  },
+  "waiver": {
+    "heading": "Exención de responsabilidad",
+    "intro": "Un último paso para ser miembro de Karma.",
+    "legend": "Exención de responsabilidad",
+    "checkboxLabel": "He leído y acepto la exención de responsabilidad de arriba.",
+    "body1": "Al marcar la casilla de abajo, reconozco que participar en los partidos, carreras y demás eventos de Karma implica riesgos inherentes de lesiones físicas, incluyendo entre otros esguinces, fracturas, choques con otros participantes y otras lesiones comunes en los deportes recreativos.",
+    "body2": "Asumo voluntariamente todos los riesgos asociados con mi participación, previstos o no, y libero a Karma, a sus voluntarios, organizadores y sedes de eventos de cualquier reclamo, responsabilidad o daño que surja de mi participación, salvo en casos de negligencia grave o conducta intencional.",
+    "body3": "Confirmo que estoy en condiciones físicas para participar y que no tengo conocimiento de ninguna condición médica que haga insegura mi participación. En caso de lesión, autorizo a los voluntarios de Karma a gestionar atención médica de emergencia en mi nombre si no puedo dar mi consentimiento en ese momento.",
+    "body4": "Esta exención aplica a todos los eventos de Karma a los que asista, presentes y futuros, hasta que cancele mi membresía por escrito.",
+    "error": "Debes aceptar la exención para continuar.",
+    "submit": "Aceptar y continuar",
+    "submitting": "Guardando…",
+    "submitError": "Algo salió mal al aceptar la exención. Inténtalo de nuevo."
   },
   "success": {
-    "eyebrow": "Ya estás en la lista",
-    "heading": "Bienvenido a Karma, {{name}}.",
-    "body1": "Ya quedaste en la lista de interesados. Cuando activemos las cuentas de miembro, te escribiremos a {{email}} para que termines de configurar tu cuenta y recibas tu código QR de registro.",
-    "body2": "Mientras tanto, no pierdas de vista la página de Eventos: ahí publicamos cada partido, carrera y colecta de donaciones.",
-    "cta": "Ver próximos eventos",
-    "another": "Registrar a alguien más"
+    "eyebrow": "Ya eres miembro",
+    "heading": "Bienvenido a Karma.",
+    "headingNamed": "Bienvenido a Karma, {{name}}.",
+    "body": "Ya eres oficialmente miembro de Karma. Ve a tu cuenta para obtener tu código QR de registro, o revisa los próximos eventos para encontrar tu primer partido.",
+    "cta": "Ir a tu cuenta",
+    "ctaSecondary": "Ver próximos eventos"
   }
 }

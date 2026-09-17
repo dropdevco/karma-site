@@ -29,6 +29,17 @@
     "nearlyFull": "Casi lleno",
     "full": "Lleno — lista de espera abierta"
   },
+  "status": {
+    "cancelled": "Cancelado"
+  },
+  "loading": {
+    "events": "Cargando eventos…"
+  },
+  "error": {
+    "title": "No pudimos cargar los eventos",
+    "body": "Algo salió mal al consultar el calendario. Revisa tu conexión e inténtalo de nuevo.",
+    "retry": "Intentar de nuevo"
+  },
   "empty": {
     "title": "Ningún evento coincide con esos filtros",
     "body": "Prueba con otro deporte, o revisa los eventos pasados para ver qué hemos hecho. Agregamos partidos nuevos seguido.",
@@ -47,9 +58,97 @@
     "whatToBring": "Qué traer",
     "whoItHelps": "A quién ayuda",
     "helpsIntro": "Las donaciones de este evento van para",
-    "register": "Inscripción",
-    "registerBody": "Estamos construyendo la inscripción en línea y el registro con código QR para una próxima versión. Por ahora, solo preséntate — los lugares son por orden de llegada.",
-    "registerSoon": "La inscripción de miembros abre pronto"
+    "loading": "Cargando evento…",
+    "errorTitle": "No pudimos cargar este evento",
+    "errorBody": "Algo salió mal. Revisa tu conexión e inténtalo de nuevo.",
+    "errorRetry": "Intentar de nuevo"
+  },
+  "register": {
+    "heading": "Inscripción",
+    "loading": "Revisando tu inscripción…",
+    "signedOut": {
+      "body": "Inicia sesión para inscribirte a este evento. Te traeremos de vuelta aquí después.",
+      "cta": "Inicia sesión para inscribirte"
+    },
+    "incomplete": {
+      "title": "Termina de configurar tu cuenta",
+      "body": "Necesitas un perfil completo, confirmar que tienes 18 años o más, y aceptar el aviso de responsabilidad vigente antes de poder inscribirte.",
+      "cta": "Completar configuración"
+    },
+    "cancelledEvent": {
+      "title": "Este evento fue cancelado",
+      "body": "La inscripción no está disponible porque este evento fue cancelado."
+    },
+    "ended": {
+      "title": "Este evento ya ocurrió",
+      "body": "La inscripción está cerrada porque el evento ya terminó."
+    },
+    "available": {
+      "cta": "Inscribirme"
+    },
+    "full": {
+      "cta": "Unirme a la lista de espera",
+      "count_one": "{{count}} persona ya está en la lista de espera",
+      "count_other": "{{count}} personas ya están en la lista de espera"
+    },
+    "registered": {
+      "title": "Estás inscrito",
+      "body": "Aparta la fecha — ahí nos vemos.",
+      "cancelCta": "Cancelar mi lugar"
+    },
+    "waitlisted": {
+      "title": "Estás en la lista de espera",
+      "body": "Te pasaremos a inscrito automáticamente si se abre un lugar.",
+      "leaveCta": "Salir de la lista de espera"
+    },
+    "processing": "Procesando…",
+    "loadError": {
+      "title": "No pudimos revisar tu inscripción",
+      "body": "Algo salió mal. Revisa tu conexión e inténtalo de nuevo.",
+      "retry": "Intentar de nuevo"
+    },
+    "announced": {
+      "registered": "Quedaste inscrito en este evento.",
+      "waitlisted": "Te agregamos a la lista de espera.",
+      "cancelled": "Tu inscripción fue cancelada."
+    },
+    "errors": {
+      "not_authenticated": "Inicia sesión e inténtalo de nuevo.",
+      "event_not_found": "Ya no pudimos encontrar este evento.",
+      "event_cancelled": "Este evento fue cancelado.",
+      "event_ended": "Este evento ya ocurrió.",
+      "event_started": "Este evento ya comenzó, así que no se puede cancelar en línea.",
+      "profile_incomplete": "Completa tu perfil antes de inscribirte.",
+      "under_18": "Los eventos de Karma son para miembros de 18 años o más.",
+      "waiver_required": "Acepta el aviso de responsabilidad vigente antes de inscribirte.",
+      "offline": "Estás sin conexión. Revisa tu conexión e inténtalo de nuevo.",
+      "unknown": "Algo salió mal. Por favor inténtalo de nuevo."
+    }
+  },
+  "myEvents": {
+    "title": "Mis eventos",
+    "subtitle": "Todo lo que has inscrito, en un solo lugar.",
+    "upcomingHeading": "Próximos",
+    "pastHeading": "Pasados",
+    "statusRegistered": "Inscrito",
+    "statusWaitlisted": "En lista de espera",
+    "cancel": "Cancelar",
+    "loading": "Cargando tus eventos…",
+    "error": {
+      "title": "No pudimos cargar tus eventos",
+      "body": "Algo salió mal. Revisa tu conexión e inténtalo de nuevo.",
+      "retry": "Intentar de nuevo"
+    },
+    "empty": {
+      "title": "Todavía no te has inscrito a nada",
+      "body": "Explora los próximos partidos y carreras comunitarias y aparta tu lugar.",
+      "cta": "Ver eventos"
+    }
+  },
+  "homeTeaser": {
+    "bring": "Trae: {{item}}",
+    "empty": "Pronto agregaremos nuevos eventos — vuelve a revisar en un rato.",
+    "error": "No pudimos cargar los próximos eventos en este momento."
   },
   "notFound": {
     "title": "No encontramos ese evento",

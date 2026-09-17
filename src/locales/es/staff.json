@@ -1,0 +1,126 @@
+{
+  "meta": {
+    "title": "Personal — Karma"
+  },
+  "categories": {
+    "soccer": "Fútbol",
+    "basketball": "Básquetbol",
+    "running": "Carrera",
+    "volleyball": "Vóleibol"
+  },
+  "home": {
+    "eyebrow": "Área de personal",
+    "title": "Los partidos de hoy",
+    "subtitle": "Elige un evento para registrar asistencia, agregar a alguien sin registro previo, o hacer cambios.",
+    "newEvent": "Nuevo evento",
+    "justCreated": "Evento creado.",
+    "justUpdated": "Cambios guardados.",
+    "loading": "Cargando eventos…",
+    "loadError": "No pudimos cargar los eventos. Revisa tu conexión e intenta de nuevo.",
+    "offlineError": "Estás sin conexión. Conéctate e intenta de nuevo para cargar los eventos.",
+    "retry": "Intentar de nuevo",
+    "empty": {
+      "title": "Todavía no hay eventos",
+      "body": "Agrega tu primer evento para que el personal pueda empezar a recibir registros y check-ins.",
+      "cta": "Agregar un evento"
+    },
+    "upcomingSection": "Hoy y próximos",
+    "noUpcoming": "No hay nada programado. Agrega un evento para empezar.",
+    "pastSection": "Eventos pasados",
+    "noPast": "Todavía no hay eventos pasados.",
+    "todayBadge": "Hoy",
+    "recurringBadge": "Semanal",
+    "cancelledBadge": "Cancelado",
+    "counts": {
+      "loading": "Cargando conteos…",
+      "summary": "{{registered}} registrados · {{capacity}} cupos en total",
+      "waitlist_one": "{{count}} en lista de espera",
+      "waitlist_other": "{{count}} en lista de espera"
+    },
+    "scanCta": "Escanear check-ins",
+    "walkInCta": "Agregar sin registro previo",
+    "editCta": "Editar evento"
+  },
+  "form": {
+    "eyebrow": "Área de personal",
+    "title": {
+      "create": "Nuevo evento",
+      "edit": "Editar evento"
+    },
+    "loading": "Cargando evento…",
+    "notFound": {
+      "title": "No encontramos ese evento",
+      "body": "Puede que se haya eliminado, o el enlace esté mal.",
+      "cta": "Volver al inicio de personal"
+    },
+    "loadError": {
+      "title": "No pudimos cargar este evento",
+      "body": "Algo salió mal al conectar con la base de datos. Revisa tu conexión e intenta de nuevo."
+    },
+    "status": {
+      "scheduled": "Programado",
+      "cancelled": "Cancelado"
+    },
+    "actions": {
+      "cancelEvent": "Cancelar este evento",
+      "reactivateEvent": "Reactivar evento",
+      "cancelConfirm": "¿Cancelar este evento? Aparecerá como cancelado en todas partes, pero se conserva el historial de asistencia.",
+      "reactivateConfirm": "¿Reactivar este evento y volver a mostrarlo?",
+      "discard": "Volver al inicio de personal",
+      "save": "Guardar evento",
+      "saving": "Guardando…"
+    },
+    "errors": {
+      "permission": "Tu cuenta no tiene permiso de personal para guardar eventos.",
+      "offline": "Estás sin conexión. Conéctate e intenta de nuevo.",
+      "generic": "Algo salió mal al guardar este evento. Intenta de nuevo.",
+      "summary_one": "Corrige {{count}} campo antes de guardar.",
+      "summary_other": "Corrige {{count}} campos antes de guardar.",
+      "required": "Este campo es obligatorio.",
+      "slugRequired": "Escribe una dirección web para este evento.",
+      "slugFormat": "Usa solo letras minúsculas, números y guiones, hasta 100 caracteres.",
+      "dateInvalid": "Escribe una fecha y hora válidas.",
+      "endBeforeStart": "La hora de fin debe ser posterior a la hora de inicio.",
+      "capacityRange": "La capacidad debe ser un número entero entre 1 y 10,000."
+    },
+    "sections": {
+      "title": "Título del evento",
+      "schedule": "Fecha, hora y sede",
+      "description": "Descripción",
+      "donation": "Detalles de la donación"
+    },
+    "fields": {
+      "titleEn": { "label": "Título (inglés)" },
+      "titleEs": { "label": "Título (español)" },
+      "slug": {
+        "label": "Dirección web",
+        "hint": "Enlace público: karma.org/events/{{slug}}. Solo letras minúsculas, números y guiones."
+      },
+      "category": {
+        "label": "Deporte",
+        "placeholder": "Elige un deporte"
+      },
+      "capacity": {
+        "label": "Capacidad",
+        "hint": "Aumentar la capacidad mueve automáticamente a personas de la lista de espera a los cupos disponibles."
+      },
+      "timezoneNote": "Las horas usan la zona horaria de tu dispositivo ({{zone}}).",
+      "startsAt": { "label": "Inicio" },
+      "endsAt": { "label": "Fin" },
+      "venueName": { "label": "Nombre de la sede" },
+      "venueAddress": { "label": "Dirección de la sede" },
+      "recurring": {
+        "label": "Este es un evento recurrente",
+        "hint": "Lo marca como parte de una serie semanal. Cada fecha sigue siendo su propio evento para editar y cancelar."
+      },
+      "descriptionEn": { "label": "Descripción (inglés)" },
+      "descriptionEs": { "label": "Descripción (español)" },
+      "donationItemEn": { "groupLabel": "Artículo para traer", "label": "Artículo para traer (inglés)" },
+      "donationItemEs": { "label": "Artículo para traer (español)" },
+      "donationSuggestionEn": { "groupLabel": "Donación sugerida", "label": "Donación sugerida (inglés)" },
+      "donationSuggestionEs": { "label": "Donación sugerida (español)" },
+      "beneficiaryEn": { "groupLabel": "Beneficiario", "label": "Beneficiario (inglés)" },
+      "beneficiaryEs": { "label": "Beneficiario (español)" }
+    }
+  }
+}
