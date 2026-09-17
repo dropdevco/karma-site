@@ -5,6 +5,15 @@ import { VitePWA } from 'vite-plugin-pwa'
 import path from 'node:path'
 
 export default defineConfig({
+  // Vite only inlines env vars into the client bundle when their name matches
+  // one of these prefixes. SUPABASE_URL/SUPABASE_ANON_KEY are stored without
+  // the conventional VITE_ prefix in Vercel, so that prefix is added here to
+  // match. This does not make either value private — this is a static SPA
+  // with no server, so the Supabase client (and therefore this URL and key)
+  // runs entirely in the visitor's browser regardless of naming. Never store
+  // a value that must stay secret (e.g. a service role key) under a prefix
+  // listed here.
+  envPrefix: ['VITE_', 'SUPABASE_'],
   plugins: [
     react(),
     tailwindcss(),
