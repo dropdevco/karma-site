@@ -9,9 +9,18 @@
     "about": "Nosotros",
     "beneficiaries": "A Quién Ayudamos",
     "join": "Únete a Karma",
+    "signIn": "Inicia sesión",
     "menu": "Menú",
     "close": "Cerrar menú",
     "skipToContent": "Saltar al contenido principal"
+  },
+  "account": {
+    "accountLabel": "Cuenta",
+    "myQR": "Mi código QR",
+    "myEvents": "Mis eventos",
+    "account": "Mi cuenta",
+    "staffArea": "Área de staff",
+    "signOut": "Cerrar sesión"
   },
   "lang": {
     "switch": "Cambiar idioma",

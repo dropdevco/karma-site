@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react'
-import { Link, NavLink } from 'react-router-dom'
+import { Link, NavLink, useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { Logo } from './Logo'
 import { LanguageToggle } from './LanguageToggle'
 import { ButtonLink } from '@/components/ui/Button'
 import { cn } from '@/lib/cn'
+import { useAuth } from '@/auth/useAuth'
+import { AccountMenu } from './AccountMenu'
 
 const links = [
   { to: '/events', key: 'nav.events' },
@@ -12,8 +14,81 @@ const links = [
   { to: '/beneficiaries', key: 'nav.beneficiaries' },
 ] as const
 
+function MobileAccountMenuItems({
+  onClose,
+}: {
+  onClose: () => void
+}) {
+  const { t } = useTranslation()
+  const { status, signOut } = useAuth()
+  const navigate = useNavigate()
+
+  const handleSignOut = async () => {
+    onClose()
+    await signOut()
+    navigate('/')
+  }
+
+  return (
+    <>
+      <button
+        type="button"
+        onClick={() => {
+          onClose()
+          navigate('/account/qr')
+        }}
+        className="w-full text-left rounded-xl px-4 py-3 text-base font-medium text-karma-ink hover:bg-karma-tan-light transition-colors"
+      >
+        {t('account.myQR')}
+      </button>
+      <button
+        type="button"
+        onClick={() => {
+          onClose()
+          navigate('/account/events')
+        }}
+        className="w-full text-left rounded-xl px-4 py-3 text-base font-medium text-karma-ink hover:bg-karma-tan-light transition-colors"
+      >
+        {t('account.myEvents')}
+      </button>
+      <button
+        type="button"
+        onClick={() => {
+          onClose()
+          navigate('/account')
+        }}
+        className="w-full text-left rounded-xl px-4 py-3 text-base font-medium text-karma-ink hover:bg-karma-tan-light transition-colors"
+      >
+        {t('account.account')}
+      </button>
+      {(status?.role === 'staff' || status?.role === 'admin') && (
+        <button
+          type="button"
+          onClick={() => {
+            onClose()
+            navigate('/staff')
+          }}
+          className="w-full text-left rounded-xl px-4 py-3 text-base font-medium text-karma-ink hover:bg-karma-tan-light transition-colors"
+        >
+          {t('account.staffArea')}
+        </button>
+      )}
+      <div className="mt-3 pt-3 border-t border-karma-tan-dark/20">
+        <button
+          type="button"
+          onClick={handleSignOut}
+          className="w-full text-left rounded-xl px-4 py-3 text-base font-medium text-karma-ink hover:bg-karma-tan-light transition-colors"
+        >
+          {t('account.signOut')}
+        </button>
+      </div>
+    </>
+  )
+}
+
 export function Header() {
   const { t } = useTranslation()
+  const { loading, session } = useAuth()
   const [open, setOpen] = useState(false)
 
   useEffect(() => {
@@ -51,9 +126,20 @@ export function Header() {
 
         <div className="hidden items-center gap-3 md:flex">
           <LanguageToggle />
-          <ButtonLink to="/join" size="sm">
-            {t('cta.join')}
-          </ButtonLink>
+          {loading ? (
+            <div className="h-9 w-20 rounded-full bg-karma-tan-light" />
+          ) : session ? (
+            <AccountMenu />
+          ) : (
+            <>
+              <ButtonLink to="/signin" variant="ghost" size="sm">
+                {t('nav.signIn')}
+              </ButtonLink>
+              <ButtonLink to="/join" size="sm">
+                {t('cta.join')}
+              </ButtonLink>
+            </>
+          )}
         </div>
 
         <button
@@ -108,11 +194,33 @@ export function Header() {
                 {t(link.key)}
               </NavLink>
             ))}
+
+            {loading ? (
+              <div className="mt-3 h-10 w-24 rounded-full bg-karma-tan-light" />
+            ) : session ? (
+              <MobileAccountMenuItems onClose={() => setOpen(false)} />
+            ) : (
+              <NavLink
+                to="/signin"
+                onClick={() => setOpen(false)}
+                className={({ isActive }) =>
+                  cn(
+                    'rounded-xl px-4 py-3 text-base font-medium block',
+                    isActive ? 'bg-karma-tan-light text-karma-ink' : 'text-karma-ink-soft',
+                  )
+                }
+              >
+                {t('nav.signIn')}
+              </NavLink>
+            )}
+
             <div className="mt-3 flex items-center justify-between gap-3">
               <LanguageToggle />
-              <ButtonLink to="/join" className="flex-1" onClick={() => setOpen(false)}>
-                {t('cta.join')}
-              </ButtonLink>
+              {!loading && !session && (
+                <ButtonLink to="/join" className="flex-1" onClick={() => setOpen(false)}>
+                  {t('cta.join')}
+                </ButtonLink>
+              )}
             </div>
           </nav>
         </div>
