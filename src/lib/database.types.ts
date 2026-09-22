@@ -93,7 +93,6 @@ export type CheckInRow = {
   synced_at: string
   checked_in_by: string | null
   client_scan_id: string
-  brought_donation: boolean
 }
 
 export type WalkInRow = {
@@ -168,10 +167,42 @@ export type CheckInScanPayload = {
   scanned_at: string
   qr_window?: number
   qr_sig?: string
-  brought_donation?: boolean
+  category_ids?: string[]
 }
 
-export type PointEventKind = 'attendance' | 'donation_bonus' | 'adjustment'
+export type PointEventKind = 'attendance' | 'category_bonus' | 'manual' | 'adjustment'
+
+export type EventPointCategoryRow = {
+  id: string
+  event_id: string
+  label_en: string
+  label_es: string
+  points: number
+  sort_order: number
+  created_at: string
+}
+
+export type EventPointCategoryInsert = Pick<EventPointCategoryRow, 'event_id' | 'label_en' | 'label_es' | 'points'> &
+  Partial<Pick<EventPointCategoryRow, 'sort_order'>>
+
+export type EventPointCategoryUpdate = Partial<
+  Pick<EventPointCategoryRow, 'label_en' | 'label_es' | 'points' | 'sort_order'>
+>
+
+export type CheckInPointCategoryRow = {
+  id: string
+  check_in_id: string
+  category_id: string | null
+  label_en: string
+  label_es: string
+  points_awarded: number
+  created_at: string
+}
+
+export type MemberSearchResult = {
+  user_id: string
+  full_name: string
+}
 
 export type PointEventRow = {
   id: string
@@ -188,7 +219,6 @@ export type PointEventRow = {
 export type PointsConfigRow = {
   id: true
   attendance_points: number
-  donation_bonus_points: number
   updated_at: string
 }
 
@@ -310,6 +340,18 @@ export type Database = {
         Update: DonationUpdate
         Relationships: []
       }
+      event_point_categories: {
+        Row: EventPointCategoryRow
+        Insert: EventPointCategoryInsert
+        Update: EventPointCategoryUpdate
+        Relationships: []
+      }
+      check_in_point_categories: {
+        Row: CheckInPointCategoryRow
+        Insert: Partial<CheckInPointCategoryRow>
+        Update: Partial<CheckInPointCategoryRow>
+        Relationships: []
+      }
     }
     Views: Record<string, never>
     Functions: {
@@ -331,6 +373,8 @@ export type Database = {
       get_leaderboard: { Args: { p_limit?: number }; Returns: LeaderboardRow[] }
       get_my_points_summary: { Args: Record<string, never>; Returns: MyPointsSummary | null }
       void_point_event: { Args: { p_point_event_id: string; p_note?: string }; Returns: undefined }
+      award_manual_points: { Args: { p_user_id: string; p_points: number; p_note: string }; Returns: undefined }
+      search_members: { Args: { p_query?: string }; Returns: MemberSearchResult[] }
     }
     Enums: Record<string, never>
     CompositeTypes: Record<string, never>

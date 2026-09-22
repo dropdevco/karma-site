@@ -39,9 +39,14 @@ export function StaffHome() {
             </h1>
             <p className="mt-2 max-w-xl text-karma-ink-soft">{t('home.subtitle')}</p>
           </div>
-          <ButtonLink to="/staff/events/new" variant="primary" size="md">
-            {t('home.newEvent')}
-          </ButtonLink>
+          <div className="flex flex-wrap gap-2">
+            <ButtonLink to="/staff/points" variant="secondary" size="md">
+              {t('home.awardPoints')}
+            </ButtonLink>
+            <ButtonLink to="/staff/events/new" variant="primary" size="md">
+              {t('home.newEvent')}
+            </ButtonLink>
+          </div>
         </div>
 
         {confirmation && (

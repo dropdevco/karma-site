@@ -13,6 +13,7 @@
     "title": "Los partidos de hoy",
     "subtitle": "Elige un evento para registrar asistencia, agregar a alguien sin registro previo, o hacer cambios.",
     "newEvent": "Nuevo evento",
+    "awardPoints": "Otorgar puntos",
     "justCreated": "Evento creado.",
     "justUpdated": "Cambios guardados.",
     "loading": "Cargando eventos…",
@@ -122,6 +123,44 @@
       "donationSuggestionEs": { "label": "Donación sugerida (español)" },
       "beneficiaryEn": { "groupLabel": "Beneficiario", "label": "Beneficiario (inglés)" },
       "beneficiaryEs": { "label": "Beneficiario (español)" }
+    }
+  },
+  "pointCategories": {
+    "heading": "Categorías de puntos",
+    "intro": "Formas adicionales y opcionales para que los miembros ganen puntos en este evento, además de los puntos que todos reciben solo por registrar asistencia.",
+    "createNotice": "Primero guarda este evento. Una vez que exista, podrás agregar categorías de puntos aquí.",
+    "loading": "Cargando categorías de puntos…",
+    "empty": "Todavía no hay categorías de puntos. Agrega una abajo.",
+    "list": {
+      "pointsLabel": "{{points}} pts"
+    },
+    "add": {
+      "legend": "Agregar una categoría",
+      "labelEn": "Etiqueta (inglés)",
+      "labelEs": "Etiqueta (español)",
+      "points": "Puntos",
+      "submit": "Agregar categoría",
+      "submitting": "Agregando…"
+    },
+    "edit": {
+      "legend": "Editar categoría",
+      "editCta": "Editar",
+      "save": "Guardar",
+      "saving": "Guardando…",
+      "cancel": "Cancelar",
+      "deleteCta": "Eliminar",
+      "deleting": "Eliminando…",
+      "deleteConfirm": "¿Eliminar esta categoría? Esto no se puede deshacer, pero los check-ins pasados que ya la usaron conservan sus puntos."
+    },
+    "errors": {
+      "required": "Este campo es obligatorio.",
+      "labelTooLong": "Usa 120 caracteres o menos.",
+      "pointsRange": "Los puntos deben ser un número entero entre 1 y 10,000.",
+      "permission": "Tu cuenta no tiene permiso de personal para administrar categorías de puntos.",
+      "offline": "Estás sin conexión. Conéctate e intenta de nuevo.",
+      "loadFailed": "No pudimos cargar las categorías de puntos. Revisa tu conexión e intenta de nuevo.",
+      "saveFailed": "Algo salió mal al guardar esta categoría. Intenta de nuevo.",
+      "deleteFailed": "Algo salió mal al eliminar esta categoría. Intenta de nuevo."
     }
   }
 }

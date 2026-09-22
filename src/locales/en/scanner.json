@@ -5,9 +5,9 @@
     "scan": "Scan QR",
     "manual": "Manual check-in"
   },
-  "donationToggle": {
-    "off": "Mark next check-in as a donation",
-    "on": "Donation armed — next check-in gets the bonus"
+  "categories": {
+    "heading": "Extra points for this check-in",
+    "hint": "Select any that apply, then scan or check in — they reset after each person."
   },
   "camera": {
     "notStarted": "Camera is off.",
@@ -38,10 +38,6 @@
     "accepted": {
       "label": "Checked in"
     },
-    "acceptedWithDonation": {
-      "label": "Checked in"
-    },
-    "donationBadge": "Brought a donation",
     "already": {
       "label": "Already checked in"
     },

@@ -2,11 +2,14 @@ import { useCallback, useEffect, useRef, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { verifyQrToken } from '@/lib/qrToken'
-import type { EventRosterRow } from '@/lib/database.types'
+import type { EventPointCategoryRow, EventRosterRow } from '@/lib/database.types'
+import { toLanguageCode } from '@/components/events/dateUtils'
 import {
+  cachePointCategories,
   cacheRoster,
   cacheWaiverVersion,
   enqueueScan,
+  getCachedPointCategories,
   getCachedRoster,
   scannedUserIdsForEvent,
   type CachedRoster,
@@ -43,21 +46,23 @@ function useOnlineStatus(): boolean {
 
 export function StaffScanner() {
   const { id: eventId } = useParams<{ id: string }>()
-  const { t } = useTranslation('scanner')
+  const { t, i18n } = useTranslation('scanner')
+  const lang = toLanguageCode(i18n.resolvedLanguage)
   const online = useOnlineStatus()
 
   const [roster, setRoster] = useState<CachedRoster | null>(null)
   const [checkedInUserIds, setCheckedInUserIds] = useState<Set<string>>(new Set())
   const [downloading, setDownloading] = useState(false)
   const [downloadError, setDownloadError] = useState<string | null>(null)
+  const [categories, setCategories] = useState<EventPointCategoryRow[]>([])
 
   const [cameraOn, setCameraOn] = useState(false)
   const [manualMode, setManualMode] = useState(false)
   const [outcome, setOutcome] = useState<ScanOutcome | null>(null)
   const lastScanRef = useRef<{ raw: string; at: number } | null>(null)
-  // Applies to the very next check-in only, then resets — staff taps it on
-  // right as the person in front of them hands over a donation.
-  const [nextIsDonation, setNextIsDonation] = useState(false)
+  // Applies to the very next check-in only, then resets — staff selects
+  // whichever apply right as the person in front of them hands things over.
+  const [selectedCategoryIds, setSelectedCategoryIds] = useState<Set<string>>(new Set())
 
   const sync = useSyncQueue(eventId ?? '')
 
@@ -80,6 +85,9 @@ export function StaffScanner() {
     void getCachedRoster(eventId).then((cached) => {
       if (!cancelled && cached) void applyRoster(cached)
     })
+    void getCachedPointCategories(eventId).then((cached) => {
+      if (!cancelled) setCategories(cached)
+    })
     return () => {
       cancelled = true
     }
@@ -90,14 +98,22 @@ export function StaffScanner() {
     setDownloading(true)
     setDownloadError(null)
     try {
-      const [rosterRes, waiverRes] = await Promise.all([
+      const [rosterRes, waiverRes, categoriesRes] = await Promise.all([
         supabase.rpc('get_event_roster', { p_event_id: eventId }),
         supabase.rpc('current_waiver_version'),
+        supabase
+          .from('event_point_categories')
+          .select('*')
+          .eq('event_id', eventId)
+          .order('sort_order'),
       ])
       if (rosterRes.error) throw new Error(rosterRes.error.message)
       const waiverVersion = waiverRes.data ?? ''
       const cached = await cacheRoster(eventId, rosterRes.data ?? [], waiverVersion)
       if (waiverVersion) await cacheWaiverVersion(waiverVersion)
+      const categoryRows = categoriesRes.data ?? []
+      await cachePointCategories(eventId, categoryRows)
+      setCategories(categoryRows)
       await applyRoster(cached)
     } catch {
       setDownloadError('failed')
@@ -106,17 +122,32 @@ export function StaffScanner() {
     }
   }, [eventId, applyRoster])
 
-  const showOutcome = useCallback((kind: ScanOutcomeKind, member?: EventRosterRow) => {
-    setOutcome({ kind, member, at: Date.now() })
-    if (kind === 'accepted' || kind === 'acceptedWithDonation') playAccepted()
-    else if (kind === 'already') playAlready()
-    else playRejected()
+  const showOutcome = useCallback(
+    (kind: ScanOutcomeKind, member?: EventRosterRow, categoryLabels?: string[]) => {
+      setOutcome({ kind, member, categoryLabels, at: Date.now() })
+      if (kind === 'accepted') playAccepted()
+      else if (kind === 'already') playAlready()
+      else playRejected()
+    },
+    [],
+  )
+
+  const toggleCategory = useCallback((categoryId: string) => {
+    setSelectedCategoryIds((prev) => {
+      const next = new Set(prev)
+      if (next.has(categoryId)) next.delete(categoryId)
+      else next.add(categoryId)
+      return next
+    })
   }, [])
 
   const acceptMember = useCallback(
     async (member: EventRosterRow, method: 'qr' | 'manual', qrWindow?: number, qrSig?: string) => {
       if (!eventId) return
-      const broughtDonation = nextIsDonation
+      const categoryIds = [...selectedCategoryIds]
+      const categoryLabels = categories
+        .filter((c) => selectedCategoryIds.has(c.id))
+        .map((c) => (lang === 'es' ? c.label_es : c.label_en))
       await enqueueScan({
         clientScanId: crypto.randomUUID(),
         eventId,
@@ -126,14 +157,14 @@ export function StaffScanner() {
         scannedAt: new Date().toISOString(),
         qrWindow,
         qrSig,
-        broughtDonation,
+        categoryIds,
       })
       setCheckedInUserIds((prev) => new Set(prev).add(member.user_id))
-      setNextIsDonation(false)
-      showOutcome(broughtDonation ? 'acceptedWithDonation' : 'accepted', member)
+      setSelectedCategoryIds(new Set())
+      showOutcome('accepted', member, categoryLabels)
       void sync.syncNow()
     },
-    [eventId, nextIsDonation, showOutcome, sync],
+    [eventId, selectedCategoryIds, categories, lang, showOutcome, sync],
   )
 
   const handleDecode = useCallback(
@@ -215,18 +246,33 @@ export function StaffScanner() {
               />
             </div>
 
-            <button
-              type="button"
-              onClick={() => setNextIsDonation((v) => !v)}
-              aria-pressed={nextIsDonation}
-              className={`mt-5 flex w-full items-center justify-center gap-2 rounded-card border-2 py-3 font-display text-base font-bold transition-colors ${
-                nextIsDonation
-                  ? 'border-karma-red bg-karma-red text-white'
-                  : 'border-karma-tan-dark/40 bg-karma-tan-light text-karma-ink'
-              }`}
-            >
-              {nextIsDonation ? t('donationToggle.on') : t('donationToggle.off')}
-            </button>
+            {categories.length > 0 && (
+              <div className="mt-5 rounded-card border-2 border-karma-tan-dark/30 bg-white p-4">
+                <p className="font-display text-sm font-bold text-karma-ink">{t('categories.heading')}</p>
+                <p className="mt-0.5 text-xs text-karma-ink-soft">{t('categories.hint')}</p>
+                <div className="mt-3 flex flex-wrap gap-2">
+                  {categories.map((category) => {
+                    const label = lang === 'es' ? category.label_es : category.label_en
+                    const selected = selectedCategoryIds.has(category.id)
+                    return (
+                      <button
+                        key={category.id}
+                        type="button"
+                        onClick={() => toggleCategory(category.id)}
+                        aria-pressed={selected}
+                        className={`min-h-11 rounded-full border-2 px-4 py-2 text-sm font-bold transition-colors ${
+                          selected
+                            ? 'border-karma-red bg-karma-red text-white'
+                            : 'border-karma-tan-dark/40 bg-karma-tan-light text-karma-ink'
+                        }`}
+                      >
+                        {label} · +{category.points}
+                      </button>
+                    )
+                  })}
+                </div>
+              </div>
+            )}
 
             <div className="mt-3 flex gap-2">
               <Button

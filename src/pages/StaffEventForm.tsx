@@ -5,6 +5,7 @@ import { useTranslation } from 'react-i18next'
 import { Section, Container, Eyebrow } from '@/components/ui/Section'
 import { Button, ButtonLink } from '@/components/ui/Button'
 import { BilingualPair } from '@/components/staff/BilingualPair'
+import { EventPointCategoriesEditor } from '@/components/staff/EventPointCategoriesEditor'
 import { StaffTextField } from '@/components/staff/StaffTextField'
 import { StaffTextArea } from '@/components/staff/StaffTextArea'
 import { StaffSelectField } from '@/components/staff/StaffSelectField'
@@ -542,6 +543,17 @@ export function StaffEventForm() {
             </Button>
           </div>
         </form>
+
+        {isEdit && id ? (
+          <div className="mt-10">
+            <EventPointCategoriesEditor eventId={id} />
+          </div>
+        ) : (
+          <div className="mt-10 rounded-card border border-karma-tan-dark/25 bg-white p-5">
+            <h2 className="font-display text-base font-bold text-karma-ink">{t('pointCategories.heading')}</h2>
+            <p className="mt-1 text-sm text-karma-ink-soft">{t('pointCategories.createNotice')}</p>
+          </div>
+        )}
       </Container>
     </Section>
   )

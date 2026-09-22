@@ -1,0 +1,51 @@
+{
+  "eyebrow": "Staff area",
+  "title": "Award points",
+  "subtitle": "Give a member points directly for a contribution that didn't happen at a check-in — or apply a correction.",
+  "member": {
+    "label": "Member",
+    "placeholder": "Search by name…",
+    "change": "Change",
+    "searching": "Searching…",
+    "noResults": "No members match that search.",
+    "offline": "You're offline. Connect to search members.",
+    "searchError": "We couldn't search members. Try again.",
+    "required": "Search for and select a member.",
+    "notFound": "We couldn't find that member. Search again and pick them from the list."
+  },
+  "points": {
+    "label": "Points",
+    "directionLabel": "Give or deduct points",
+    "give": "Give",
+    "deduct": "Deduct",
+    "amountLabel": "Amount",
+    "amountPlaceholder": "0",
+    "amountRequired": "Enter an amount greater than zero."
+  },
+  "note": {
+    "label": "Note",
+    "hint": "Explain what this award is for — this is the only record of why it happened.",
+    "placeholder": "e.g. Helped set up the field before the 9am game",
+    "required": "Add a note explaining this award."
+  },
+  "summary": {
+    "give": "{{name}} will receive +{{points}} points.",
+    "deduct": "{{name}} will lose {{points}} points. This is a correction."
+  },
+  "confirmation": {
+    "given": "Gave {{name}} +{{points}} points.",
+    "deducted": "Deducted {{points}} points from {{name}}."
+  },
+  "submit": {
+    "cta": "Award points",
+    "saving": "Saving…"
+  },
+  "errors": {
+    "forbidden": "Your account doesn't have staff permission to award points.",
+    "offline": "You're offline. Connect and try again.",
+    "generic": "Something went wrong saving this award. Try again."
+  },
+  "recent": {
+    "heading": "Awarded this session"
+  }
+}

@@ -13,6 +13,7 @@
     "title": "Today's games",
     "subtitle": "Pick an event to check people in, add a walk-in, or make changes.",
     "newEvent": "New event",
+    "awardPoints": "Award points",
     "justCreated": "Event created.",
     "justUpdated": "Event changes saved.",
     "loading": "Loading events…",
@@ -122,6 +123,44 @@
       "donationSuggestionEs": { "label": "Suggested donation (Spanish)" },
       "beneficiaryEn": { "groupLabel": "Beneficiary", "label": "Beneficiary (English)" },
       "beneficiaryEs": { "label": "Beneficiary (Spanish)" }
+    }
+  },
+  "pointCategories": {
+    "heading": "Point categories",
+    "intro": "Optional extra ways members can earn points at this event, on top of the points everyone gets just for checking in.",
+    "createNotice": "Save this event first. Once it exists, you'll be able to add point categories here.",
+    "loading": "Loading point categories…",
+    "empty": "No point categories yet. Add one below.",
+    "list": {
+      "pointsLabel": "{{points}} pts"
+    },
+    "add": {
+      "legend": "Add a category",
+      "labelEn": "Label (English)",
+      "labelEs": "Label (Spanish)",
+      "points": "Points",
+      "submit": "Add category",
+      "submitting": "Adding…"
+    },
+    "edit": {
+      "legend": "Edit category",
+      "editCta": "Edit",
+      "save": "Save",
+      "saving": "Saving…",
+      "cancel": "Cancel",
+      "deleteCta": "Delete",
+      "deleting": "Deleting…",
+      "deleteConfirm": "Delete this category? This can't be undone, but past check-ins that already used it keep their points."
+    },
+    "errors": {
+      "required": "This field is required.",
+      "labelTooLong": "Keep this to 120 characters or fewer.",
+      "pointsRange": "Points must be a whole number between 1 and 10,000.",
+      "permission": "Your account doesn't have staff permission to manage point categories.",
+      "offline": "You're offline. Connect and try again.",
+      "loadFailed": "We couldn't load point categories. Check your connection and try again.",
+      "saveFailed": "Something went wrong saving this category. Try again.",
+      "deleteFailed": "Something went wrong deleting this category. Try again."
     }
   }
 }

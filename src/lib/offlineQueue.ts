@@ -13,7 +13,7 @@
  * response never reached the device) can never double-count a check-in.
  */
 import Dexie, { type Table } from 'dexie'
-import type { CheckInMethod, EventRosterRow, EventRow } from './database.types'
+import type { CheckInMethod, EventPointCategoryRow, EventRosterRow, EventRow } from './database.types'
 
 export type QueueStatus = 'pending' | 'synced' | 'duplicate' | 'rejected'
 
@@ -21,6 +21,13 @@ export interface CachedRoster {
   eventId: string
   rows: EventRosterRow[]
   waiverVersion: string
+  cachedAt: string
+}
+
+/** The event's configurable extra ways to earn points, cached alongside the roster so the check-in categories work offline too. */
+export interface CachedPointCategories {
+  eventId: string
+  categories: EventPointCategoryRow[]
   cachedAt: string
 }
 
@@ -46,7 +53,7 @@ export interface QueuedScan {
   scannedAt: string
   qrWindow?: number
   qrSig?: string
-  broughtDonation?: boolean
+  categoryIds?: string[]
   status: QueueStatus
   rejectReason?: string
   queuedAt: string
@@ -77,6 +84,7 @@ class OfflineQueueDb extends Dexie {
   waiverVersions!: Table<CachedWaiverVersion, string>
   scans!: Table<QueuedScan, string>
   walkIns!: Table<QueuedWalkIn, string>
+  pointCategories!: Table<CachedPointCategories, string>
 
   constructor() {
     super('karma-offline-queue')
@@ -86,6 +94,9 @@ class OfflineQueueDb extends Dexie {
       waiverVersions: 'key',
       scans: 'clientScanId, eventId, status',
       walkIns: 'id, eventId, status',
+    })
+    this.version(2).stores({
+      pointCategories: 'eventId',
     })
   }
 }
@@ -114,6 +125,15 @@ export async function cacheEvent(event: EventRow): Promise<void> {
 
 export function getCachedEvent(eventId: string): Promise<CachedEvent | undefined> {
   return offlineDb.events.get(eventId)
+}
+
+export async function cachePointCategories(eventId: string, categories: EventPointCategoryRow[]): Promise<void> {
+  await offlineDb.pointCategories.put({ eventId, categories, cachedAt: new Date().toISOString() })
+}
+
+export async function getCachedPointCategories(eventId: string): Promise<EventPointCategoryRow[]> {
+  const row = await offlineDb.pointCategories.get(eventId)
+  return row?.categories ?? []
 }
 
 export async function cacheWaiverVersion(version: string): Promise<void> {

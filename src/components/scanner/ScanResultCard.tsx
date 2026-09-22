@@ -4,7 +4,6 @@ import type { ScanOutcome } from './types'
 
 const STYLES: Record<ScanOutcome['kind'], string> = {
   accepted: 'border-green-700 bg-green-50',
-  acceptedWithDonation: 'border-green-700 bg-green-50',
   already: 'border-amber-600 bg-amber-50',
   stale: 'border-orange-600 bg-orange-50',
   invalid: 'border-karma-red bg-karma-red-soft',
@@ -42,11 +41,14 @@ export function ScanResultCard({ outcome }: { outcome: ScanOutcome }) {
                 {t('result.registrationStatus.unregistered')}
               </span>
             )}
-            {outcome.kind === 'acceptedWithDonation' && (
-              <span className="rounded-full bg-karma-red px-3 py-1 text-sm font-semibold text-white">
-                {t('result.donationBadge')}
+            {outcome.categoryLabels?.map((label) => (
+              <span
+                key={label}
+                className="rounded-full bg-karma-red px-3 py-1 text-sm font-semibold text-white"
+              >
+                {label}
               </span>
-            )}
+            ))}
           </div>
           {member.emergency_contact_name && (
             <div className="mt-4 rounded-xl bg-white/60 p-3">

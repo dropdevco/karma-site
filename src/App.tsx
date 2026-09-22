@@ -45,6 +45,7 @@ const StaffWalkIn = lazy(() =>
 const StaffDonations = lazy(() =>
   import('@/pages/StaffDonations').then((m) => ({ default: m.StaffDonations })),
 )
+const StaffPoints = lazy(() => import('@/pages/StaffPoints').then((m) => ({ default: m.StaffPoints })))
 
 function RouteFallback() {
   return <div className="min-h-[60vh]" aria-hidden="true" />
@@ -88,6 +89,7 @@ const router = createBrowserRouter([
       { path: '/staff/events/:id/scan', element: staffPage(<StaffScanner />) },
       { path: '/staff/events/:id/walk-in', element: staffPage(<StaffWalkIn />) },
       { path: '/staff/events/:id/donations', element: staffPage(<StaffDonations />) },
+      { path: '/staff/points', element: staffPage(<StaffPoints />) },
 
       { path: '*', element: page(<NotFound />) },
     ],

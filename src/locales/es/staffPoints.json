@@ -1,0 +1,51 @@
+{
+  "eyebrow": "Área de personal",
+  "title": "Otorgar puntos",
+  "subtitle": "Dale puntos a un miembro directamente por una contribución que no ocurrió en un check-in, o aplica una corrección.",
+  "member": {
+    "label": "Miembro",
+    "placeholder": "Buscar por nombre…",
+    "change": "Cambiar",
+    "searching": "Buscando…",
+    "noResults": "Ningún miembro coincide con esa búsqueda.",
+    "offline": "Estás sin conexión. Conéctate para buscar miembros.",
+    "searchError": "No pudimos buscar miembros. Intenta de nuevo.",
+    "required": "Busca y selecciona un miembro.",
+    "notFound": "No encontramos a ese miembro. Busca de nuevo y elígelo de la lista."
+  },
+  "points": {
+    "label": "Puntos",
+    "directionLabel": "Dar o descontar puntos",
+    "give": "Dar",
+    "deduct": "Descontar",
+    "amountLabel": "Cantidad",
+    "amountPlaceholder": "0",
+    "amountRequired": "Escribe una cantidad mayor que cero."
+  },
+  "note": {
+    "label": "Nota",
+    "hint": "Explica para qué es este otorgamiento: es el único registro de por qué ocurrió.",
+    "placeholder": "ej. Ayudó a preparar la cancha antes del partido de las 9am",
+    "required": "Agrega una nota que explique este otorgamiento."
+  },
+  "summary": {
+    "give": "{{name}} recibirá +{{points}} puntos.",
+    "deduct": "{{name}} perderá {{points}} puntos. Esto es una corrección."
+  },
+  "confirmation": {
+    "given": "Se le dieron +{{points}} puntos a {{name}}.",
+    "deducted": "Se descontaron {{points}} puntos a {{name}}."
+  },
+  "submit": {
+    "cta": "Otorgar puntos",
+    "saving": "Guardando…"
+  },
+  "errors": {
+    "forbidden": "Tu cuenta no tiene permiso de personal para otorgar puntos.",
+    "offline": "Estás sin conexión. Conéctate e intenta de nuevo.",
+    "generic": "Algo salió mal al guardar este otorgamiento. Intenta de nuevo."
+  },
+  "recent": {
+    "heading": "Otorgados en esta sesión"
+  }
+}

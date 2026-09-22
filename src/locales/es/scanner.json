@@ -5,9 +5,9 @@
     "scan": "Escanear QR",
     "manual": "Registro manual"
   },
-  "donationToggle": {
-    "off": "Marcar el próximo registro como donación",
-    "on": "Donación activada — el próximo registro suma el bono"
+  "categories": {
+    "heading": "Puntos extra para este registro",
+    "hint": "Selecciona los que apliquen y luego escanea o registra — se reinician después de cada persona."
   },
   "camera": {
     "notStarted": "La cámara está apagada.",
@@ -38,10 +38,6 @@
     "accepted": {
       "label": "Registrado"
     },
-    "acceptedWithDonation": {
-      "label": "Registrado"
-    },
-    "donationBadge": "Trajo una donación",
     "already": {
       "label": "Ya estaba registrado"
     },
