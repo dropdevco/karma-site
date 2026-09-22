@@ -100,9 +100,14 @@ export function StaffEventCard({ entry, variant }: StaffEventCardProps) {
         </div>
       )}
 
-      <ButtonLink to={`/staff/events/${event.id}/edit`} variant="ghost" size="sm" className="self-start">
-        {t('home.editCta')}
-      </ButtonLink>
+      <div className="flex flex-wrap gap-2">
+        <ButtonLink to={`/staff/events/${event.id}/edit`} variant="ghost" size="sm" className="self-start">
+          {t('home.editCta')}
+        </ButtonLink>
+        <ButtonLink to={`/staff/events/${event.id}/donations`} variant="ghost" size="sm" className="self-start">
+          {t('home.donationsCta')}
+        </ButtonLink>
+      </div>
     </div>
   )
 }

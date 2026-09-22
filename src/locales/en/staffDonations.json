@@ -1,0 +1,77 @@
+{
+  "header": {
+    "eyebrow": "Staff area",
+    "loading": "Loading event…",
+    "notFound": {
+      "title": "We couldn't find that event",
+      "body": "It may have been removed, or the link is wrong.",
+      "cta": "Back to staff home"
+    },
+    "loadError": {
+      "title": "We couldn't load this event",
+      "body": "Something went wrong reaching the database. Check your connection and try again.",
+      "offlineBody": "You're offline. Connect and try again.",
+      "cta": "Back to staff home"
+    }
+  },
+  "subtitle": "Record what came in at this event overall — not per attendee.",
+  "form": {
+    "addTitle": "Log a new donation",
+    "editTitle": "Edit donation",
+    "fields": {
+      "description": {
+        "label": "Description",
+        "placeholder": "e.g. Canned food"
+      },
+      "quantity": {
+        "label": "Quantity"
+      },
+      "unit": {
+        "label": "Unit",
+        "placeholder": "e.g. cans, items, $"
+      },
+      "beneficiaryGroup": "Beneficiary (optional)",
+      "beneficiaryHint": "Which partner organization this specific drop-off is earmarked for, if it's different from the event's default.",
+      "beneficiaryEn": {
+        "label": "Beneficiary (English)"
+      },
+      "beneficiaryEs": {
+        "label": "Beneficiary (Spanish)"
+      },
+      "notes": {
+        "label": "Notes",
+        "placeholder": "Anything else worth recording"
+      }
+    },
+    "errors": {
+      "required": "Enter a description.",
+      "quantityInvalid": "Quantity must be zero or a positive number.",
+      "offline": "You're offline. Connect and try again.",
+      "permission": "Your account doesn't have staff permission to log donations.",
+      "unknown": "Something went wrong saving this donation. Try again."
+    },
+    "save": "Log donation",
+    "saving": "Saving…",
+    "saveChanges": "Save changes",
+    "savingChanges": "Saving…",
+    "cancel": "Cancel",
+    "savedConfirmation": "Donation logged."
+  },
+  "list": {
+    "title": "Logged so far",
+    "loading": "Loading donations…",
+    "loadError": "We couldn't load donations for this event. Check your connection and try again.",
+    "offlineError": "You're offline. Connect and try again to load donations.",
+    "retry": "Try again",
+    "empty": "Nothing logged yet. Use the form above to add the first entry.",
+    "quantityUnit": "{{quantity}} {{unit}}",
+    "beneficiaryLabel": "For: {{beneficiary}}",
+    "notesLabel": "Notes: {{notes}}",
+    "loggedAt": "Logged {{when}}",
+    "editCta": "Edit"
+  },
+  "totals": {
+    "title": "Running totals",
+    "item": "{{total}} {{unit}}"
+  }
+}

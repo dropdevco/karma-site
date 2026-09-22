@@ -39,7 +39,8 @@
     },
     "scanCta": "Scan check-ins",
     "walkInCta": "Add a walk-in",
-    "editCta": "Edit event"
+    "editCta": "Edit event",
+    "donationsCta": "Log donations"
   },
   "form": {
     "eyebrow": "Staff area",

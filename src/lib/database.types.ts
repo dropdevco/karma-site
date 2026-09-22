@@ -20,6 +20,7 @@ export type ProfileRow = {
   reminder_opt_in: boolean
   heard_about: HeardAboutKey | null
   role: MemberRole
+  leaderboard_visible: boolean
   created_at: string
   updated_at: string
 }
@@ -38,6 +39,7 @@ export type ProfileUpdate = Partial<
     | 'photo_consent'
     | 'reminder_opt_in'
     | 'heard_about'
+    | 'leaderboard_visible'
   >
 >
 
@@ -91,6 +93,7 @@ export type CheckInRow = {
   synced_at: string
   checked_in_by: string | null
   client_scan_id: string
+  brought_donation: boolean
 }
 
 export type WalkInRow = {
@@ -165,7 +168,62 @@ export type CheckInScanPayload = {
   scanned_at: string
   qr_window?: number
   qr_sig?: string
+  brought_donation?: boolean
 }
+
+export type PointEventKind = 'attendance' | 'donation_bonus' | 'adjustment'
+
+export type PointEventRow = {
+  id: string
+  user_id: string
+  event_id: string | null
+  kind: PointEventKind
+  points: number
+  note: string | null
+  reverses: string | null
+  created_by: string | null
+  created_at: string
+}
+
+export type PointsConfigRow = {
+  id: true
+  attendance_points: number
+  donation_bonus_points: number
+  updated_at: string
+}
+
+export type LeaderboardRow = {
+  user_id: string
+  full_name: string
+  total_points: number
+  rank: number
+}
+
+export type MyPointsSummary = {
+  total_points: number
+  rank: number | null
+  member_count: number
+}
+
+export type DonationRow = {
+  id: string
+  event_id: string
+  description: string
+  quantity: number | null
+  unit: string | null
+  beneficiary_en: string | null
+  beneficiary_es: string | null
+  notes: string | null
+  logged_by: string | null
+  logged_at: string
+}
+
+export type DonationInsert = Pick<DonationRow, 'event_id' | 'description'> &
+  Partial<Pick<DonationRow, 'quantity' | 'unit' | 'beneficiary_en' | 'beneficiary_es' | 'notes'>>
+
+export type DonationUpdate = Partial<
+  Pick<DonationRow, 'description' | 'quantity' | 'unit' | 'beneficiary_en' | 'beneficiary_es' | 'notes'>
+>
 
 export type WalkInPayload = {
   id: string
@@ -234,6 +292,24 @@ export type Database = {
         Update: Partial<WaiverAcceptanceRow>
         Relationships: []
       }
+      point_events: {
+        Row: PointEventRow
+        Insert: Partial<PointEventRow>
+        Update: Partial<PointEventRow>
+        Relationships: []
+      }
+      points_config: {
+        Row: PointsConfigRow
+        Insert: Partial<PointsConfigRow>
+        Update: Partial<PointsConfigRow>
+        Relationships: []
+      }
+      donations: {
+        Row: DonationRow
+        Insert: DonationInsert
+        Update: DonationUpdate
+        Relationships: []
+      }
     }
     Views: Record<string, never>
     Functions: {
@@ -252,6 +328,9 @@ export type Database = {
       sync_walk_ins: { Args: { p_walk_ins: WalkInPayload[] }; Returns: SyncWalkInResult[] }
       is_staff: { Args: Record<string, never>; Returns: boolean }
       is_admin: { Args: Record<string, never>; Returns: boolean }
+      get_leaderboard: { Args: { p_limit?: number }; Returns: LeaderboardRow[] }
+      get_my_points_summary: { Args: Record<string, never>; Returns: MyPointsSummary | null }
+      void_point_event: { Args: { p_point_event_id: string; p_note?: string }; Returns: undefined }
     }
     Enums: Record<string, never>
     CompositeTypes: Record<string, never>

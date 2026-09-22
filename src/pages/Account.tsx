@@ -1,11 +1,12 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
 import { Section, Container, Eyebrow } from '@/components/ui/Section'
 import { Button, ButtonLink } from '@/components/ui/Button'
 import { useAuth } from '@/auth/useAuth'
 import { useLanguage } from '@/hooks/useLanguage'
-import type { ActivityKey, HeardAboutKey, ProfileUpdate } from '@/lib/database.types'
+import { supabase } from '@/lib/supabase'
+import type { ActivityKey, HeardAboutKey, MyPointsSummary, ProfileUpdate } from '@/lib/database.types'
 import { ProfileForm } from '@/components/join/ProfileForm'
 import { WaiverStep } from '@/components/join/WaiverStep'
 import { profileToFormValues } from '@/components/join/formTypes'
@@ -30,6 +31,24 @@ export function Account() {
   const navigate = useNavigate()
   const { loading, user, profile, status, stale, refresh, signOut } = useAuth()
   const [editing, setEditing] = useState(false)
+  const [points, setPoints] = useState<MyPointsSummary | null>(null)
+  const [leaderboardVisible, setLeaderboardVisible] = useState(profile?.leaderboard_visible ?? true)
+  const [savingVisibility, setSavingVisibility] = useState(false)
+
+  useEffect(() => {
+    setLeaderboardVisible(profile?.leaderboard_visible ?? true)
+  }, [profile?.leaderboard_visible])
+
+  useEffect(() => {
+    if (!user) return
+    let cancelled = false
+    void supabase.rpc('get_my_points_summary').then(({ data }) => {
+      if (!cancelled && data) setPoints(data)
+    })
+    return () => {
+      cancelled = true
+    }
+  }, [user])
 
   if (loading || !user || !profile || !status) return <Waiting />
 
@@ -38,6 +57,20 @@ export function Account() {
   async function handleSignOut() {
     await signOut()
     navigate('/', { replace: true })
+  }
+
+  async function handleToggleLeaderboardVisible() {
+    const next = !leaderboardVisible
+    setLeaderboardVisible(next)
+    setSavingVisibility(true)
+    try {
+      await updateMyProfile(currentUser.id, { leaderboard_visible: next })
+      await refresh()
+    } catch {
+      setLeaderboardVisible(!next)
+    } finally {
+      setSavingVisibility(false)
+    }
   }
 
   async function handleProfileSave(patch: ProfileUpdate) {
@@ -72,6 +105,27 @@ export function Account() {
           >
             {t('account.staleNotice')}
           </p>
+        )}
+
+        {points && (
+          <div className="mt-8 flex flex-wrap items-center justify-between gap-4 rounded-card border border-karma-tan-dark/30 bg-karma-red-soft p-6 shadow-sm sm:p-8">
+            <div>
+              <p className="font-display text-sm font-bold uppercase tracking-[0.2em] text-karma-red">
+                {t('account.points.eyebrow')}
+              </p>
+              <p className="mt-1 font-display text-4xl font-extrabold text-karma-ink">
+                {t('account.points.total', { points: points.total_points })}
+              </p>
+              {points.rank && (
+                <p className="mt-1 text-sm text-karma-ink-soft">
+                  {t('account.points.rank', { rank: points.rank, members: points.member_count })}
+                </p>
+              )}
+            </div>
+            <ButtonLink to="/leaderboard" variant="secondary" size="md">
+              {t('account.points.viewLeaderboard')}
+            </ButtonLink>
+          </div>
         )}
 
         <div className="mt-8 rounded-card border border-karma-tan-dark/30 bg-white p-6 shadow-sm sm:p-10">
@@ -169,6 +223,17 @@ export function Account() {
               )}
             </dl>
           )}
+
+          <label className="mt-6 flex min-h-11 items-center gap-3 border-t border-karma-tan-dark/20 pt-6 text-sm text-karma-ink">
+            <input
+              type="checkbox"
+              checked={leaderboardVisible}
+              disabled={savingVisibility}
+              onChange={() => void handleToggleLeaderboardVisible()}
+              className="size-5 rounded border-karma-tan-dark/50"
+            />
+            {t('account.points.leaderboardOptIn')}
+          </label>
         </div>
 
         <div className="mt-8 rounded-card border border-karma-tan-dark/30 bg-white p-6 shadow-sm sm:p-10">

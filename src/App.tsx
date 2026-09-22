@@ -28,6 +28,9 @@ const AuthCallback = lazy(() =>
 const Account = lazy(() => import('@/pages/Account').then((m) => ({ default: m.Account })))
 const AccountQr = lazy(() => import('@/pages/AccountQr').then((m) => ({ default: m.AccountQr })))
 const MyEvents = lazy(() => import('@/pages/MyEvents').then((m) => ({ default: m.MyEvents })))
+const Leaderboard = lazy(() =>
+  import('@/pages/Leaderboard').then((m) => ({ default: m.Leaderboard })),
+)
 
 const StaffHome = lazy(() => import('@/pages/StaffHome').then((m) => ({ default: m.StaffHome })))
 const StaffEventForm = lazy(() =>
@@ -38,6 +41,9 @@ const StaffScanner = lazy(() =>
 )
 const StaffWalkIn = lazy(() =>
   import('@/pages/StaffWalkIn').then((m) => ({ default: m.StaffWalkIn })),
+)
+const StaffDonations = lazy(() =>
+  import('@/pages/StaffDonations').then((m) => ({ default: m.StaffDonations })),
 )
 
 function RouteFallback() {
@@ -74,12 +80,14 @@ const router = createBrowserRouter([
       { path: '/account', element: memberPage(<Account />) },
       { path: '/account/qr', element: memberPage(<AccountQr />) },
       { path: '/account/events', element: memberPage(<MyEvents />) },
+      { path: '/leaderboard', element: memberPage(<Leaderboard />) },
 
       { path: '/staff', element: staffPage(<StaffHome />) },
       { path: '/staff/events/new', element: staffPage(<StaffEventForm />) },
       { path: '/staff/events/:id/edit', element: staffPage(<StaffEventForm />) },
       { path: '/staff/events/:id/scan', element: staffPage(<StaffScanner />) },
       { path: '/staff/events/:id/walk-in', element: staffPage(<StaffWalkIn />) },
+      { path: '/staff/events/:id/donations', element: staffPage(<StaffDonations />) },
 
       { path: '*', element: page(<NotFound />) },
     ],

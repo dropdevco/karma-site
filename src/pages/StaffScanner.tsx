@@ -55,6 +55,9 @@ export function StaffScanner() {
   const [manualMode, setManualMode] = useState(false)
   const [outcome, setOutcome] = useState<ScanOutcome | null>(null)
   const lastScanRef = useRef<{ raw: string; at: number } | null>(null)
+  // Applies to the very next check-in only, then resets — staff taps it on
+  // right as the person in front of them hands over a donation.
+  const [nextIsDonation, setNextIsDonation] = useState(false)
 
   const sync = useSyncQueue(eventId ?? '')
 
@@ -105,7 +108,7 @@ export function StaffScanner() {
 
   const showOutcome = useCallback((kind: ScanOutcomeKind, member?: EventRosterRow) => {
     setOutcome({ kind, member, at: Date.now() })
-    if (kind === 'accepted') playAccepted()
+    if (kind === 'accepted' || kind === 'acceptedWithDonation') playAccepted()
     else if (kind === 'already') playAlready()
     else playRejected()
   }, [])
@@ -113,6 +116,7 @@ export function StaffScanner() {
   const acceptMember = useCallback(
     async (member: EventRosterRow, method: 'qr' | 'manual', qrWindow?: number, qrSig?: string) => {
       if (!eventId) return
+      const broughtDonation = nextIsDonation
       await enqueueScan({
         clientScanId: crypto.randomUUID(),
         eventId,
@@ -122,12 +126,14 @@ export function StaffScanner() {
         scannedAt: new Date().toISOString(),
         qrWindow,
         qrSig,
+        broughtDonation,
       })
       setCheckedInUserIds((prev) => new Set(prev).add(member.user_id))
-      showOutcome('accepted', member)
+      setNextIsDonation(false)
+      showOutcome(broughtDonation ? 'acceptedWithDonation' : 'accepted', member)
       void sync.syncNow()
     },
-    [eventId, showOutcome, sync],
+    [eventId, nextIsDonation, showOutcome, sync],
   )
 
   const handleDecode = useCallback(
@@ -209,7 +215,20 @@ export function StaffScanner() {
               />
             </div>
 
-            <div className="mt-5 flex gap-2">
+            <button
+              type="button"
+              onClick={() => setNextIsDonation((v) => !v)}
+              aria-pressed={nextIsDonation}
+              className={`mt-5 flex w-full items-center justify-center gap-2 rounded-card border-2 py-3 font-display text-base font-bold transition-colors ${
+                nextIsDonation
+                  ? 'border-karma-red bg-karma-red text-white'
+                  : 'border-karma-tan-dark/40 bg-karma-tan-light text-karma-ink'
+              }`}
+            >
+              {nextIsDonation ? t('donationToggle.on') : t('donationToggle.off')}
+            </button>
+
+            <div className="mt-3 flex gap-2">
               <Button
                 className="flex-1"
                 variant={manualMode ? 'secondary' : 'primary'}

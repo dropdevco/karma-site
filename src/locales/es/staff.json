@@ -39,7 +39,8 @@
     },
     "scanCta": "Escanear check-ins",
     "walkInCta": "Agregar sin registro previo",
-    "editCta": "Editar evento"
+    "editCta": "Editar evento",
+    "donationsCta": "Registrar donaciones"
   },
   "form": {
     "eyebrow": "Área de personal",

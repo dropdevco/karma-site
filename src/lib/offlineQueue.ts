@@ -46,6 +46,7 @@ export interface QueuedScan {
   scannedAt: string
   qrWindow?: number
   qrSig?: string
+  broughtDonation?: boolean
   status: QueueStatus
   rejectReason?: string
   queuedAt: string

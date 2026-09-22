@@ -1,0 +1,54 @@
+{
+  "eyebrow": "Leaderboard",
+  "title": "Who's in the lead?",
+  "subtitle": "Every check-in and every donation adds up. See where you stand for the season.",
+  "loading": "Loading the leaderboard…",
+  "error": {
+    "title": "We couldn't load the leaderboard",
+    "body": "Something went wrong reaching the standings. Check your connection and try again.",
+    "offlineTitle": "You're offline",
+    "offlineBody": "Connect to the internet to see the current standings.",
+    "retry": "Try again"
+  },
+  "empty": {
+    "title": "The board is just getting started",
+    "body": "No one has points yet this season — be the first to check in at an event and claim the top spot.",
+    "cta": "Browse events"
+  },
+  "live": {
+    "updated": "Leaderboard updated."
+  },
+  "you": "You",
+  "pointsCount_one": "{{count}} point",
+  "pointsCount_other": "{{count}} points",
+  "podium": {
+    "ariaLabel": "Top three standings",
+    "first": "1st place",
+    "second": "2nd place",
+    "third": "3rd place"
+  },
+  "list": {
+    "ariaLabel": "Remaining standings"
+  },
+  "myStanding": {
+    "eyebrow": "Your standing",
+    "rank": "#{{rank}} of {{members}} members",
+    "rankUnavailable": "Your rank will show up here as soon as points are recorded.",
+    "note": "This always reflects your own points and rank, whether or not your name shows on the board below."
+  },
+  "prize": {
+    "eyebrow": "Season prize",
+    "headline": "Top of the board when the season ends wins $400, cash.",
+    "body": "Every check-in and every donation you bring adds points toward the title. Full contest rules and eligibility are on our terms page.",
+    "rulesLink": "Read the official rules"
+  },
+  "howItWorks": {
+    "heading": "How points work",
+    "checkIn": "Check in at an event and you earn points just for showing up.",
+    "donationBonus": "Bring a donation for that week's beneficiary and earn a bonus on top."
+  },
+  "cta": {
+    "body": "Not on the board yet? Every event is a chance to climb it.",
+    "button": "Browse events"
+  }
+}

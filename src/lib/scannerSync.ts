@@ -66,6 +66,7 @@ async function syncScanBatch(batch: QueuedScan[]): Promise<{ synced: number; rej
     scanned_at: s.scannedAt,
     qr_window: s.qrWindow,
     qr_sig: s.qrSig,
+    brought_donation: s.broughtDonation,
   }))
 
   const { data, error } = await supabase.rpc('sync_check_ins', { p_scans: payload })

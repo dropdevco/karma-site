@@ -1,0 +1,54 @@
+{
+  "eyebrow": "Tabla de posiciones",
+  "title": "¿Quién va a la cabeza?",
+  "subtitle": "Cada asistencia y cada donación suman. Mira cómo vas en la temporada.",
+  "loading": "Cargando la tabla de posiciones…",
+  "error": {
+    "title": "No pudimos cargar la tabla de posiciones",
+    "body": "Algo salió mal al consultar las posiciones. Revisa tu conexión e inténtalo de nuevo.",
+    "offlineTitle": "Estás sin conexión",
+    "offlineBody": "Conéctate a internet para ver las posiciones actuales.",
+    "retry": "Intentar de nuevo"
+  },
+  "empty": {
+    "title": "La tabla apenas está comenzando",
+    "body": "Todavía nadie tiene puntos esta temporada — sé el primero en registrar tu asistencia a un evento y toma el primer lugar.",
+    "cta": "Ver eventos"
+  },
+  "live": {
+    "updated": "Tabla de posiciones actualizada."
+  },
+  "you": "Tú",
+  "pointsCount_one": "{{count}} punto",
+  "pointsCount_other": "{{count}} puntos",
+  "podium": {
+    "ariaLabel": "Los tres primeros lugares",
+    "first": "Primer lugar",
+    "second": "Segundo lugar",
+    "third": "Tercer lugar"
+  },
+  "list": {
+    "ariaLabel": "Resto de las posiciones"
+  },
+  "myStanding": {
+    "eyebrow": "Tu posición",
+    "rank": "#{{rank}} de {{members}} miembros",
+    "rankUnavailable": "Tu posición aparecerá aquí en cuanto se registren tus puntos.",
+    "note": "Esto siempre refleja tus propios puntos y tu posición, aparezca o no tu nombre en la tabla de abajo."
+  },
+  "prize": {
+    "eyebrow": "Premio de la temporada",
+    "headline": "Quien vaya a la cabeza al terminar la temporada se lleva $400 en efectivo.",
+    "body": "Cada asistencia y cada donación que traigas suman puntos hacia el título. Las reglas oficiales del concurso y los requisitos de elegibilidad están en nuestra página de términos.",
+    "rulesLink": "Leer las reglas oficiales"
+  },
+  "howItWorks": {
+    "heading": "Cómo funcionan los puntos",
+    "checkIn": "Registra tu asistencia a un evento y ganas puntos solo por presentarte.",
+    "donationBonus": "Trae una donación para el beneficiario de esa semana y gana puntos extra."
+  },
+  "cta": {
+    "body": "¿Todavía no apareces en la tabla? Cada evento es una oportunidad para subir.",
+    "button": "Ver eventos"
+  }
+}

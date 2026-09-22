@@ -1,0 +1,77 @@
+{
+  "header": {
+    "eyebrow": "Área de personal",
+    "loading": "Cargando evento…",
+    "notFound": {
+      "title": "No encontramos ese evento",
+      "body": "Puede que se haya eliminado, o el enlace esté mal.",
+      "cta": "Volver al inicio de personal"
+    },
+    "loadError": {
+      "title": "No pudimos cargar este evento",
+      "body": "Algo salió mal al conectar con la base de datos. Revisa tu conexión e intenta de nuevo.",
+      "offlineBody": "Estás sin conexión. Conéctate e intenta de nuevo.",
+      "cta": "Volver al inicio de personal"
+    }
+  },
+  "subtitle": "Registra lo que se recolectó en este evento en total, no por asistente.",
+  "form": {
+    "addTitle": "Registrar una nueva donación",
+    "editTitle": "Editar donación",
+    "fields": {
+      "description": {
+        "label": "Descripción",
+        "placeholder": "ej. Comida enlatada"
+      },
+      "quantity": {
+        "label": "Cantidad"
+      },
+      "unit": {
+        "label": "Unidad",
+        "placeholder": "ej. latas, artículos, $"
+      },
+      "beneficiaryGroup": "Beneficiario (opcional)",
+      "beneficiaryHint": "A qué organización asociada está destinada esta entrega en particular, si es distinta del beneficiario por defecto del evento.",
+      "beneficiaryEn": {
+        "label": "Beneficiario (inglés)"
+      },
+      "beneficiaryEs": {
+        "label": "Beneficiario (español)"
+      },
+      "notes": {
+        "label": "Notas",
+        "placeholder": "Cualquier otro detalle que valga la pena registrar"
+      }
+    },
+    "errors": {
+      "required": "Escribe una descripción.",
+      "quantityInvalid": "La cantidad debe ser cero o un número positivo.",
+      "offline": "Estás sin conexión. Conéctate e intenta de nuevo.",
+      "permission": "Tu cuenta no tiene permiso de personal para registrar donaciones.",
+      "unknown": "Algo salió mal al guardar esta donación. Intenta de nuevo."
+    },
+    "save": "Registrar donación",
+    "saving": "Guardando…",
+    "saveChanges": "Guardar cambios",
+    "savingChanges": "Guardando…",
+    "cancel": "Cancelar",
+    "savedConfirmation": "Donación registrada."
+  },
+  "list": {
+    "title": "Registrado hasta ahora",
+    "loading": "Cargando donaciones…",
+    "loadError": "No pudimos cargar las donaciones de este evento. Revisa tu conexión e intenta de nuevo.",
+    "offlineError": "Estás sin conexión. Conéctate e intenta de nuevo para cargar las donaciones.",
+    "retry": "Intentar de nuevo",
+    "empty": "Todavía no hay nada registrado. Usa el formulario de arriba para agregar la primera entrada.",
+    "quantityUnit": "{{quantity}} {{unit}}",
+    "beneficiaryLabel": "Para: {{beneficiary}}",
+    "notesLabel": "Notas: {{notes}}",
+    "loggedAt": "Registrado {{when}}",
+    "editCta": "Editar"
+  },
+  "totals": {
+    "title": "Totales acumulados",
+    "item": "{{total}} {{unit}}"
+  }
+}
