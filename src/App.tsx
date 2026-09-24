@@ -25,6 +25,12 @@ const SignIn = lazy(() => import('@/pages/SignIn').then((m) => ({ default: m.Sig
 const AuthCallback = lazy(() =>
   import('@/pages/AuthCallback').then((m) => ({ default: m.AuthCallback })),
 )
+const ForgotPassword = lazy(() =>
+  import('@/pages/ForgotPassword').then((m) => ({ default: m.ForgotPassword })),
+)
+const ResetPassword = lazy(() =>
+  import('@/pages/ResetPassword').then((m) => ({ default: m.ResetPassword })),
+)
 const Account = lazy(() => import('@/pages/Account').then((m) => ({ default: m.Account })))
 const AccountQr = lazy(() => import('@/pages/AccountQr').then((m) => ({ default: m.AccountQr })))
 const MyEvents = lazy(() => import('@/pages/MyEvents').then((m) => ({ default: m.MyEvents })))
@@ -75,6 +81,8 @@ const router = createBrowserRouter([
       { path: '/join', element: page(<Join />) },
       { path: '/signin', element: page(<SignIn />) },
       { path: '/auth/callback', element: page(<AuthCallback />) },
+      { path: '/forgot-password', element: page(<ForgotPassword />) },
+      { path: '/reset-password', element: page(<ResetPassword />) },
       { path: '/privacy', element: page(<Privacy />) },
       { path: '/terms', element: page(<Terms />) },
 

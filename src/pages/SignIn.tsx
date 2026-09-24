@@ -1,9 +1,12 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { Section, Container, Eyebrow } from '@/components/ui/Section'
 import { useAuth } from '@/auth/useAuth'
 import { EmailOtpFlow } from '@/components/auth/EmailOtpFlow'
+import { PasswordSignInForm } from '@/components/auth/PasswordSignInForm'
+
+type Mode = 'password' | 'code'
 
 interface SignInLocationState {
   returnTo?: string
@@ -16,6 +19,7 @@ export function SignIn() {
   const location = useLocation()
   const state = location.state as SignInLocationState | null
   const returnTo = state?.returnTo || '/account'
+  const [mode, setMode] = useState<Mode>('password')
 
   useEffect(() => {
     if (!loading && session) {
@@ -31,7 +35,20 @@ export function SignIn() {
           <h1 className="mt-3 text-3xl font-bold text-karma-ink sm:text-4xl">{t('signIn.heading')}</h1>
           <p className="mt-2 text-karma-ink-soft">{t('signIn.subhead')}</p>
           <div className="mt-8">
-            <EmailOtpFlow onVerified={() => navigate(returnTo, { replace: true })} />
+            {mode === 'password' ? (
+              <PasswordSignInForm onSignedIn={() => navigate(returnTo, { replace: true })} />
+            ) : (
+              <EmailOtpFlow onVerified={() => navigate(returnTo, { replace: true })} />
+            )}
+          </div>
+          <div className="mt-6 text-center">
+            <button
+              type="button"
+              onClick={() => setMode((current) => (current === 'password' ? 'code' : 'password'))}
+              className="min-h-11 font-display text-sm font-semibold text-karma-red underline-offset-2 hover:underline"
+            >
+              {mode === 'password' ? t('signIn.useCodeInstead') : t('signIn.usePasswordInstead')}
+            </button>
           </div>
         </div>
       </Container>

@@ -28,6 +28,22 @@
     "heading": "Let's start with your email",
     "intro": "We'll send you a one-time code to verify it's you before you create your profile."
   },
+  "password": {
+    "heading": "Create a password",
+    "intro": "Set a password now so you can sign in directly next time, without waiting for an emailed code.",
+    "newLabel": "New password",
+    "confirmLabel": "Confirm password",
+    "submit": "Continue",
+    "submitting": "Saving…",
+    "errors": {
+      "tooShort": "Use at least {{count}} characters.",
+      "mismatch": "Those passwords don't match.",
+      "weakPassword": "Choose a stronger password and try again.",
+      "rateLimited": "Too many attempts. Please wait a moment and try again.",
+      "offline": "You're offline. Check your connection and try again.",
+      "generic": "Something went wrong. Please try again."
+    }
+  },
   "profile": {
     "heading": "Tell us about you",
     "intro": "Takes about two minutes. Fields marked * are required.",

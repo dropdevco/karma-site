@@ -4,6 +4,7 @@ import { Section, Container } from '@/components/ui/Section'
 import { useAuth } from '@/auth/useAuth'
 import type { ProfileUpdate } from '@/lib/database.types'
 import { EmailOtpFlow } from '@/components/auth/EmailOtpFlow'
+import { SetPasswordStep } from '@/components/auth/SetPasswordStep'
 import { WhyJoinSection } from '@/components/join/WhyJoinSection'
 import { ProfileForm } from '@/components/join/ProfileForm'
 import { WaiverStep } from '@/components/join/WaiverStep'
@@ -11,7 +12,7 @@ import { SuccessPanel } from '@/components/join/SuccessPanel'
 import { profileToFormValues } from '@/components/join/formTypes'
 import { acceptCurrentWaiver, getMyAccountStatus, updateMyProfile } from '@/components/join/accountApi'
 
-type Step = 'email' | 'profile' | 'waiver' | 'success'
+type Step = 'email' | 'password' | 'profile' | 'waiver' | 'success'
 
 function Waiting() {
   return <div className="min-h-[40vh]" aria-busy="true" />
@@ -70,7 +71,17 @@ export function Join() {
                 <h2 className="text-2xl font-bold text-karma-ink sm:text-3xl">{t('emailStep.heading')}</h2>
                 <p className="mt-2 text-karma-ink-soft">{t('emailStep.intro')}</p>
                 <div className="mt-8">
-                  <EmailOtpFlow onVerified={() => setStep('profile')} />
+                  <EmailOtpFlow onVerified={() => setStep('password')} />
+                </div>
+              </>
+            )}
+
+            {step === 'password' && (
+              <>
+                <h2 className="text-2xl font-bold text-karma-ink sm:text-3xl">{t('password.heading')}</h2>
+                <p className="mt-2 text-karma-ink-soft">{t('password.intro')}</p>
+                <div className="mt-8">
+                  <SetPasswordStep onDone={() => setStep('profile')} />
                 </div>
               </>
             )}

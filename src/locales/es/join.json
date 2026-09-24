@@ -28,6 +28,22 @@
     "heading": "Empecemos con tu correo",
     "intro": "Te enviaremos un código de un solo uso para verificar que eres tú antes de crear tu perfil."
   },
+  "password": {
+    "heading": "Crea una contraseña",
+    "intro": "Crea una contraseña ahora para poder iniciar sesión directamente la próxima vez, sin esperar un código por correo.",
+    "newLabel": "Contraseña nueva",
+    "confirmLabel": "Confirmar contraseña",
+    "submit": "Continuar",
+    "submitting": "Guardando…",
+    "errors": {
+      "tooShort": "Usa al menos {{count}} caracteres.",
+      "mismatch": "Las contraseñas no coinciden.",
+      "weakPassword": "Elige una contraseña más segura e inténtalo de nuevo.",
+      "rateLimited": "Demasiados intentos. Espera un momento e inténtalo de nuevo.",
+      "offline": "Estás sin conexión. Revisa tu internet e inténtalo de nuevo.",
+      "generic": "Algo salió mal. Inténtalo de nuevo."
+    }
+  },
   "profile": {
     "heading": "Cuéntanos sobre ti",
     "intro": "Toma unos dos minutos. Los campos con * son obligatorios.",

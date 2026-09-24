@@ -11,6 +11,7 @@ import { ProfileForm } from '@/components/join/ProfileForm'
 import { WaiverStep } from '@/components/join/WaiverStep'
 import { profileToFormValues } from '@/components/join/formTypes'
 import { acceptCurrentWaiver, updateMyProfile } from '@/components/join/accountApi'
+import { PasswordSection } from '@/components/account/PasswordSection'
 
 function Waiting() {
   return <div className="min-h-[50vh]" aria-busy="true" />
@@ -258,6 +259,8 @@ export function Account() {
             </>
           )}
         </div>
+
+        <PasswordSection />
 
         <div className="mt-8 grid gap-4 sm:grid-cols-2">
           <ButtonLink to="/account/qr" variant="secondary" size="lg">
