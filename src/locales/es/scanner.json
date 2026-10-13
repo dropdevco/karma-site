@@ -76,6 +76,17 @@
     "syncing": "Sincronizando…",
     "lastAttemptFailed": "No se pudo conectar con el servidor en el último intento. Sigue en cola y lo reintentará automáticamente.",
     "rejectedHeading": "Necesita atención",
+    "rejectedHelp": "Estos NO se registraron: el servidor los rechazó, así que no se guardó la asistencia ni los puntos. Corrige la causa o usa Registro manual, y luego descártalos.",
+    "reasons": {
+      "outside_event_window": "No registrado: el evento no está en curso. Se acepta asistencia desde 3 horas antes del inicio hasta 3 horas después del final.",
+      "member_not_found": "No registrado: no se encontró la cuenta de esta persona.",
+      "event_not_found": "No registrado: este evento ya no existe.",
+      "stale_code": "No registrado: el código QR había caducado. Pídele que muestre el código actual.",
+      "bad_signature": "No registrado: el código QR no se pudo verificar. Pídele que lo actualice.",
+      "missing_signature": "No registrado: el código QR no se pudo verificar. Pídele que lo actualice.",
+      "malformed": "No registrado: no se pudo leer el código.",
+      "error": "No registrado: algo falló en el servidor. Intenta de nuevo o usa Registro manual."
+    },
     "dismiss": "Descartar"
   },
   "walkIn": {

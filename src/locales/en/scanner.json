@@ -76,6 +76,17 @@
     "syncing": "Syncing…",
     "lastAttemptFailed": "Couldn't reach the server on the last attempt. Still queued — it'll retry automatically.",
     "rejectedHeading": "Needs attention",
+    "rejectedHelp": "These were NOT recorded: the server refused them, so no check-in or points were saved. Fix the cause or use Manual, then dismiss.",
+    "reasons": {
+      "outside_event_window": "Not recorded: the event isn't happening now. Check-ins are accepted from 3 hours before the start until 3 hours after the end.",
+      "member_not_found": "Not recorded: this person's account wasn't found.",
+      "event_not_found": "Not recorded: this event no longer exists.",
+      "stale_code": "Not recorded: the QR code had expired. Ask them to show the live code.",
+      "bad_signature": "Not recorded: the QR code didn't verify. Ask them to refresh their code.",
+      "missing_signature": "Not recorded: the QR code didn't verify. Ask them to refresh their code.",
+      "malformed": "Not recorded: the code couldn't be read.",
+      "error": "Not recorded: something went wrong on the server. Try again or use Manual."
+    },
     "dismiss": "Dismiss"
   },
   "walkIn": {

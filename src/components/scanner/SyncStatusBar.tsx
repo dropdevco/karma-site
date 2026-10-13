@@ -33,6 +33,10 @@ export function SyncStatusBar({
 }: SyncStatusBarProps) {
   const { t } = useTranslation('scanner')
   const hasRejections = rejectedScans.length > 0 || rejectedWalkIns.length > 0
+  // The server reports codes like "rejected:outside_event_window"; unknown
+  // codes fall back to the raw text rather than hiding the reason.
+  const reasonText = (reason?: string) =>
+    reason ? t(`sync.reasons.${reason.replace(/^rejected:/, '')}`, { defaultValue: reason }) : ''
 
   return (
     <div className="rounded-card border-2 border-karma-tan-dark/30 bg-white p-4">
@@ -59,6 +63,7 @@ export function SyncStatusBar({
       {hasRejections && (
         <div className="mt-4 flex flex-col gap-2 border-t border-karma-tan-dark/30 pt-3">
           <p className="text-sm font-bold uppercase tracking-wide text-karma-red">{t('sync.rejectedHeading')}</p>
+          <p className="text-sm text-karma-ink-soft">{t('sync.rejectedHelp')}</p>
           {rejectedScans.map((scan) => (
             <div
               key={scan.clientScanId}
@@ -66,7 +71,7 @@ export function SyncStatusBar({
             >
               <div className="min-w-0">
                 <p className="truncate font-semibold text-karma-ink">{scan.memberName}</p>
-                <p className="truncate text-sm text-karma-ink-soft">{scan.rejectReason}</p>
+                <p className="text-sm text-karma-ink-soft">{reasonText(scan.rejectReason)}</p>
               </div>
               <Button size="sm" variant="ghost" onClick={() => onDismissScan(scan.clientScanId)}>
                 {t('sync.dismiss')}
@@ -80,7 +85,7 @@ export function SyncStatusBar({
             >
               <div className="min-w-0">
                 <p className="truncate font-semibold text-karma-ink">{walkIn.fullName}</p>
-                <p className="truncate text-sm text-karma-ink-soft">{walkIn.rejectReason}</p>
+                <p className="text-sm text-karma-ink-soft">{reasonText(walkIn.rejectReason)}</p>
               </div>
               <Button size="sm" variant="ghost" onClick={() => onDismissWalkIn(walkIn.id)}>
                 {t('sync.dismiss')}
