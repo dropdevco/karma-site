@@ -1,0 +1,56 @@
+{
+  "eyebrow": "Staff area",
+  "title": "Members",
+  "subtitle": "Everyone with an account, newest first. This list is read-only.",
+  "loading": "Loading members…",
+  "loadError": "We couldn't load members. Check your connection and try again.",
+  "offlineError": "You're offline. Connect and try again to load members.",
+  "retry": "Try again",
+  "summary": {
+    "total": "Total accounts",
+    "staff": "Staff and admins",
+    "recent": "Joined in last 30 days"
+  },
+  "search": {
+    "label": "Search members",
+    "placeholder": "Name, email, or phone"
+  },
+  "roleFilter": {
+    "label": "Role",
+    "all": "All roles"
+  },
+  "roles": {
+    "member": "Member",
+    "staff": "Staff",
+    "admin": "Admin"
+  },
+  "languages": {
+    "en": "English",
+    "es": "Spanish"
+  },
+  "showing": "Showing {{shown}} of {{total}}",
+  "empty": {
+    "title": "No members yet",
+    "body": "Accounts will show up here as people sign up."
+  },
+  "noMatch": {
+    "title": "No members match",
+    "body": "Try a different search or role filter."
+  },
+  "table": {
+    "caption": "Member accounts"
+  },
+  "columns": {
+    "name": "Name",
+    "contact": "Email and phone",
+    "role": "Role",
+    "language": "Language",
+    "joined": "Joined",
+    "lastSignIn": "Last sign-in",
+    "points": "Points",
+    "checkIns": "Check-ins"
+  },
+  "noName": "No name yet",
+  "never": "Never",
+  "none": "—"
+}

@@ -204,6 +204,19 @@ export type MemberSearchResult = {
   full_name: string
 }
 
+export type StaffMemberRow = {
+  user_id: string
+  email: string | null
+  full_name: string
+  phone: string | null
+  role: 'member' | 'staff' | 'admin'
+  preferred_language: 'en' | 'es'
+  created_at: string
+  last_sign_in_at: string | null
+  total_points: number
+  check_in_count: number
+}
+
 export type PointEventRow = {
   id: string
   user_id: string
@@ -375,6 +388,7 @@ export type Database = {
       void_point_event: { Args: { p_point_event_id: string; p_note?: string }; Returns: undefined }
       award_manual_points: { Args: { p_user_id: string; p_points: number; p_note: string }; Returns: undefined }
       search_members: { Args: { p_query?: string }; Returns: MemberSearchResult[] }
+      staff_list_members: { Args: Record<string, never>; Returns: StaffMemberRow[] }
     }
     Enums: Record<string, never>
     CompositeTypes: Record<string, never>

@@ -40,6 +40,9 @@ export function StaffHome() {
             <p className="mt-2 max-w-xl text-karma-ink-soft">{t('home.subtitle')}</p>
           </div>
           <div className="flex flex-wrap gap-2">
+            <ButtonLink to="/staff/members" variant="secondary" size="md">
+              {t('home.members')}
+            </ButtonLink>
             <ButtonLink to="/staff/points" variant="secondary" size="md">
               {t('home.awardPoints')}
             </ButtonLink>

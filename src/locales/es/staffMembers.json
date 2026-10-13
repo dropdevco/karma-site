@@ -1,0 +1,56 @@
+{
+  "eyebrow": "Área de personal",
+  "title": "Miembros",
+  "subtitle": "Todas las personas con cuenta, de la más reciente a la más antigua. Esta lista es solo de lectura.",
+  "loading": "Cargando miembros…",
+  "loadError": "No pudimos cargar los miembros. Revisa tu conexión e intenta de nuevo.",
+  "offlineError": "Estás sin conexión. Conéctate e intenta de nuevo para cargar los miembros.",
+  "retry": "Intentar de nuevo",
+  "summary": {
+    "total": "Cuentas en total",
+    "staff": "Personal y administradores",
+    "recent": "Se unieron en los últimos 30 días"
+  },
+  "search": {
+    "label": "Buscar miembros",
+    "placeholder": "Nombre, correo o teléfono"
+  },
+  "roleFilter": {
+    "label": "Rol",
+    "all": "Todos los roles"
+  },
+  "roles": {
+    "member": "Miembro",
+    "staff": "Personal",
+    "admin": "Administrador"
+  },
+  "languages": {
+    "en": "Inglés",
+    "es": "Español"
+  },
+  "showing": "Mostrando {{shown}} de {{total}}",
+  "empty": {
+    "title": "Aún no hay miembros",
+    "body": "Las cuentas aparecerán aquí cuando la gente se registre."
+  },
+  "noMatch": {
+    "title": "Ningún miembro coincide",
+    "body": "Prueba con otra búsqueda o con otro filtro de rol."
+  },
+  "table": {
+    "caption": "Cuentas de miembros"
+  },
+  "columns": {
+    "name": "Nombre",
+    "contact": "Correo y teléfono",
+    "role": "Rol",
+    "language": "Idioma",
+    "joined": "Se unió",
+    "lastSignIn": "Último acceso",
+    "points": "Puntos",
+    "checkIns": "Asistencias"
+  },
+  "noName": "Aún sin nombre",
+  "never": "Nunca",
+  "none": "—"
+}
