@@ -294,6 +294,14 @@ export function StaffScanner() {
               </Button>
             </div>
 
+            {/* Above the camera: the 3:4 viewfinder is tall enough to push a card
+                placed below it off-screen on a laptop, which reads as "nothing happened". */}
+            {outcome && (
+              <div className="mt-5">
+                <ScanResultCard outcome={outcome} />
+              </div>
+            )}
+
             <div className="mt-5">
               {manualMode ? (
                 <ManualCheckInList
@@ -313,12 +321,6 @@ export function StaffScanner() {
                 </div>
               )}
             </div>
-
-            {outcome && (
-              <div className="mt-5">
-                <ScanResultCard outcome={outcome} />
-              </div>
-            )}
           </>
         )}
       </Container>

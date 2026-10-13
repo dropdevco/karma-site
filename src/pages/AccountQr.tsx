@@ -100,10 +100,12 @@ export function AccountQr() {
         const token = await createQrToken(secretValue, userId)
         if (!cancelled) {
           const url = await QRCode.toDataURL(token, {
-            errorCorrectionLevel: 'H',
+            // 'M' keeps the code at 33 modules (vs 41 at 'H'), so each module
+            // is larger on screen. The 4-module quiet zone is the spec minimum.
+            errorCorrectionLevel: 'M',
             type: 'image/png',
-            width: 300,
-            margin: 2,
+            width: 560,
+            margin: 4,
             color: {
               dark: '#000000',
               light: '#ffffff',

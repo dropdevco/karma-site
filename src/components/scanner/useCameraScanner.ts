@@ -44,6 +44,19 @@ export interface UseCameraScannerResult {
 
 const SCAN_INTERVAL_MS = 220
 
+/**
+ * Without a resolution hint browsers often hand back 640x480, which leaves a
+ * phone-screen QR only a few pixels per module for the decoder to resolve.
+ */
+const VIDEO_CONSTRAINTS: MediaStreamConstraints = {
+  video: {
+    facingMode: { ideal: 'environment' },
+    width: { ideal: 1280 },
+    height: { ideal: 720 },
+  },
+  audio: false,
+}
+
 export function useCameraScanner({ active, onDecode }: UseCameraScannerOptions): UseCameraScannerResult {
   const videoRef = useRef<HTMLVideoElement | null>(null)
   const onDecodeRef = useRef(onDecode)
@@ -97,10 +110,7 @@ export function useCameraScanner({ active, onDecode }: UseCameraScannerOptions):
 
     const startNative = async (Ctor: NonNullable<typeof NativeCtor>) => {
       const detector = new Ctor({ formats: ['qr_code'] })
-      const stream = await navigator.mediaDevices.getUserMedia({
-        video: { facingMode: { ideal: 'environment' } },
-        audio: false,
-      })
+      const stream = await navigator.mediaDevices.getUserMedia(VIDEO_CONSTRAINTS)
       if (stoppedRef.current) {
         for (const track of stream.getTracks()) track.stop()
         return
@@ -149,7 +159,7 @@ export function useCameraScanner({ active, onDecode }: UseCameraScannerOptions):
         delayBetweenScanSuccess: 1000,
       })
 
-      const controls = await reader.decodeFromVideoDevice(undefined, video, (result) => {
+      const controls = await reader.decodeFromConstraints(VIDEO_CONSTRAINTS, video, (result) => {
         if (result) onDecodeRef.current(result.getText())
       })
       if (stoppedRef.current) {
