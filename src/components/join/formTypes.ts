@@ -80,6 +80,7 @@ export const PROFILE_FIELD_ORDER = [
   'emergencyName',
   'emergencyPhone',
   'dateOfBirth',
+  'photoConsent',
 ] as const
 
 export type ProfileFormField = (typeof PROFILE_FIELD_ORDER)[number]

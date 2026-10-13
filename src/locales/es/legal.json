@@ -115,7 +115,7 @@
       },
       "eventPhotography": {
         "heading": "Fotografías en Eventos",
-        "content": "Los voluntarios de Karma fotografían nuestros eventos para celebrar a nuestra comunidad y compartir nuestro impacto. Las fotos pueden aparecer en nuestro sitio web, redes sociales o materiales de recaudación de fondos.\n\nPuedes optar por no aparecer en fotos. Cuando te unas o en cualquier momento, cuéntanos si no deseas aparecer en fotografías de eventos, y lo anotaremos en tu cuenta e instruiremos a nuestros fotógrafos.\n\nNunca vendemos fotos ni las usamos con fines comerciales fuera de la misión de Karma."
+        "content": "Los voluntarios de Karma fotografían y filman nuestros eventos para celebrar a nuestra comunidad y compartir nuestro impacto. Las fotos y los videos pueden aparecer en nuestro sitio web, redes sociales o materiales de recaudación de fondos.\n\nAceptar nuestra autorización de fotos y medios es obligatorio para unirte a Karma y asistir a los eventos. Los eventos son espacios compartidos y no podemos quitar a personas específicas de las fotos o videos de grupo, por lo que no ofrecemos la opción de excluirse. Si no estás de acuerdo con aparecer en las fotos de los eventos, no podrás unirte ni asistir. Registramos la fecha en que aceptas.\n\nNunca vendemos fotos ni las usamos con fines comerciales fuera de la misión de Karma."
       },
       "emailCommunications": {
         "heading": "Email y Recordatorios de Eventos",
@@ -147,7 +147,7 @@
           },
           {
             "label": "Optar por no participar",
-            "description": "Dejar de recibir correos, optar por no aparecer en fotos o cambiar tus preferencias en cualquier momento."
+            "description": "Dejar de recibir correos o cambiar tus preferencias de notificaciones en cualquier momento."
           }
         ],
         "contactPrompt": "Para ejercer cualquiera de estos derechos, contáctanos en:",

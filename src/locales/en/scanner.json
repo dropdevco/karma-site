@@ -94,12 +94,12 @@
       "emergencyContactName": "Emergency contact name",
       "emergencyContactPhone": "Emergency contact phone",
       "confirmedAdult": "I confirm this person is 18 or older.",
-      "waiverAcknowledged": "I confirm this person has read and accepted the liability waiver."
+      "waiverAcknowledged": "I confirm this person has read and accepted the liability waiver and the photo and media release."
     },
     "errors": {
       "nameRequired": "Enter a full name.",
       "adultRequired": "You must confirm the attendee is 18 or older.",
-      "waiverRequired": "You must confirm the waiver was acknowledged.",
+      "waiverRequired": "You must confirm the waiver and the photo and media release were acknowledged.",
       "noWaiverVersion": "The current waiver text hasn't been downloaded to this device yet. Connect to the internet once to enable walk-ins offline."
     }
   }

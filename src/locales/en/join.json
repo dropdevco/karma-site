@@ -26,7 +26,7 @@
   },
   "emailStep": {
     "heading": "Let's start with your email",
-    "intro": "We'll send you a one-time code to verify it's you before you create your profile."
+    "intro": "We'll email you a secure sign-in link. Click it to get into your account, then finish your profile and sign the waiver."
   },
   "password": {
     "heading": "Create a password",
@@ -94,8 +94,10 @@
         "hint": "Karma events are open to adults 18 and up."
       },
       "photoConsent": {
-        "label": "Photo & media consent (optional)",
-        "description": "Karma volunteers take photos and video at events for our website and social media. Checking this box lets us include you. It's completely optional and won't affect your membership either way."
+        "label": "I agree to the photo and media release",
+        "description": "Karma volunteers take photos and video at events and may post them on our website, social media and fundraising materials. Because we can't pick individual people out of group photos, agreeing is required to join and attend events.",
+        "summaryLabel": "Photo & media release"
+      
       },
       "reminderOptIn": {
         "label": "Email me event reminders",
@@ -125,6 +127,7 @@
       "dateOfBirthRequired": "Enter your date of birth.",
       "dateOfBirthInvalid": "Enter a valid date.",
       "dateOfBirthUnder18": "You must be 18 or older to join Karma.",
+      "photoConsentRequired": "You must agree to the photo and media release to continue.",
       "summary_one": "There is {{count}} error to fix before you can continue.",
       "summary_other": "There are {{count}} errors to fix before you can continue."
     },

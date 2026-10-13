@@ -108,6 +108,18 @@ export function Account() {
           </p>
         )}
 
+        {(!status.profile_complete || !status.waiver_current) && (
+          <div className="mt-8 flex flex-wrap items-center justify-between gap-4 rounded-card border-2 border-karma-red bg-karma-red-soft p-5 sm:p-6">
+            <div>
+              <h2 className="font-display text-lg font-bold text-karma-ink">{t('account.setup.title')}</h2>
+              <p className="mt-1 text-sm text-karma-ink-soft">{t('account.setup.body')}</p>
+            </div>
+            <ButtonLink to="/join" variant="primary" size="md">
+              {t('account.setup.cta')}
+            </ButtonLink>
+          </div>
+        )}
+
         {points && (
           <div className="mt-8 flex flex-wrap items-center justify-between gap-4 rounded-card border border-karma-tan-dark/30 bg-karma-red-soft p-6 shadow-sm sm:p-8">
             <div>
@@ -204,7 +216,7 @@ export function Account() {
               </div>
               <div>
                 <dt className="font-display font-semibold text-karma-ink">
-                  {tJoin('profile.fields.photoConsent.label')}
+                  {tJoin('profile.fields.photoConsent.summaryLabel')}
                 </dt>
                 <dd className="mt-1 text-karma-ink-soft">{yesNo(profile.photo_consent)}</dd>
               </div>

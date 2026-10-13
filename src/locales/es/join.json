@@ -26,7 +26,7 @@
   },
   "emailStep": {
     "heading": "Empecemos con tu correo",
-    "intro": "Te enviaremos un código de un solo uso para verificar que eres tú antes de crear tu perfil."
+    "intro": "Te enviaremos por correo un enlace de acceso seguro. Haz clic en él para entrar a tu cuenta y luego completa tu perfil y firma el descargo de responsabilidad."
   },
   "password": {
     "heading": "Crea una contraseña",
@@ -94,8 +94,10 @@
         "hint": "Los eventos de Karma son solo para mayores de 18 años."
       },
       "photoConsent": {
-        "label": "Consentimiento de fotos y video (opcional)",
-        "description": "Nuestros voluntarios toman fotos y video en los eventos para el sitio web y las redes sociales de Karma. Marca esta casilla si nos das permiso de incluirte. Es totalmente opcional y no afecta tu membresía de ninguna forma."
+        "label": "Acepto la autorización de fotos y medios",
+        "description": "Los voluntarios de Karma toman fotos y video en los eventos y pueden publicarlos en nuestro sitio web, redes sociales y materiales de recaudación de fondos. Como no podemos separar a personas específicas de las fotos de grupo, aceptarla es obligatorio para unirte y asistir a los eventos.",
+        "summaryLabel": "Autorización de fotos y medios"
+      
       },
       "reminderOptIn": {
         "label": "Enviarme recordatorios de eventos por correo",
@@ -125,6 +127,7 @@
       "dateOfBirthRequired": "Escribe tu fecha de nacimiento.",
       "dateOfBirthInvalid": "Escribe una fecha válida.",
       "dateOfBirthUnder18": "Debes tener 18 años o más para unirte a Karma.",
+      "photoConsentRequired": "Debes aceptar la autorización de fotos y medios para continuar.",
       "summary_one": "Hay {{count}} error que corregir antes de continuar.",
       "summary_other": "Hay {{count}} errores que corregir antes de continuar."
     },

@@ -274,8 +274,14 @@ export function ProfileForm({
           id="photoConsent"
           label={t('profile.fields.photoConsent.label')}
           description={t('profile.fields.photoConsent.description')}
+          required
           checked={values.photoConsent}
+          error={visibleError('photoConsent')}
           onChange={(value) => updateValue('photoConsent', value)}
+          onBlur={() => handleBlur('photoConsent')}
+          inputRef={(el) => {
+            fieldRefs.current.photoConsent = el
+          }}
         />
       </fieldset>
 

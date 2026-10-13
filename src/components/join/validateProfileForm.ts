@@ -59,5 +59,9 @@ export function validateProfileForm(values: ProfileFormValues, t: Translate): Pr
     errors.dateOfBirth = t('profile.errors.dateOfBirthUnder18')
   }
 
+  if (!values.photoConsent) {
+    errors.photoConsent = t('profile.errors.photoConsentRequired')
+  }
+
   return errors
 }

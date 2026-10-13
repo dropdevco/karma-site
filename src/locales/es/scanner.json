@@ -94,12 +94,12 @@
       "emergencyContactName": "Nombre del contacto de emergencia",
       "emergencyContactPhone": "Teléfono del contacto de emergencia",
       "confirmedAdult": "Confirmo que esta persona tiene 18 años o más.",
-      "waiverAcknowledged": "Confirmo que esta persona leyó y aceptó el descargo de responsabilidad."
+      "waiverAcknowledged": "Confirmo que esta persona leyó y aceptó el descargo de responsabilidad y la autorización de fotos y medios."
     },
     "errors": {
       "nameRequired": "Ingresa un nombre completo.",
       "adultRequired": "Debes confirmar que el asistente tiene 18 años o más.",
-      "waiverRequired": "Debes confirmar que se aceptó el descargo de responsabilidad.",
+      "waiverRequired": "Debes confirmar que se aceptaron el descargo de responsabilidad y la autorización de fotos y medios.",
       "noWaiverVersion": "El texto vigente del descargo de responsabilidad aún no se ha descargado a este dispositivo. Conéctate a internet una vez para habilitar registros sin conexión."
     }
   }

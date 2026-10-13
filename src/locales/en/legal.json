@@ -115,7 +115,7 @@
       },
       "eventPhotography": {
         "heading": "Event Photography",
-        "content": "Karma volunteers photograph our events to celebrate our community and share impact. Photos may appear on our website, social media, or in fundraising materials.\n\nYou can opt out of appearing in photos. When you join or at any time, let us know if you don't want to appear in event photographs, and we'll note that on your account and remind our photographers.\n\nWe never sell photos or use them for commercial purposes outside of Karma's mission."
+        "content": "Karma volunteers photograph and film our events to celebrate our community and share impact. Photos and video may appear on our website, social media, or in fundraising materials.\n\nAgreeing to our photo and media release is required to join Karma and to attend events. Events are shared spaces and we can't edit individual people out of group photos or video, so we don't offer an opt-out. If you aren't comfortable appearing in event photos, you won't be able to join or attend events. We record the date you agree.\n\nWe never sell photos or use them for commercial purposes outside of Karma's mission."
       },
       "emailCommunications": {
         "heading": "Email & Event Reminders",
@@ -147,7 +147,7 @@
           },
           {
             "label": "Opt out",
-            "description": "Stop receiving emails, opt out of photography, or change your preferences anytime."
+            "description": "Stop receiving emails or change your notification preferences anytime."
           }
         ],
         "contactPrompt": "To exercise any of these rights, contact us at:",
